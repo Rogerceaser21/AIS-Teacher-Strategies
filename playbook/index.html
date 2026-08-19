@@ -4,159 +4,259 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AIS Teacher Strategies · The Learning Environment Playbook</title>
+<meta name="description" content="Six strands, thirty classroom setups and a searchable library of around 150 named techniques for turning the room itself into part of the lesson.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,900&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f8f4ec; --paper-2:#f1ead9; --ink:#2e2438; --ink-soft:#5b4f6b;
-  --amber:#d98e2b; --amber-soft:#f3ddba; --plum:#6d4bb8; --plum-soft:#e6def5;
-  --line:#d9cfbd; --card:#fffdf8; --say:#3c2a4d;
-  --serif:"Fraunces", Georgia, "Times New Roman", serif;
-  --sans:"Karla", "Segoe UI", Arial, sans-serif;
+  --paper:#f7f1e6; --paper-deep:#efe6d4; --card:#fdfaf3;
+  --ink:#2c2337; --ink-soft:#5d5170; --ink-faint:#8a7f99;
+  --amber:#e09a34; --amber-ink:#8f5c10; --amber-wash:#f6e3c2;
+  --plum:#5f3fae; --plum-wash:#e9e2f7;
+  --say-bg:#352544; --say-fg:#f3ebff;
+  --shadow-sm:0 1px 2px rgba(44,35,55,.07),0 6px 18px -10px rgba(44,35,55,.22);
+  --shadow-md:0 2px 4px rgba(44,35,55,.06),0 18px 40px -18px rgba(44,35,55,.35);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Karla","Segoe UI",Arial,sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.55}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;z-index:0;
-  background-image:radial-gradient(rgba(46,36,56,.05) 1px, transparent 1px);background-size:22px 22px}
+body{
+  background:
+    radial-gradient(1200px 500px at 85% -5%, rgba(224,154,52,.10), transparent 60%),
+    radial-gradient(900px 480px at -10% 30%, rgba(95,63,174,.06), transparent 55%),
+    var(--paper);
+  color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.58;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 .17 0 0 0 0 .13 0 0 0 0 .22 0 0 0 .028 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+::selection{background:var(--amber-wash);color:var(--ink)}
 main,header.site{position:relative;z-index:1}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--plum);outline-offset:3px;border-radius:4px}
 
-/* ---------- sticky nav ---------- */
-header.site{position:sticky;top:0;z-index:50;background:rgba(248,244,236,.94);backdrop-filter:blur(6px);
-  border-bottom:2px solid var(--ink)}
-.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 24px;flex-wrap:wrap}
-.brand{font-family:var(--serif);font-weight:900;font-size:1.05rem;letter-spacing:.01em;white-space:nowrap}
-.brand .star{color:var(--amber)}
-nav.menu{display:flex;gap:4px;flex-wrap:wrap}
-nav.menu a{color:var(--ink-soft);text-decoration:none;font-weight:700;font-size:.82rem;letter-spacing:.06em;
-  text-transform:uppercase;padding:6px 10px;border-radius:999px}
-nav.menu a:hover{background:var(--amber-soft);color:var(--ink)}
-.searchwrap{margin-left:auto;position:relative;flex:1 1 220px;max-width:340px;min-width:200px}
-#search{width:100%;padding:9px 36px 9px 14px;border:2px solid var(--ink);border-radius:999px;
-  background:var(--card);font:600 .9rem var(--sans);color:var(--ink)}
-#search::placeholder{color:#9a8fa9}
-#search:focus{outline:3px solid var(--amber-soft)}
-#clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;
-  font-size:1rem;cursor:pointer;color:var(--ink-soft);display:none;padding:4px}
-#hitcount{position:absolute;right:-2px;top:calc(100% + 4px);font-size:.72rem;font-weight:700;color:var(--plum);display:none;white-space:nowrap}
+/* ============ floating pill nav ============ */
+header.site{position:sticky;top:14px;z-index:60;display:flex;justify-content:center;padding:0 16px}
+.pill{
+  display:flex;align-items:center;gap:2px;max-width:1060px;width:100%;
+  background:rgba(253,250,243,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(44,35,55,.14);border-radius:999px;box-shadow:var(--shadow-md);
+  padding:8px 10px 8px 18px;
+}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-weight:900;font-size:1rem;
+  letter-spacing:.01em;white-space:nowrap;text-decoration:none;margin-right:8px}
+.brand svg{width:19px;height:19px;flex:none}
+nav.menu{display:flex;gap:1px;flex-wrap:nowrap;overflow:hidden}
+nav.menu a{color:var(--ink-soft);text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:.05em;
+  text-transform:uppercase;padding:8px 11px;border-radius:999px;transition:background .25s var(--ease),color .25s var(--ease);white-space:nowrap}
+nav.menu a:hover{background:var(--amber-wash);color:var(--ink)}
+.searchwrap{margin-left:auto;position:relative;flex:0 1 250px;min-width:150px}
+#search{width:100%;padding:9px 34px 9px 15px;border:1px solid rgba(44,35,55,.22);border-radius:999px;
+  background:var(--card);font:500 .88rem var(--sans);color:var(--ink);transition:border-color .25s,box-shadow .25s}
+#search::placeholder{color:var(--ink-faint)}
+#search:focus{outline:none;border-color:var(--plum);box-shadow:0 0 0 3px var(--plum-wash)}
+#clear{position:absolute;right:5px;top:50%;transform:translateY(-50%);border:0;background:none;
+  font-size:.95rem;cursor:pointer;color:var(--ink-soft);display:none;padding:5px;line-height:1}
+#hitcount{position:absolute;right:8px;top:calc(100% + 7px);font-size:.72rem;font-weight:700;color:var(--plum);
+  background:var(--card);border:1px solid var(--plum-wash);border-radius:999px;padding:2px 10px;
+  box-shadow:var(--shadow-sm);display:none;white-space:nowrap}
 
-/* ---------- hero ---------- */
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.hero{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
-.kicker{font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
-h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.4rem,5.4vw,4.2rem);line-height:1.02;margin:10px 0 16px;max-width:900px}
-.stand{max-width:640px;color:var(--ink-soft);font-size:1.08rem}
+/* ============ layout ============ */
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+
+/* ============ hero ============ */
+.hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center;
+  padding:74px 0 34px}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.5rem,5.6vw,4.4rem);line-height:.99;
+  letter-spacing:-.015em;margin:0 0 20px;text-wrap:balance}
+h1 .under{position:relative;white-space:nowrap}
+h1 .under svg{position:absolute;left:-1%;bottom:-.13em;width:102%;height:.3em;overflow:visible}
+h1 .under path{fill:none;stroke:var(--amber);stroke-width:7;stroke-linecap:round;opacity:.85}
+.stand{max-width:56ch;color:var(--ink-soft);font-size:1.1rem}
 .stand strong{color:var(--ink)}
+.hero-facts{margin-top:22px;font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.02rem;color:var(--amber-ink)}
+/* the plate */
+.plate{position:relative;transform:rotate(1.6deg);transition:transform .6s var(--ease);justify-self:end;width:min(100%,440px)}
+.plate:hover{transform:rotate(.4deg) translateY(-4px)}
+.plate img{display:block;width:100%;border-radius:6px;border:1px solid rgba(44,35,55,.2);
+  box-shadow:var(--shadow-md);background:var(--paper-deep)}
+.plate .tape{position:absolute;width:92px;height:30px;background:rgba(224,154,52,.4);
+  border-left:1px dashed rgba(143,92,16,.35);border-right:1px dashed rgba(143,92,16,.35);
+  top:-14px;left:50%;transform:translateX(-50%) rotate(-2deg)}
+.plate figcaption{margin-top:12px;text-align:center;font-family:var(--serif);font-style:italic;
+  font-size:.92rem;color:var(--ink-soft)}
+/* entrance: the one authored moment */
+@media (prefers-reduced-motion:no-preference){
+  .rise{opacity:0;transform:translateY(18px);animation:rise .9s var(--ease) forwards}
+  .plate.rise{transform:translateY(18px) rotate(4.5deg);animation:settle 1.1s var(--ease) forwards}
+  .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.42s}
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  @keyframes settle{to{opacity:1;transform:translateY(0) rotate(1.6deg)}}
+}
 
-/* router */
-.router{margin:38px 0 8px}
-.router h2{font-family:var(--serif);font-weight:800;font-size:1.35rem;margin-bottom:4px}
-.router p.sub{color:var(--ink-soft);margin-bottom:14px;font-size:.95rem}
-.router a.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:baseline;
-  padding:13px 14px;border-top:1.5px solid var(--line);text-decoration:none;color:inherit}
-.router a.row:last-of-type{border-bottom:1.5px solid var(--line)}
+/* ============ router ============ */
+.router{padding:14px 0 58px}
+.router h2{font-family:var(--serif);font-weight:900;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:2px}
+.router p.sub{color:var(--ink-soft);margin-bottom:18px}
+.router a.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:baseline;
+  padding:15px 12px;border-top:1px solid rgba(44,35,55,.16);text-decoration:none;color:inherit;
+  position:relative;transition:background .3s var(--ease)}
+.router a.row:last-of-type{border-bottom:1px solid rgba(44,35,55,.16)}
 .router a.row:hover{background:var(--card)}
-.router .cannot{font-size:1.02rem}
-.router .cannot b{font-family:var(--serif);font-weight:800}
-.router .dest{font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--plum);white-space:nowrap}
+.router .cannot{font-size:1.06rem}
+.router .cannot b{font-family:var(--serif);font-weight:700}
+.router .dest{font-weight:700;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--plum);
+  white-space:nowrap;display:flex;align-items:center;gap:7px}
+.router .dest svg{width:16px;height:12px;transition:transform .3s var(--ease)}
+.router .dest svg path{stroke:var(--plum);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.router a.row:hover .dest svg{transform:translateX(4px)}
 
-/* ---------- sections ---------- */
-section.block{padding:50px 0 34px;border-bottom:2px solid var(--ink)}
-.block-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:6px}
-.bignum{font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,6vw,4rem);color:var(--amber);line-height:1}
-h2.title{font-family:var(--serif);font-weight:900;font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.1}
-.usewhen{color:var(--ink-soft);max-width:760px;margin:8px 0 2px}
-.starthere{display:inline-block;margin:14px 0 6px;padding:9px 14px;background:var(--ink);color:var(--paper);
-  border-radius:8px;font-weight:700;font-size:.92rem}
-.starthere b{color:var(--amber)}
+/* ============ section chrome ============ */
+section.block{padding:58px 0 44px;border-top:1px solid rgba(44,35,55,.16)}
+.block-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.snum{flex:none;width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--paper);
+  font-family:var(--serif);font-weight:900;font-size:1.35rem;display:grid;place-items:center;
+  box-shadow:var(--shadow-sm)}
+h2.title{font-family:var(--serif);font-weight:900;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.06;
+  letter-spacing:-.01em;text-wrap:balance}
+.usewhen{color:var(--ink-soft);max-width:70ch;margin:14px 0 2px}
+.usewhen b{color:var(--ink)}
+.starthere{display:inline-block;margin:16px 0 4px;padding:11px 16px;background:var(--card);
+  border:1px solid rgba(44,35,55,.2);border-radius:10px;box-shadow:var(--shadow-sm);
+  font-size:.94rem;transform:rotate(-.4deg)}
+.starthere b{font-family:var(--serif);color:var(--amber-ink)}
 
-/* setup cards */
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;margin-top:22px}
-.card{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;
-  box-shadow:4px 4px 0 rgba(46,36,56,.14);display:flex;flex-direction:column}
-.card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1.5px solid var(--ink);background:var(--paper-2)}
-.card .pad{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.card h3{font-family:var(--serif);font-weight:800;font-size:1.22rem;line-height:1.15}
-.meta{display:flex;gap:8px;flex-wrap:wrap}
-.meta span{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-  background:var(--plum-soft);color:var(--say);padding:3px 9px;border-radius:999px}
-.card ol{padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:.95rem}
-.say{background:var(--say);color:#f6edff;border-radius:10px;padding:11px 14px;font-size:.95rem}
-.say b{color:var(--amber);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:3px}
+/* ============ setup cards ============ */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:26px;margin-top:26px}
+.card{background:var(--card);border:1px solid rgba(44,35,55,.16);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.card .imgbox{overflow:hidden;border-bottom:1px solid rgba(44,35,55,.14);background:var(--paper-deep)}
+.card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;
+  transition:transform .6s var(--ease)}
+.card:hover img{transform:scale(1.03)}
+.card .pad{padding:18px 20px 20px;display:flex;flex-direction:column;gap:11px;flex:1}
+.card h3{font-family:var(--serif);font-weight:700;font-size:1.26rem;line-height:1.14}
+.meta{display:flex;gap:7px;flex-wrap:wrap}
+.meta span{font-size:.71rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  background:var(--plum-wash);color:#433080;padding:3px 10px;border-radius:999px}
+.card ol{padding-left:19px;display:flex;flex-direction:column;gap:5px;font-size:.94rem}
+.card ol li::marker{font-weight:700;color:var(--amber-ink)}
+.say{background:var(--say-bg);color:var(--say-fg);border-radius:10px;padding:12px 15px;font-size:.95rem;
+  font-family:var(--serif);font-style:italic}
+.say b{font-family:var(--sans);font-style:normal;color:var(--amber);font-size:.68rem;letter-spacing:.15em;
+  text-transform:uppercase;display:block;margin-bottom:4px}
 .why{font-size:.9rem;color:var(--ink-soft)}
 .why b{color:var(--ink)}
 
-/* strand footer */
-.strandfoot{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.foot-box{background:var(--paper-2);border:1.5px solid var(--line);border-radius:12px;padding:16px 18px}
-.foot-box h4{font-family:var(--serif);font-weight:800;font-size:1rem;margin-bottom:8px}
-.foot-box ol,.foot-box ul{padding-left:20px;font-size:.92rem;display:flex;flex-direction:column;gap:4px}
+/* strand footers */
+.strandfoot{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.foot-box{background:linear-gradient(rgba(44,35,55,.045) 1px,transparent 1px) 0 12px/100% 28px,var(--paper-deep);
+  border:1px solid rgba(44,35,55,.14);border-radius:12px;padding:18px 20px}
+.foot-box h4{font-family:var(--serif);font-weight:700;font-size:1.02rem;margin-bottom:9px}
+.foot-box ol,.foot-box ul{padding-left:19px;font-size:.92rem;display:flex;flex-direction:column;gap:5px}
 .foot-box p{font-size:.92rem}
-details.book{margin-top:18px;border:1.5px solid var(--line);border-radius:12px;background:var(--card)}
-details.book summary{cursor:pointer;padding:13px 18px;font-weight:700;font-family:var(--serif);font-size:1rem}
-details.book .inner{padding:0 18px 16px}
-details.book ul{padding-left:20px;font-size:.92rem;display:flex;flex-direction:column;gap:6px}
+details.book{margin-top:20px;border:1px solid rgba(44,35,55,.16);border-radius:12px;background:var(--card);
+  box-shadow:var(--shadow-sm);overflow:hidden}
+details.book summary{cursor:pointer;padding:14px 20px;font-weight:700;font-family:var(--serif);font-size:1rem;
+  list-style:none;display:flex;align-items:center;gap:10px;transition:background .25s}
+details.book summary::-webkit-details-marker{display:none}
+details.book summary::before{content:"";width:9px;height:9px;border-right:2px solid var(--amber-ink);
+  border-bottom:2px solid var(--amber-ink);transform:rotate(-45deg);transition:transform .3s var(--ease);flex:none}
+details.book[open] summary::before{transform:rotate(45deg)}
+details.book summary:hover{background:var(--amber-wash)}
+details.book .inner{padding:2px 20px 18px}
+details.book ul{padding-left:19px;font-size:.92rem;display:flex;flex-direction:column;gap:7px}
 
-/* house rules */
-.rules{counter-reset:rule;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:20px}
-.rule{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:16px;position:relative}
-.rule::before{counter-increment:rule;content:counter(rule);position:absolute;top:-14px;left:14px;
-  background:var(--amber);color:var(--ink);font-family:var(--serif);font-weight:900;width:28px;height:28px;
-  border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--ink)}
-.rule b{display:block;font-family:var(--serif);font-size:1rem;margin-bottom:4px;padding-top:4px}
-.rule p{font-size:.88rem;color:var(--ink-soft)}
+/* ============ house rules: manifesto list ============ */
+.rules{margin-top:8px;max-width:74ch;padding-left:0}
+.rules li{list-style:none;display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;align-items:baseline;
+  padding:20px 4px;border-top:1px solid rgba(44,35,55,.16)}
+.rules li:first-child{border-top:0}
+.rules .n{font-family:var(--serif);font-weight:900;font-style:italic;font-size:2.4rem;color:var(--amber);line-height:1}
+.rules b{display:block;font-family:var(--serif);font-weight:700;font-size:1.18rem;margin-bottom:3px}
+.rules p{color:var(--ink-soft);font-size:.95rem}
 
-/* technique library */
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px}
-.chip{border:1.5px solid var(--ink);background:var(--card);border-radius:999px;padding:6px 14px;
-  font:700 .82rem var(--sans);cursor:pointer;color:var(--ink)}
-.chip.active{background:var(--ink);color:var(--paper)}
-.tgroup{margin-top:26px}
-.tgroup>h3{font-family:var(--serif);font-weight:900;font-size:1.5rem}
-.tgroup>.locs{font-size:.8rem;color:var(--ink-soft);margin:2px 0 10px}
-.tsub{margin:14px 0 4px;font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--plum)}
-ul.tech{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:8px 22px}
-ul.tech li{font-size:.93rem;padding:7px 10px;border-left:3px solid var(--amber);background:var(--card);border-radius:0 8px 8px 0}
-ul.tech li b{font-family:var(--serif)}
-ul.tech.case li{border-left-color:var(--plum)}
+/* ============ technique library: ledger ============ */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 6px;position:sticky;top:76px;z-index:5;
+  background:transparent;pointer-events:none}
+.chip{pointer-events:auto;border:1px solid rgba(44,35,55,.25);background:var(--card);border-radius:999px;
+  padding:7px 15px;font:700 .8rem var(--sans);cursor:pointer;color:var(--ink);box-shadow:var(--shadow-sm);
+  transition:background .25s,color .25s,transform .25s var(--ease)}
+.chip:hover{transform:translateY(-1px)}
+.chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tgroup{margin-top:34px}
+.tgroup>h3{font-family:var(--serif);font-weight:900;font-size:1.6rem;letter-spacing:-.01em}
+.tgroup>.locs{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--ink-soft);margin:3px 0 8px}
+.tsub{margin:22px 0 8px;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--plum)}
+ul.tech{list-style:none;padding-left:0;column-width:23rem;column-gap:44px}
+ul.tech li{font-size:.93rem;padding:7px 0;border-bottom:1px dotted rgba(44,35,55,.28);
+  break-inside:avoid;color:var(--ink-soft)}
+ul.tech li b{font-family:var(--serif);font-weight:700;color:var(--ink)}
+ul.tech.case li b{color:var(--plum)}
+ul.tech.case li b::before{content:"case · ";font-family:var(--sans);font-weight:700;font-size:.68rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink)}
 
-/* worked example */
-.judge{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
-.judge div{border:1.5px solid var(--ink);border-radius:10px;padding:10px 16px;background:var(--card)}
-.judge .lvl{font-family:var(--serif);font-weight:900;font-size:1.5rem}
-.judge .lbl{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
-.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:18px}
-.rec{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:16px 18px}
-.rec .from{font-size:.82rem;color:var(--ink-soft);font-style:italic;margin-bottom:8px}
-.rec h4{font-family:var(--serif);font-weight:800;font-size:1.05rem;margin-bottom:6px}
-.rec p{font-size:.9rem;margin-bottom:6px}
-.notebox{margin-top:22px;background:var(--say);color:#f6edff;border-radius:12px;padding:18px 20px}
-.notebox h4{font-family:var(--serif);color:var(--amber);margin-bottom:8px}
-.notebox ol{padding-left:20px;display:flex;flex-direction:column;gap:5px;font-size:.95rem}
+/* ============ worked example ============ */
+.judge{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 6px}
+.judge div{border:1px solid rgba(44,35,55,.18);border-radius:12px;padding:12px 18px;background:var(--card);
+  box-shadow:var(--shadow-sm);display:flex;align-items:baseline;gap:10px}
+.judge .lvl{font-family:var(--serif);font-weight:900;font-size:1.7rem}
+.judge .lbl{font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:22px}
+.rec{background:var(--card);border:1px solid rgba(44,35,55,.16);border-radius:4px 14px 14px 14px;
+  padding:18px 20px;box-shadow:var(--shadow-sm);position:relative;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.rec:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.rec::before{content:"";position:absolute;top:-9px;left:22px;width:66px;height:20px;
+  background:rgba(224,154,52,.35);border-left:1px dashed rgba(143,92,16,.3);border-right:1px dashed rgba(143,92,16,.3);
+  transform:rotate(-1.6deg)}
+.rec .from{font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--ink-soft);margin-bottom:10px}
+.rec h4{font-family:var(--serif);font-weight:700;font-size:1.1rem;margin-bottom:7px}
+.rec h4 span{color:var(--plum);font-size:.92rem}
+.rec p{font-size:.9rem;margin-bottom:7px}
+.notebox{margin-top:28px;background:var(--say-bg);color:var(--say-fg);border-radius:14px;padding:22px 26px;
+  box-shadow:var(--shadow-md)}
+.notebox h4{font-family:var(--serif);color:var(--amber);font-size:1.15rem;margin-bottom:10px}
+.notebox ol{padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:.96rem}
+.notebox .eg{margin-top:12px;font-family:var(--serif);font-style:italic;font-size:.93rem;color:#cdbfe4}
 
-/* footer */
-footer{padding:36px 0 60px;color:var(--ink-soft);font-size:.9rem;max-width:760px}
+/* ============ footer ============ */
+footer{padding:44px 0 70px;color:var(--ink-soft);font-size:.9rem}
+footer .rule-end{width:120px;margin-bottom:22px}
+footer .rule-end path{fill:none;stroke:var(--amber);stroke-width:3;stroke-linecap:round;opacity:.8}
+footer p{max-width:72ch}
 footer b{color:var(--ink)}
 
 .hidden{display:none !important}
 .searchable.dim{display:none}
-mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 
-@media (max-width:640px){
-  .nav-inner{gap:10px;padding:10px 16px}
-  .searchwrap{max-width:none}
-  .wrap{padding:0 16px}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:34px;padding-top:48px}
+  .plate{justify-self:center}
+}
+@media (max-width:700px){
+  header.site{top:8px}
+  .pill{flex-wrap:wrap;border-radius:22px;padding:10px 14px;gap:6px}
+  nav.menu{order:3;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .searchwrap{flex:1 1 140px}
+  .wrap{padding:0 18px}
+  .rules li{grid-template-columns:44px minmax(0,1fr);gap:12px}
+  .rules .n{font-size:1.8rem}
 }
 @media print{
   header.site,.chips,#hitcount{display:none !important}
   body{background:#fff;font-size:11.5pt}
   body::before{display:none}
-  section.block{page-break-before:always;border-bottom:0;padding:20px 0}
-  .hero{page-break-before:avoid;padding:10px 0}
-  .card{box-shadow:none;break-inside:avoid}
+  section.block{page-break-before:always;border-top:0;padding:18px 0}
+  .hero,.router{page-break-before:avoid;padding:8px 0}
+  .card,.rec{box-shadow:none;break-inside:avoid}
+  .rise{opacity:1 !important;transform:none !important;animation:none !important}
   details.book{display:block}
-  details.book summary{list-style:none}
   details.book .inner{display:block}
   a{color:inherit;text-decoration:none}
 }
@@ -165,66 +265,79 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 <body>
 
 <header class="site">
-  <div class="nav-inner">
-    <div class="brand"><span class="star">✷</span> AIS · Teacher Strategies</div>
-    <nav class="menu">
+  <div class="pill">
+    <a class="brand" href="#top" aria-label="AIS Teacher Strategies, back to top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6c.6 3.7 1.3 5.6 2.6 6.9 1.3 1.3 3.2 2 6.8 2.5-3.6.6-5.5 1.3-6.8 2.6-1.3 1.3-2 3.2-2.6 6.8-.5-3.6-1.2-5.5-2.5-6.8C8.2 13.3 6.3 12.6 2.6 12c3.7-.5 5.6-1.2 6.9-2.5C10.8 8.2 11.5 6.3 12 2.6Z" fill="none" stroke="#e09a34" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      AIS · Teacher Strategies
+    </a>
+    <nav class="menu" aria-label="Page sections">
       <a href="#find">Find your strand</a>
       <a href="#rules">House rules</a>
       <a href="#s1">Strands</a>
-      <a href="#library">Technique library</a>
-      <a href="#example">Worked example</a>
+      <a href="#library">Library</a>
+      <a href="#example">Example</a>
     </nav>
     <div class="searchwrap">
-      <input id="search" type="search" placeholder="Search 30 setups + 150 techniques…" autocomplete="off">
+      <input id="search" type="search" placeholder="Search everything… ( / )" autocomplete="off" aria-label="Search setups and techniques">
       <button id="clear" aria-label="Clear search">✕</button>
-      <div id="hitcount"></div>
+      <div id="hitcount" role="status"></div>
     </div>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="top">
 
-<!-- ================= HERO + ROUTER ================= -->
-<div class="hero" id="top">
-  <div class="kicker">The learning environment, put to work</div>
-  <h1>The Learning Environment Playbook</h1>
-  <p class="stand">Thirty AIS classroom setups and around one hundred and fifty named techniques for turning
-  the room itself into part of the lesson. <strong>Open one strand. Run one setup this week.</strong>
-  Every setup gives prep time, numbered steps and the exact sentence the teacher says out loud.</p>
-
-  <div class="router" id="find">
-    <h2>Find your strand</h2>
-    <p class="sub">Pick from what students are failing to DO, not from what you want on the wall.</p>
-    <a class="row" href="#s1"><span class="cannot">Students cannot <b>say how they did it, or start without you</b></span><span class="dest">Strand 1 · Metacognition ↓</span></a>
-    <a class="row" href="#s2"><span class="cannot">Students cannot <b>find a reason to care before you supply one</b></span><span class="dest">Strand 2 · Emotional engagement ↓</span></a>
-    <a class="row" href="#s3"><span class="cannot">Students cannot <b>recall last term's content</b></span><span class="dest">Strand 3 · Retrieval ↓</span></a>
-    <a class="row" href="#s4"><span class="cannot">Students cannot <b>show you what they know in time for you to act</b></span><span class="dest">Strand 4 · Responsive teaching ↓</span></a>
-    <a class="row" href="#s5"><span class="cannot">Students cannot <b>say the subject out loud in full sentences</b></span><span class="dest">Strand 5 · Oracy ↓</span></a>
-    <a class="row" href="#s6"><span class="cannot">Students cannot <b>work in a group without one student carrying it</b></span><span class="dest">Strand 6 · Collaborative ↓</span></a>
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div>
+    <h1 class="rise">The room is part<br>of <span class="under">the lesson<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 7 Q 18 3 34 6 T 66 5 T 98 6"/></svg></span>.</h1>
+    <p class="stand rise d1">Six strands, thirty AIS classroom setups and a searchable library of around one hundred
+    and fifty named techniques. <strong>Open one strand. Run one setup this week.</strong> Every setup
+    gives prep time, numbered steps and the exact sentence the teacher says out loud.</p>
+    <p class="hero-facts rise d2">Nothing here needs more than thirty minutes of prep. Most need ten.</p>
   </div>
+  <figure class="plate rise d3">
+    <span class="tape" aria-hidden="true"></span>
+    <img src="assets/01-metacognition-self-regulation/stuck-ladder.jpg"
+         data-alt="../diagrams/01-metacognition-self-regulation/stuck-ladder.svg"
+         alt="Hand-drawn illustration of the stuck ladder setup beside a classroom door" width="1408" height="768">
+    <figcaption>The stuck ladder, strand 1. Five minutes of card and tape.</figcaption>
+  </figure>
+</div>
+
+<!-- ================= ROUTER ================= -->
+<div class="router" id="find">
+  <h2 class="rise d4">Find your strand</h2>
+  <p class="sub">Pick from what students are failing to DO, not from what you want on the wall.</p>
+  <a class="row" href="#s1"><span class="cannot">Students cannot <b>say how they did it, or start without you</b></span><span class="dest">Strand 1 · Metacognition <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6 Q 8 4.5 18 6 M14 2.5 Q 16.5 4.5 18 6 Q 16.5 7.5 14 9.5"/></svg></span></a>
+  <a class="row" href="#s2"><span class="cannot">Students cannot <b>find a reason to care before you supply one</b></span><span class="dest">Strand 2 · Emotional engagement <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6 Q 8 4.5 18 6 M14 2.5 Q 16.5 4.5 18 6 Q 16.5 7.5 14 9.5"/></svg></span></a>
+  <a class="row" href="#s3"><span class="cannot">Students cannot <b>recall last term's content</b></span><span class="dest">Strand 3 · Retrieval <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6 Q 8 4.5 18 6 M14 2.5 Q 16.5 4.5 18 6 Q 16.5 7.5 14 9.5"/></svg></span></a>
+  <a class="row" href="#s4"><span class="cannot">Students cannot <b>show you what they know in time for you to act</b></span><span class="dest">Strand 4 · Responsive teaching <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6 Q 8 4.5 18 6 M14 2.5 Q 16.5 4.5 18 6 Q 16.5 7.5 14 9.5"/></svg></span></a>
+  <a class="row" href="#s5"><span class="cannot">Students cannot <b>say the subject out loud in full sentences</b></span><span class="dest">Strand 5 · Oracy <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6 Q 8 4.5 18 6 M14 2.5 Q 16.5 4.5 18 6 Q 16.5 7.5 14 9.5"/></svg></span></a>
+  <a class="row" href="#s6"><span class="cannot">Students cannot <b>work in a group without one student carrying it</b></span><span class="dest">Strand 6 · Collaborative <svg viewBox="0 0 20 12" aria-hidden="true"><path d="M1 6 Q 8 4.5 18 6 M14 2.5 Q 16.5 4.5 18 6 Q 16.5 7.5 14 9.5"/></svg></span></a>
 </div>
 
 <!-- ================= HOUSE RULES ================= -->
 <section class="block" id="rules">
   <div class="block-head"><h2 class="title">Five house rules</h2></div>
-  <div class="rules">
-    <div class="rule"><b>Students touch it or it comes down.</b><p>A surface nobody writes on, moves or points at is decoration. Decoration is fine. It does not count as environment work.</p></div>
-    <div class="rule"><b>Nothing laminated in its first fortnight.</b><p>If the build takes longer than the use, redesign it.</p></div>
-    <div class="rule"><b>Show thinking, not finished work.</b><p>Attempts, crossings out, disagreements. A wall of perfect work teaches students that only perfect work belongs.</p></div>
-    <div class="rule"><b>One strand per room per half term.</b><p>All six at once is a craft fair.</p></div>
-    <div class="rule"><b>Say the activating sentence out loud.</b><p>Every setup has one. Unspoken surfaces get ignored, which trains students to ignore the walls.</p></div>
-  </div>
+  <ul class="rules">
+    <li><span class="n">1</span><span><b>Students touch it or it comes down.</b><p>A surface nobody writes on, moves or points at is decoration. Decoration is fine. It does not count as environment work.</p></span></li>
+    <li><span class="n">2</span><span><b>Nothing laminated in its first fortnight.</b><p>If the build takes longer than the use, redesign it.</p></span></li>
+    <li><span class="n">3</span><span><b>Show thinking, not finished work.</b><p>Attempts, crossings out, disagreements. A wall of perfect work teaches students that only perfect work belongs.</p></span></li>
+    <li><span class="n">4</span><span><b>One strand per room per half term.</b><p>All six at once is a craft fair.</p></span></li>
+    <li><span class="n">5</span><span><b>Say the activating sentence out loud.</b><p>Every setup has one. Unspoken surfaces get ignored, which trains students to ignore the walls.</p></span></li>
+  </ul>
 </section>
 
 <!-- ================= STRAND 1 ================= -->
 <section class="block strand" id="s1">
-  <div class="block-head"><div class="bignum">01</div><h2 class="title">Metacognition and self-regulated learning</h2></div>
+  <div class="block-head"><div class="snum">1</div><h2 class="title">Metacognition and self-regulated learning</h2></div>
   <p class="usewhen"><b>Use this strand when:</b> students finish the task but cannot say how, ask "is this right?" every two minutes, stall the second you walk away, or hand in work they never reread.</p>
   <div class="starthere"><b>Start here today:</b> tape six numbered card strips beside your door. That is the stuck ladder. Five minutes.</div>
   <div class="cards">
 
     <article class="card searchable" data-s="stuck ladder door metacognition independence stuck before asking adult rungs">
-      <img src="assets/01-metacognition-self-regulation/stuck-ladder.jpg" data-alt="../diagrams/01-metacognition-self-regulation/stuck-ladder.svg" alt="Stuck ladder schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/01-metacognition-self-regulation/stuck-ladder.jpg" data-alt="../diagrams/01-metacognition-self-regulation/stuck-ladder.svg" alt="Stuck ladder illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Stuck ladder</h3>
         <div class="meta"><span>Door frame</span><span>Prep 5 min once</span><span>Runs itself</span></div>
@@ -235,7 +348,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="live model mistakes working wall modelling crossings out process">
-      <img src="assets/01-metacognition-self-regulation/live-model-mistakes.jpg" data-alt="../diagrams/01-metacognition-self-regulation/live-model-mistakes.svg" alt="Live model schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/01-metacognition-self-regulation/live-model-mistakes.jpg" data-alt="../diagrams/01-metacognition-self-regulation/live-model-mistakes.svg" alt="Live model illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Live model, mistakes left in</h3>
         <div class="meta"><span>Working wall</span><span>Prep 0</span><span>6 min in lesson</span></div>
@@ -246,7 +359,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="plan boxes tabletop planning first move wipe clean sleeve">
-      <img src="assets/01-metacognition-self-regulation/plan-boxes.jpg" data-alt="../diagrams/01-metacognition-self-regulation/plan-boxes.svg" alt="Plan boxes schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/01-metacognition-self-regulation/plan-boxes.jpg" data-alt="../diagrams/01-metacognition-self-regulation/plan-boxes.svg" alt="Plan boxes illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Plan boxes on the tabletop</h3>
         <div class="meta"><span>Desk</span><span>Prep 10 min once</span><span>90 seconds</span></div>
@@ -257,7 +370,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="two colour check second pen evaluate improve editing book scrutiny">
-      <img src="assets/01-metacognition-self-regulation/two-colour-check.jpg" data-alt="../diagrams/01-metacognition-self-regulation/two-colour-check.svg" alt="Two colour check schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/01-metacognition-self-regulation/two-colour-check.jpg" data-alt="../diagrams/01-metacognition-self-regulation/two-colour-check.svg" alt="Two colour check illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Two colour check</h3>
         <div class="meta"><span>Books</span><span>Prep 5 min once</span><span>Last 5 min</span></div>
@@ -268,7 +381,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="exit strip door pockets got it nearly lost me sticky note self assessment">
-      <img src="assets/01-metacognition-self-regulation/exit-strip.jpg" data-alt="../diagrams/01-metacognition-self-regulation/exit-strip.svg" alt="Exit strip schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/01-metacognition-self-regulation/exit-strip.jpg" data-alt="../diagrams/01-metacognition-self-regulation/exit-strip.svg" alt="Exit strip illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Exit strip on the back of the door</h3>
         <div class="meta"><span>Back of door</span><span>Prep 10 min once</span><span>60 seconds</span></div>
@@ -303,13 +416,13 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 
 <!-- ================= STRAND 2 ================= -->
 <section class="block strand" id="s2">
-  <div class="block-head"><div class="bignum">02</div><h2 class="title">Emotional engagement</h2></div>
+  <div class="block-head"><div class="snum">2</div><h2 class="title">Emotional engagement</h2></div>
   <p class="usewhen"><b>Use this strand when:</b> the class is compliant but flat, starts are slow, students wait to be told what to find interesting, or you are the only energy in the room.</p>
   <div class="starthere"><b>Start here today:</b> put one object connected to your unit on the front bench and cover it. Two minutes.</div>
   <div class="cards">
 
     <article class="card searchable" data-s="covered object curiosity cloth mystery reveal engagement hook">
-      <img src="assets/02-emotional-engagement/covered-object.jpg" data-alt="../diagrams/02-emotional-engagement/covered-object.svg" alt="Covered object schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/02-emotional-engagement/covered-object.jpg" data-alt="../diagrams/02-emotional-engagement/covered-object.svg" alt="Covered object illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Covered object</h3>
         <div class="meta"><span>Front bench</span><span>Prep 2 min</span><span>3 min in lesson</span></div>
@@ -320,7 +433,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="wrong answer wall misconceptions sticky notes risk safe mistakes">
-      <img src="assets/02-emotional-engagement/wrong-answer-wall.jpg" data-alt="../diagrams/02-emotional-engagement/wrong-answer-wall.svg" alt="Wrong answer wall schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/02-emotional-engagement/wrong-answer-wall.jpg" data-alt="../diagrams/02-emotional-engagement/wrong-answer-wall.svg" alt="Wrong answer wall illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Wrong answer wall</h3>
         <div class="meta"><span>One wall panel</span><span>Prep 5 min once</span><span>4 min weekly</span></div>
@@ -331,7 +444,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="threshold question door entry corridor energy start">
-      <img src="assets/02-emotional-engagement/threshold-question.jpg" data-alt="../diagrams/02-emotional-engagement/threshold-question.svg" alt="Threshold question schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/02-emotional-engagement/threshold-question.jpg" data-alt="../diagrams/02-emotional-engagement/threshold-question.svg" alt="Threshold question illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Threshold question</h3>
         <div class="meta"><span>Door</span><span>Prep 1 min per lesson</span><span>3 min</span></div>
@@ -342,7 +455,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="the pupil corner curated space students own artefact clipping question weekly review">
-      <img src="assets/02-emotional-engagement/pupil-owned-corner.jpg" data-alt="../diagrams/02-emotional-engagement/pupil-owned-corner.svg" alt="The Pupil Corner schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/02-emotional-engagement/the-pupil-corner.jpg" data-alt="../diagrams/02-emotional-engagement/the-pupil-corner.svg" alt="The Pupil Corner illustration" loading="lazy"></div>
       <div class="pad">
         <h3>The Pupil Corner</h3>
         <div class="meta"><span>1 metre square</span><span>Prep 10 min once</span><span>2 min weekly</span></div>
@@ -353,7 +466,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="countdown reveal numbered cards story sequence unit narrative">
-      <img src="assets/02-emotional-engagement/countdown-reveal.jpg" data-alt="../diagrams/02-emotional-engagement/countdown-reveal.svg" alt="Countdown reveal schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/02-emotional-engagement/countdown-reveal.jpg" data-alt="../diagrams/02-emotional-engagement/countdown-reveal.svg" alt="Countdown reveal illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Countdown reveal</h3>
         <div class="meta"><span>Wall strip</span><span>Prep 15 min per unit</span><span>2 min</span></div>
@@ -388,13 +501,13 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 
 <!-- ================= STRAND 3 ================= -->
 <section class="block strand" id="s3">
-  <div class="block-head"><div class="bignum">03</div><h2 class="title">Retrieval and revision</h2></div>
+  <div class="block-head"><div class="snum">3</div><h2 class="title">Retrieval and revision</h2></div>
   <p class="usewhen"><b>Use this strand when:</b> last term's content has evaporated, students recognise material but cannot produce it, or revision means rereading and highlighting.</p>
   <div class="starthere"><b>Start here today:</b> run tomorrow's starter with books shut for three minutes. Zero prep.</div>
   <div class="cards">
 
     <article class="card searchable" data-s="three shelf knowledge wall spacing bands starter retrieval">
-      <img src="assets/03-retrieval-and-revision/three-shelf-wall.jpg" data-alt="../diagrams/03-retrieval-and-revision/three-shelf-wall.svg" alt="Three shelf knowledge wall schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/03-retrieval-and-revision/three-shelf-wall.jpg" data-alt="../diagrams/03-retrieval-and-revision/three-shelf-wall.svg" alt="Three shelf knowledge wall illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Three shelf knowledge wall</h3>
         <div class="meta"><span>One wall</span><span>Prep 20 min + 2 min weekly</span><span>5 min starter</span></div>
@@ -405,7 +518,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="blank first book second retrieval practice testing memory closed books">
-      <img src="assets/03-retrieval-and-revision/blank-first-book-second.jpg" data-alt="../diagrams/03-retrieval-and-revision/blank-first-book-second.svg" alt="Blank first book second schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/03-retrieval-and-revision/blank-first-book-second.jpg" data-alt="../diagrams/03-retrieval-and-revision/blank-first-book-second.svg" alt="Blank first book second illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Blank first, book second</h3>
         <div class="meta"><span>Books</span><span>Prep 0</span><span>5 min</span></div>
@@ -416,7 +529,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="question grid dice tabletop random coordinate pairs">
-      <img src="assets/03-retrieval-and-revision/question-grid.jpg" data-alt="../diagrams/03-retrieval-and-revision/question-grid.svg" alt="Question grid schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/03-retrieval-and-revision/question-grid.jpg" data-alt="../diagrams/03-retrieval-and-revision/question-grid.svg" alt="Question grid illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Question grid on the tabletop</h3>
         <div class="meta"><span>Desk</span><span>Prep 30 min per unit</span><span>5 min</span></div>
@@ -427,7 +540,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="forgetting queue pegs fluffed questions gaps visible progress">
-      <img src="assets/03-retrieval-and-revision/forgetting-queue.jpg" data-alt="../diagrams/03-retrieval-and-revision/forgetting-queue.svg" alt="Forgetting queue schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/03-retrieval-and-revision/forgetting-queue.jpg" data-alt="../diagrams/03-retrieval-and-revision/forgetting-queue.svg" alt="Forgetting queue illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Forgetting queue</h3>
         <div class="meta"><span>Back wall or corridor</span><span>Prep 10 min once</span><span>3 min</span></div>
@@ -438,7 +551,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="twenty word summary strip constraint selection revision spine">
-      <img src="assets/03-retrieval-and-revision/twenty-word-strip.jpg" data-alt="../diagrams/03-retrieval-and-revision/twenty-word-strip.svg" alt="Twenty word summary strip schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/03-retrieval-and-revision/twenty-word-strip.jpg" data-alt="../diagrams/03-retrieval-and-revision/twenty-word-strip.svg" alt="Twenty word summary strip illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Twenty word summary strip</h3>
         <div class="meta"><span>Wall strip</span><span>Prep 10 min once</span><span>3 min</span></div>
@@ -472,13 +585,13 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 
 <!-- ================= STRAND 4 ================= -->
 <section class="block strand" id="s4">
-  <div class="block-head"><div class="bignum">04</div><h2 class="title">Responsive teaching</h2></div>
+  <div class="block-head"><div class="snum">4</div><h2 class="title">Responsive teaching</h2></div>
   <p class="usewhen"><b>Use this strand when:</b> you discover the gap while marking at home, the same three students answer everything, or support for vulnerable students is planned in advance and never adjusted.</p>
   <div class="starthere"><b>Start here today:</b> put a wipe-clean board and pen on every desk, where students can reach them without asking. Ten minutes.</div>
   <div class="cards">
 
     <article class="card searchable" data-s="whole class response boards mini whiteboards check for understanding cfu read the room">
-      <img src="assets/04-responsive-teaching/response-boards.jpg" data-alt="../diagrams/04-responsive-teaching/response-boards.svg" alt="Response boards schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/04-responsive-teaching/response-boards.jpg" data-alt="../diagrams/04-responsive-teaching/response-boards.svg" alt="Response boards illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Whole class response boards</h3>
         <div class="meta"><span>Every desk</span><span>Prep 10 min once</span><span>8 seconds per check</span></div>
@@ -489,7 +602,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="hinge point question multiple choice misconception mid lesson fork cfu">
-      <img src="assets/04-responsive-teaching/hinge-point.jpg" data-alt="../diagrams/04-responsive-teaching/hinge-point.svg" alt="Hinge point schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/04-responsive-teaching/hinge-point.jpg" data-alt="../diagrams/04-responsive-teaching/hinge-point.svg" alt="Hinge point illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Hinge point</h3>
         <div class="meta"><span>Mid lesson</span><span>Prep 15 min, reusable</span><span>2 min</span></div>
@@ -500,7 +613,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="weighted name draw lolly sticks cold call no opt out eal quiet vulnerable">
-      <img src="assets/04-responsive-teaching/weighted-name-draw.jpg" data-alt="../diagrams/04-responsive-teaching/weighted-name-draw.svg" alt="Weighted name draw schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/04-responsive-teaching/weighted-name-draw.jpg" data-alt="../diagrams/04-responsive-teaching/weighted-name-draw.svg" alt="Weighted name draw illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Weighted name draw</h3>
         <div class="meta"><span>Jar on desk</span><span>Prep 10 min once</span><span>No extra time</span></div>
@@ -511,7 +624,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="traffic light margin located difficulty confidence exact line self rating">
-      <img src="assets/04-responsive-teaching/traffic-light-margin.jpg" data-alt="../diagrams/04-responsive-teaching/traffic-light-margin.svg" alt="Traffic light margin schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/04-responsive-teaching/traffic-light-margin.jpg" data-alt="../diagrams/04-responsive-teaching/traffic-light-margin.svg" alt="Traffic light margin illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Traffic light margin</h3>
         <div class="meta"><span>Student books</span><span>Prep 0</span><span>90 seconds</span></div>
@@ -522,7 +635,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="two seat surgery reteach immediate specific small group side table">
-      <img src="assets/04-responsive-teaching/two-seat-surgery.jpg" data-alt="../diagrams/04-responsive-teaching/two-seat-surgery.svg" alt="Two seat surgery schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/04-responsive-teaching/two-seat-surgery.jpg" data-alt="../diagrams/04-responsive-teaching/two-seat-surgery.svg" alt="Two seat surgery illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Two seat surgery</h3>
         <div class="meta"><span>Side table</span><span>Prep 0</span><span>4 min</span></div>
@@ -557,13 +670,13 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 
 <!-- ================= STRAND 5 ================= -->
 <section class="block strand" id="s5">
-  <div class="block-head"><div class="bignum">05</div><h2 class="title">Oracy and word wealth</h2></div>
+  <div class="block-head"><div class="snum">5</div><h2 class="title">Oracy and word wealth</h2></div>
   <p class="usewhen"><b>Use this strand when:</b> answers are one word long, students know the technical vocabulary but never say it, EAL students are silent, or written work is far stronger than anything you hear.</p>
   <div class="starthere"><b>Start here today:</b> print six sentence stems and tape them along the wall students face, at seated eye height. Ten minutes.</div>
   <div class="cards">
 
     <article class="card searchable" data-s="sentence stem strip talk moves frames oracy answers">
-      <img src="assets/05-oracy-and-word-wealth/sentence-stem-strip.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/sentence-stem-strip.svg" alt="Sentence stem strip schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/05-oracy-and-word-wealth/sentence-stem-strip.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/sentence-stem-strip.svg" alt="Sentence stem strip illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Sentence stem strip</h3>
         <div class="meta"><span>Wall students face</span><span>Prep 10 min once</span><span>No extra time</span></div>
@@ -574,7 +687,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="takeable word wall vocabulary cards velcro use traffic data">
-      <img src="assets/05-oracy-and-word-wealth/takeable-word-wall.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/takeable-word-wall.svg" alt="Takeable word wall schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/05-oracy-and-word-wealth/takeable-word-wall.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/takeable-word-wall.svg" alt="Takeable word wall illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Word wall students take words off</h3>
         <div class="meta"><span>Board</span><span>Prep 20 min per unit</span><span>1 min</span></div>
@@ -585,7 +698,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="talk roles builder challenger summariser evidence keeper airtime discussion accountability">
-      <img src="assets/05-oracy-and-word-wealth/talk-roles.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/talk-roles.svg" alt="Talk roles schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/05-oracy-and-word-wealth/talk-roles.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/talk-roles.svg" alt="Talk roles illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Talk roles on the table</h3>
         <div class="meta"><span>Table centre</span><span>Prep 15 min once</span><span>4 min</span></div>
@@ -596,7 +709,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="etymology corner root prefix suffix morphology eal readers word families">
-      <img src="assets/05-oracy-and-word-wealth/etymology-corner.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/etymology-corner.svg" alt="Etymology corner schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/05-oracy-and-word-wealth/etymology-corner.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/etymology-corner.svg" alt="Etymology corner illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Etymology corner</h3>
         <div class="meta"><span>Small panel</span><span>Prep 5 min per fortnight</span><span>2 min</span></div>
@@ -607,7 +720,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="sixty second subject talk sustained speaking floor spot word wall listening">
-      <img src="assets/05-oracy-and-word-wealth/sixty-second-talk.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/sixty-second-talk.svg" alt="Sixty second subject talk schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/05-oracy-and-word-wealth/sixty-second-talk.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/sixty-second-talk.svg" alt="Sixty second subject talk illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Sixty second subject talk</h3>
         <div class="meta"><span>Marked floor spot</span><span>Prep 2 min</span><span>2 min</span></div>
@@ -642,13 +755,13 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 
 <!-- ================= STRAND 6 ================= -->
 <section class="block strand" id="s6">
-  <div class="block-head"><div class="bignum">06</div><h2 class="title">Collaborative learning</h2></div>
+  <div class="block-head"><div class="snum">6</div><h2 class="title">Collaborative learning</h2></div>
   <p class="usewhen"><b>Use this strand when:</b> group work produces one poster and three spectators, the same students always scribe, or collaboration is really just seating.</p>
   <div class="starthere"><b>Start here today:</b> take three pens off every group of four and leave one. One minute.</div>
   <div class="cards">
 
     <article class="card searchable" data-s="one pen four hands shared sheet colours contribution free riding">
-      <img src="assets/06-collaborative-learning/one-pen-four-hands.jpg" data-alt="../diagrams/06-collaborative-learning/one-pen-four-hands.svg" alt="One pen four hands schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/06-collaborative-learning/one-pen-four-hands.jpg" data-alt="../diagrams/06-collaborative-learning/one-pen-four-hands.svg" alt="One pen four hands illustration" loading="lazy"></div>
       <div class="pad">
         <h3>One pen, four hands</h3>
         <div class="meta"><span>Table of four</span><span>Prep 1 min</span><span>10 min</span></div>
@@ -659,7 +772,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="numbered heads accountability report group random number">
-      <img src="assets/06-collaborative-learning/numbered-heads.jpg" data-alt="../diagrams/06-collaborative-learning/numbered-heads.svg" alt="Numbered heads schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/06-collaborative-learning/numbered-heads.jpg" data-alt="../diagrams/06-collaborative-learning/numbered-heads.svg" alt="Numbered heads illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Numbered heads</h3>
         <div class="meta"><span>Tables of four</span><span>Prep 5 min once</span><span>No extra time</span></div>
@@ -670,7 +783,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="jigsaw stations experts regroup interdependence sources">
-      <img src="assets/06-collaborative-learning/jigsaw-stations.jpg" data-alt="../diagrams/06-collaborative-learning/jigsaw-stations.svg" alt="Jigsaw stations schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/06-collaborative-learning/jigsaw-stations.jpg" data-alt="../diagrams/06-collaborative-learning/jigsaw-stations.svg" alt="Jigsaw stations illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Jigsaw stations</h3>
         <div class="meta"><span>Four stations</span><span>Prep 20 min per topic</span><span>20 min</span></div>
@@ -681,7 +794,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="silent build cards sorting no talking processing eal">
-      <img src="assets/06-collaborative-learning/silent-build.jpg" data-alt="../diagrams/06-collaborative-learning/silent-build.svg" alt="Silent build schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/06-collaborative-learning/silent-build.jpg" data-alt="../diagrams/06-collaborative-learning/silent-build.svg" alt="Silent build illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Silent build</h3>
         <div class="meta"><span>Floor or joined tables</span><span>Prep 10 min per card set</span><span>8 min</span></div>
@@ -692,7 +805,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
     </article>
 
     <article class="card searchable" data-s="two group critique swap sticky notes strength question feedback act">
-      <img src="assets/06-collaborative-learning/critique-swap.jpg" data-alt="../diagrams/06-collaborative-learning/critique-swap.svg" alt="Two group critique swap schematic" loading="lazy">
+      <div class="imgbox"><img src="assets/06-collaborative-learning/critique-swap.jpg" data-alt="../diagrams/06-collaborative-learning/critique-swap.svg" alt="Two group critique swap illustration" loading="lazy"></div>
       <div class="pad">
         <h3>Two group critique swap</h3>
         <div class="meta"><span>Work at student height</span><span>Prep 0</span><span>8 min</span></div>
@@ -729,7 +842,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 <section class="block" id="library">
   <div class="block-head"><h2 class="title">The technique library</h2></div>
   <p class="usewhen">Around one hundred and fifty named techniques from <i>Dynamically Different Classrooms</i>, retold in our own words with chapter locations so you can find the originals. The six strands above are AIS practice; everything below is Gadsby and Evans' own catalogue.</p>
-  <div class="chips">
+  <div class="chips" role="tablist" aria-label="Filter by chapter">
     <button class="chip active" data-ch="all">All chapters</button>
     <button class="chip" data-ch="c1">1 · Beyond displays</button>
     <button class="chip" data-ch="c2">2 · Nothing wasted</button>
@@ -1013,7 +1126,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
       <li class="searchable" data-s="corridor content traffic priority interactive pareto"><b>Corridor Content.</b> Corridors carry the heaviest traffic, so fill them with interactive content aligned to whole-school priorities, not showcase work.</li>
       <li class="searchable" data-s="chalk it up board gate foyer big question community"><b>Chalk It Up.</b> A big board at the gate or foyer carrying a live question, open for students, parents and visitors to add their thinking.</li>
       <li class="searchable" data-s="guru gallery power profiles whole school staff expertise consultants alumni"><b>Guru Gallery.</b> Personal Power Profiles scaled to the whole school, crucially including staff expertise, with leavers kept in the gallery.</li>
-      <li class="searchable" data-s="real legacy projects year long community issue inherit"><b>Real Legacy Projects.</b> Year-long collaborative projects on genuinely real issues, future-proofed so the next cohort inherits them.</li>
+      <li class="searchable" data-s="real legacy projects year long community issue inherit"><b>Real Legacy Projects.</b> Year-long collaborative projects on genuinely real issues, built so the next cohort can inherit them.</li>
     </ul>
     <div class="tsub">Staff development (leader-facing)</div>
     <ul class="tech">
@@ -1041,34 +1154,34 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
   <p class="usewhen">A real AIS lesson observation (a Primary Digital Technologies lesson, mixed ability), anonymised. The Teacher Coach's notes went in; four Teacher Strategy recommendations came out. This is the transaction this playbook exists for.</p>
 
   <div class="judge">
-    <div><div class="lvl">1</div><div class="lbl">Learning skills · Outstanding</div></div>
-    <div><div class="lvl">3</div><div class="lbl">Teaching · Good</div></div>
-    <div><div class="lvl">4</div><div class="lbl">Progress · Acceptable</div></div>
+    <div><span class="lvl">1</span><span class="lbl">Learning skills · Outstanding</span></div>
+    <div><span class="lvl">3</span><span class="lbl">Teaching · Good</span></div>
+    <div><span class="lvl">4</span><span class="lbl">Progress · Acceptable</span></div>
   </div>
-  <p style="max-width:760px">The shape of the observation: routines, behaviour and relationships at the top of the scale, but a closed follow-along task capped how far students could travel. The Teacher Coach left four actionable notes, and every one of them maps onto a strand above.</p>
+  <p style="max-width:70ch">The shape of the observation: routines, behaviour and relationships at the top of the scale, but a closed follow-along task capped how far students could travel. The Teacher Coach left four actionable notes, and every one of them maps onto a strand above.</p>
 
   <div class="recs">
     <div class="rec searchable" data-s="example turn and talk accountability talk roles oracy">
       <div class="from">Coach's note: "attach a condition or outcome to turn and talk, to boost accountability in student dialogue."</div>
-      <h4>→ Talk roles <span style="color:var(--plum)">(Strand 5)</span></h4>
+      <h4>→ Talk roles <span>(Strand 5)</span></h4>
       <p>Role cards per table; the summariser reports back in one sentence and names who contributed what. The report IS the condition and outcome.</p>
       <p class="why"><b>Say this:</b> "Roles up. Summarisers, I will take three of you in four minutes."</p>
     </div>
     <div class="rec searchable" data-s="example cfu success criteria highly able stretch hinge point secret challenge">
       <div class="from">Coach's note: "check for understanding against the success criteria before the first activity; and how will the students who are already able make progress today?"</div>
-      <h4>→ Hinge point + Secret Challenge <span style="color:var(--plum)">(Strand 4 + ch. 4)</span></h4>
+      <h4>→ Hinge point + Secret Challenge <span>(Strand 4 + ch. 4)</span></h4>
       <p>One misconception-revealing question before the task starts, with two pre-planned next moves. A challenge envelope zone gives the able students self-serve stretch: capped bottom, open top.</p>
       <p class="why"><b>Say this:</b> "Show me. No looking sideways."</p>
     </div>
     <div class="rec searchable" data-s="example reading aloud engagement cold call weighted name draw">
       <div class="from">Coach's note: "how do we ensure ALL students are engaged while one student is reading? For example, cold calling the next sentence."</div>
-      <h4>→ Weighted name draw <span style="color:var(--plum)">(Strand 4)</span></h4>
+      <h4>→ Weighted name draw <span>(Strand 4)</span></h4>
       <p>The stick jar decides who reads the next sentence, weighted toward students you need to hear more. Cold calling becomes infrastructure instead of a thing you remember to do.</p>
       <p class="why"><b>Say this:</b> "Sticks are in. Anyone can be next sentence."</p>
     </div>
     <div class="rec searchable" data-s="example jigsaw collaborative stations bots sharing">
       <div class="from">Coach's note: "could this have run jigsaw-style, with students visiting different stations and then sharing their experiences? More collaborative."</div>
-      <h4>→ Jigsaw stations <span style="color:var(--plum)">(Strand 6)</span></h4>
+      <h4>→ Jigsaw stations <span>(Strand 6)</span></h4>
       <p>Round one: each pair becomes the expert on a different station. Round two: regroup so every table holds one expert per station, and the task cannot be finished without all four pieces.</p>
       <p class="why"><b>Say this:</b> "You are the only person at this table who saw station three."</p>
     </div>
@@ -1081,11 +1194,12 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
       <li>One setup from that strand.</li>
       <li>The sentence the teacher will say to activate it.</li>
     </ol>
-    <p style="margin-top:10px;font-size:.9rem">Example: <i>Responsive teaching · Hinge point before task entry · "Show me. No looking sideways."</i></p>
+    <p class="eg">Example: Responsive teaching · Hinge point before task entry · "Show me. No looking sideways."</p>
   </div>
 </section>
 
 <footer>
+  <svg class="rule-end" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 7 Q 22 3 44 7 T 84 6 T 118 7"/></svg>
   <p><b>Attribution.</b> This playbook is AIS practice, inspired by the approach in <i>Dynamically Different
   Classrooms</i> by Claire Gadsby and Jan Evans (Independent Thinking Press). The six strands and their thirty
   setups are AIS versions for our rooms, subjects and kit; the technique library retells Gadsby and Evans'
@@ -1096,7 +1210,7 @@ mark{background:var(--amber-soft);color:inherit;padding:0 1px}
 </main>
 
 <script>
-/* image fallback chain: banana image -> AIS schematic svg */
+/* image fallback chain: illustrated jpg -> AIS schematic svg */
 document.querySelectorAll("img[data-alt]").forEach(img => {
   img.addEventListener("error", function h(){
     const alts = (img.dataset.alt || "").split("|").filter(Boolean);

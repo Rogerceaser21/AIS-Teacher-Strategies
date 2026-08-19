@@ -237,7 +237,7 @@ scene(S2, "threshold-question", "Threshold question", "Door · prep 1 min · 3 m
       txt(210, 200, "answered out loud or on a note, never assessed", "lm", "middle") +
       txt(210, 218, "3 pupils asked back by name once seated", "la", "middle") + floorline(240))
 
-scene(S2, "pupil-owned-corner", "The Pupil Corner", "1 metre square · prep 10 min · weekly",
+scene(S2, "the-pupil-corner", "The Pupil Corner", "1 metre square · prep 10 min · weekly",
       f'<path d="M28 200 L28 76 L152 76" class="stroke"/>' +
       panel(36, 84, 108, 108, "curated by the students", accent=True) +
       note(52, 100, 22, True) + card(84, 100, 48, 22, "clipping") +
@@ -521,6 +521,7 @@ same setups drop into <code>photos/&lt;strand&gt;/&lt;setup&gt;.jpg</code> along
     for strand in sorted(strands):
         for slug, title, sub in strands[strand]:
             photo = f"photos/{strand}/{slug}.jpg"
+            image = f"playbook/assets/{strand}/{slug}.jpg"
             entries.append({
                 "strand": strand,
                 "strand_title": names.get(strand, strand),
@@ -528,6 +529,8 @@ same setups drop into <code>photos/&lt;strand&gt;/&lt;setup&gt;.jpg</code> along
                 "title": title,
                 "context": sub,
                 "diagram": f"diagrams/{strand}/{slug}.svg",
+                "image": image,
+                "image_present": os.path.exists(os.path.join(here, "..", image)),
                 "photo": photo,
                 "photo_present": os.path.exists(os.path.join(here, "..", photo)),
             })

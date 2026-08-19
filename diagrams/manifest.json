@@ -8,6 +8,8 @@
       "title": "Stuck ladder",
       "context": "Door frame \u00b7 prep 5 min \u00b7 runs itself",
       "diagram": "diagrams/01-metacognition-self-regulation/stuck-ladder.svg",
+      "image": "playbook/assets/01-metacognition-self-regulation/stuck-ladder.jpg",
+      "image_present": true,
       "photo": "photos/01-metacognition-self-regulation/stuck-ladder.jpg",
       "photo_present": false
     },
@@ -18,6 +20,8 @@
       "title": "Live model, mistakes left in",
       "context": "Working wall \u00b7 prep 0 \u00b7 6 min in lesson",
       "diagram": "diagrams/01-metacognition-self-regulation/live-model-mistakes.svg",
+      "image": "playbook/assets/01-metacognition-self-regulation/live-model-mistakes.jpg",
+      "image_present": true,
       "photo": "photos/01-metacognition-self-regulation/live-model-mistakes.jpg",
       "photo_present": false
     },
@@ -28,6 +32,8 @@
       "title": "Plan boxes on the tabletop",
       "context": "Desk \u00b7 prep 10 min once \u00b7 90 seconds",
       "diagram": "diagrams/01-metacognition-self-regulation/plan-boxes.svg",
+      "image": "playbook/assets/01-metacognition-self-regulation/plan-boxes.jpg",
+      "image_present": true,
       "photo": "photos/01-metacognition-self-regulation/plan-boxes.jpg",
       "photo_present": false
     },
@@ -38,6 +44,8 @@
       "title": "Two colour check",
       "context": "Books \u00b7 prep 5 min once \u00b7 last 5 min",
       "diagram": "diagrams/01-metacognition-self-regulation/two-colour-check.svg",
+      "image": "playbook/assets/01-metacognition-self-regulation/two-colour-check.jpg",
+      "image_present": true,
       "photo": "photos/01-metacognition-self-regulation/two-colour-check.jpg",
       "photo_present": false
     },
@@ -48,6 +56,8 @@
       "title": "Exit strip",
       "context": "Back of door \u00b7 prep 10 min \u00b7 60 seconds",
       "diagram": "diagrams/01-metacognition-self-regulation/exit-strip.svg",
+      "image": "playbook/assets/01-metacognition-self-regulation/exit-strip.jpg",
+      "image_present": true,
       "photo": "photos/01-metacognition-self-regulation/exit-strip.jpg",
       "photo_present": false
     },
@@ -58,6 +68,8 @@
       "title": "Covered object",
       "context": "Front bench \u00b7 prep 2 min \u00b7 3 min in lesson",
       "diagram": "diagrams/02-emotional-engagement/covered-object.svg",
+      "image": "playbook/assets/02-emotional-engagement/covered-object.jpg",
+      "image_present": true,
       "photo": "photos/02-emotional-engagement/covered-object.jpg",
       "photo_present": false
     },
@@ -68,6 +80,8 @@
       "title": "Wrong answer wall",
       "context": "One wall panel \u00b7 prep 5 min \u00b7 4 min weekly",
       "diagram": "diagrams/02-emotional-engagement/wrong-answer-wall.svg",
+      "image": "playbook/assets/02-emotional-engagement/wrong-answer-wall.jpg",
+      "image_present": true,
       "photo": "photos/02-emotional-engagement/wrong-answer-wall.jpg",
       "photo_present": false
     },
@@ -78,17 +92,21 @@
       "title": "Threshold question",
       "context": "Door \u00b7 prep 1 min \u00b7 3 min in lesson",
       "diagram": "diagrams/02-emotional-engagement/threshold-question.svg",
+      "image": "playbook/assets/02-emotional-engagement/threshold-question.jpg",
+      "image_present": true,
       "photo": "photos/02-emotional-engagement/threshold-question.jpg",
       "photo_present": false
     },
     {
       "strand": "02-emotional-engagement",
       "strand_title": "Strand 2 \u00b7 Emotional engagement",
-      "setup": "pupil-owned-corner",
+      "setup": "the-pupil-corner",
       "title": "The Pupil Corner",
       "context": "1 metre square \u00b7 prep 10 min \u00b7 weekly",
-      "diagram": "diagrams/02-emotional-engagement/pupil-owned-corner.svg",
-      "photo": "photos/02-emotional-engagement/pupil-owned-corner.jpg",
+      "diagram": "diagrams/02-emotional-engagement/the-pupil-corner.svg",
+      "image": "playbook/assets/02-emotional-engagement/the-pupil-corner.jpg",
+      "image_present": true,
+      "photo": "photos/02-emotional-engagement/the-pupil-corner.jpg",
       "photo_present": false
     },
     {
@@ -98,6 +116,8 @@
       "title": "Countdown reveal",
       "context": "Wall strip \u00b7 prep 15 min per unit \u00b7 2 min",
       "diagram": "diagrams/02-emotional-engagement/countdown-reveal.svg",
+      "image": "playbook/assets/02-emotional-engagement/countdown-reveal.jpg",
+      "image_present": true,
       "photo": "photos/02-emotional-engagement/countdown-reveal.jpg",
       "photo_present": false
     },
@@ -108,6 +128,8 @@
       "title": "Three shelf knowledge wall",
       "context": "One wall \u00b7 prep 20 min \u00b7 5 min starter",
       "diagram": "diagrams/03-retrieval-and-revision/three-shelf-wall.svg",
+      "image": "playbook/assets/03-retrieval-and-revision/three-shelf-wall.jpg",
+      "image_present": true,
       "photo": "photos/03-retrieval-and-revision/three-shelf-wall.jpg",
       "photo_present": false
     },
@@ -118,6 +140,8 @@
       "title": "Blank first, book second",
       "context": "Books \u00b7 prep 0 \u00b7 5 min",
       "diagram": "diagrams/03-retrieval-and-revision/blank-first-book-second.svg",
+      "image": "playbook/assets/03-retrieval-and-revision/blank-first-book-second.jpg",
+      "image_present": true,
       "photo": "photos/03-retrieval-and-revision/blank-first-book-second.jpg",
       "photo_present": false
     },
@@ -128,6 +152,8 @@
       "title": "Question grid on the tabletop",
       "context": "Desk \u00b7 prep 30 min per unit \u00b7 5 min",
       "diagram": "diagrams/03-retrieval-and-revision/question-grid.svg",
+      "image": "playbook/assets/03-retrieval-and-revision/question-grid.jpg",
+      "image_present": true,
       "photo": "photos/03-retrieval-and-revision/question-grid.jpg",
       "photo_present": false
     },
@@ -138,6 +164,8 @@
       "title": "Forgetting queue",
       "context": "Back wall or corridor \u00b7 prep 10 min \u00b7 3 min",
       "diagram": "diagrams/03-retrieval-and-revision/forgetting-queue.svg",
+      "image": "playbook/assets/03-retrieval-and-revision/forgetting-queue.jpg",
+      "image_present": true,
       "photo": "photos/03-retrieval-and-revision/forgetting-queue.jpg",
       "photo_present": false
     },
@@ -148,6 +176,8 @@
       "title": "Twenty word summary strip",
       "context": "Wall strip \u00b7 prep 10 min \u00b7 3 min",
       "diagram": "diagrams/03-retrieval-and-revision/twenty-word-strip.svg",
+      "image": "playbook/assets/03-retrieval-and-revision/twenty-word-strip.jpg",
+      "image_present": true,
       "photo": "photos/03-retrieval-and-revision/twenty-word-strip.jpg",
       "photo_present": false
     },
@@ -158,6 +188,8 @@
       "title": "Whole class response boards",
       "context": "Every desk \u00b7 prep 10 min \u00b7 8 seconds",
       "diagram": "diagrams/04-responsive-teaching/response-boards.svg",
+      "image": "playbook/assets/04-responsive-teaching/response-boards.jpg",
+      "image_present": true,
       "photo": "photos/04-responsive-teaching/response-boards.jpg",
       "photo_present": false
     },
@@ -168,6 +200,8 @@
       "title": "Hinge point",
       "context": "Mid lesson \u00b7 prep 15 min per question \u00b7 2 min",
       "diagram": "diagrams/04-responsive-teaching/hinge-point.svg",
+      "image": "playbook/assets/04-responsive-teaching/hinge-point.jpg",
+      "image_present": true,
       "photo": "photos/04-responsive-teaching/hinge-point.jpg",
       "photo_present": false
     },
@@ -178,6 +212,8 @@
       "title": "Weighted name draw",
       "context": "Jar on desk \u00b7 prep 10 min \u00b7 no extra time",
       "diagram": "diagrams/04-responsive-teaching/weighted-name-draw.svg",
+      "image": "playbook/assets/04-responsive-teaching/weighted-name-draw.jpg",
+      "image_present": true,
       "photo": "photos/04-responsive-teaching/weighted-name-draw.jpg",
       "photo_present": false
     },
@@ -188,6 +224,8 @@
       "title": "Traffic light margin",
       "context": "Pupil books \u00b7 prep 0 \u00b7 90 seconds",
       "diagram": "diagrams/04-responsive-teaching/traffic-light-margin.svg",
+      "image": "playbook/assets/04-responsive-teaching/traffic-light-margin.jpg",
+      "image_present": true,
       "photo": "photos/04-responsive-teaching/traffic-light-margin.jpg",
       "photo_present": false
     },
@@ -198,6 +236,8 @@
       "title": "Two seat surgery",
       "context": "Side table \u00b7 prep 0 \u00b7 4 min",
       "diagram": "diagrams/04-responsive-teaching/two-seat-surgery.svg",
+      "image": "playbook/assets/04-responsive-teaching/two-seat-surgery.jpg",
+      "image_present": true,
       "photo": "photos/04-responsive-teaching/two-seat-surgery.jpg",
       "photo_present": false
     },
@@ -208,6 +248,8 @@
       "title": "Sentence stem strip",
       "context": "Wall pupils face \u00b7 prep 10 min \u00b7 no extra time",
       "diagram": "diagrams/05-oracy-and-word-wealth/sentence-stem-strip.svg",
+      "image": "playbook/assets/05-oracy-and-word-wealth/sentence-stem-strip.jpg",
+      "image_present": true,
       "photo": "photos/05-oracy-and-word-wealth/sentence-stem-strip.jpg",
       "photo_present": false
     },
@@ -218,6 +260,8 @@
       "title": "Word wall pupils take words off",
       "context": "Board \u00b7 prep 20 min per unit \u00b7 1 min",
       "diagram": "diagrams/05-oracy-and-word-wealth/takeable-word-wall.svg",
+      "image": "playbook/assets/05-oracy-and-word-wealth/takeable-word-wall.jpg",
+      "image_present": true,
       "photo": "photos/05-oracy-and-word-wealth/takeable-word-wall.jpg",
       "photo_present": false
     },
@@ -228,6 +272,8 @@
       "title": "Talk roles on the table",
       "context": "Table centre \u00b7 prep 15 min \u00b7 4 min",
       "diagram": "diagrams/05-oracy-and-word-wealth/talk-roles.svg",
+      "image": "playbook/assets/05-oracy-and-word-wealth/talk-roles.jpg",
+      "image_present": true,
       "photo": "photos/05-oracy-and-word-wealth/talk-roles.jpg",
       "photo_present": false
     },
@@ -238,6 +284,8 @@
       "title": "Etymology corner",
       "context": "Small panel \u00b7 prep 5 min per fortnight \u00b7 2 min",
       "diagram": "diagrams/05-oracy-and-word-wealth/etymology-corner.svg",
+      "image": "playbook/assets/05-oracy-and-word-wealth/etymology-corner.jpg",
+      "image_present": true,
       "photo": "photos/05-oracy-and-word-wealth/etymology-corner.jpg",
       "photo_present": false
     },
@@ -248,6 +296,8 @@
       "title": "Sixty second subject talk",
       "context": "Marked floor spot \u00b7 prep 2 min \u00b7 2 min",
       "diagram": "diagrams/05-oracy-and-word-wealth/sixty-second-talk.svg",
+      "image": "playbook/assets/05-oracy-and-word-wealth/sixty-second-talk.jpg",
+      "image_present": true,
       "photo": "photos/05-oracy-and-word-wealth/sixty-second-talk.jpg",
       "photo_present": false
     },
@@ -258,6 +308,8 @@
       "title": "One pen, four hands",
       "context": "Table of four \u00b7 prep 1 min \u00b7 10 min",
       "diagram": "diagrams/06-collaborative-learning/one-pen-four-hands.svg",
+      "image": "playbook/assets/06-collaborative-learning/one-pen-four-hands.jpg",
+      "image_present": true,
       "photo": "photos/06-collaborative-learning/one-pen-four-hands.jpg",
       "photo_present": false
     },
@@ -268,6 +320,8 @@
       "title": "Numbered heads",
       "context": "Tables of four \u00b7 prep 5 min \u00b7 no extra time",
       "diagram": "diagrams/06-collaborative-learning/numbered-heads.svg",
+      "image": "playbook/assets/06-collaborative-learning/numbered-heads.jpg",
+      "image_present": true,
       "photo": "photos/06-collaborative-learning/numbered-heads.jpg",
       "photo_present": false
     },
@@ -278,6 +332,8 @@
       "title": "Jigsaw stations",
       "context": "Four stations \u00b7 prep 20 min \u00b7 20 min",
       "diagram": "diagrams/06-collaborative-learning/jigsaw-stations.svg",
+      "image": "playbook/assets/06-collaborative-learning/jigsaw-stations.jpg",
+      "image_present": true,
       "photo": "photos/06-collaborative-learning/jigsaw-stations.jpg",
       "photo_present": false
     },
@@ -288,6 +344,8 @@
       "title": "Silent build",
       "context": "Floor or joined tables \u00b7 prep 10 min \u00b7 8 min",
       "diagram": "diagrams/06-collaborative-learning/silent-build.svg",
+      "image": "playbook/assets/06-collaborative-learning/silent-build.jpg",
+      "image_present": true,
       "photo": "photos/06-collaborative-learning/silent-build.jpg",
       "photo_present": false
     },
@@ -298,6 +356,8 @@
       "title": "Two group critique swap",
       "context": "Work at pupil height \u00b7 prep 0 \u00b7 8 min",
       "diagram": "diagrams/06-collaborative-learning/critique-swap.svg",
+      "image": "playbook/assets/06-collaborative-learning/critique-swap.jpg",
+      "image_present": true,
       "photo": "photos/06-collaborative-learning/critique-swap.jpg",
       "photo_present": false
     }
