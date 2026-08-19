@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Sixty second subject talk"><title>Sixty second subject talk</title><desc>Marked floor spot · prep 2 min · 2 min</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Sixty second subject talk</text><text x="20" y="42" class="s" text-anchor="start">Marked floor spot · prep 2 min · 2 min</text><g><ellipse cx="120" cy="196" rx="34" ry="12" class="filla"/><ellipse cx="120" cy="196" rx="34" ry="12" class="acc dash"/><circle cx="120" cy="172" r="10" class="filla"/><circle cx="120" cy="172" r="10" class="acc"/><circle cx="178" cy="150" r="13" class="fillw"/><circle cx="178" cy="150" r="13" class="stroke"/><text x="178" y="153.4" class="la" text-anchor="middle">60s</text><circle cx="246" cy="150" r="8" class="stroke"/><circle cx="276" cy="150" r="8" class="stroke"/><circle cx="306" cy="150" r="8" class="stroke"/><circle cx="336" cy="150" r="8" class="stroke"/><circle cx="246" cy="180" r="8" class="stroke"/><circle cx="276" cy="180" r="8" class="stroke"/><circle cx="306" cy="180" r="8" class="stroke"/><circle cx="336" cy="180" r="8" class="stroke"/><text x="306" y="122" class="lm" text-anchor="middle">listening for the two words</text><rect x="60" y="92" width="120" height="30" rx="2" class="filla"/><rect x="60" y="92" width="120" height="30" rx="2" class="acc"/><text x="120.0" y="110.4" class="la" text-anchor="middle">prompt card</text><text x="210" y="226" class="lm" text-anchor="middle">minimum two words off the word wall · class signals when they hear them</text></g></svg>

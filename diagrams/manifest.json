@@ -1,0 +1,305 @@
+{
+  "count": 30,
+  "setups": [
+    {
+      "strand": "01-metacognition-self-regulation",
+      "strand_title": "Strand 1 \u00b7 Metacognition and self-regulated learning",
+      "setup": "stuck-ladder",
+      "title": "Stuck ladder",
+      "context": "Door frame \u00b7 prep 5 min \u00b7 runs itself",
+      "diagram": "diagrams/01-metacognition-self-regulation/stuck-ladder.svg",
+      "photo": "photos/01-metacognition-self-regulation/stuck-ladder.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "01-metacognition-self-regulation",
+      "strand_title": "Strand 1 \u00b7 Metacognition and self-regulated learning",
+      "setup": "live-model-mistakes",
+      "title": "Live model, mistakes left in",
+      "context": "Working wall \u00b7 prep 0 \u00b7 6 min in lesson",
+      "diagram": "diagrams/01-metacognition-self-regulation/live-model-mistakes.svg",
+      "photo": "photos/01-metacognition-self-regulation/live-model-mistakes.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "01-metacognition-self-regulation",
+      "strand_title": "Strand 1 \u00b7 Metacognition and self-regulated learning",
+      "setup": "plan-boxes",
+      "title": "Plan boxes on the tabletop",
+      "context": "Desk \u00b7 prep 10 min once \u00b7 90 seconds",
+      "diagram": "diagrams/01-metacognition-self-regulation/plan-boxes.svg",
+      "photo": "photos/01-metacognition-self-regulation/plan-boxes.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "01-metacognition-self-regulation",
+      "strand_title": "Strand 1 \u00b7 Metacognition and self-regulated learning",
+      "setup": "two-colour-check",
+      "title": "Two colour check",
+      "context": "Books \u00b7 prep 5 min once \u00b7 last 5 min",
+      "diagram": "diagrams/01-metacognition-self-regulation/two-colour-check.svg",
+      "photo": "photos/01-metacognition-self-regulation/two-colour-check.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "01-metacognition-self-regulation",
+      "strand_title": "Strand 1 \u00b7 Metacognition and self-regulated learning",
+      "setup": "exit-strip",
+      "title": "Exit strip",
+      "context": "Back of door \u00b7 prep 10 min \u00b7 60 seconds",
+      "diagram": "diagrams/01-metacognition-self-regulation/exit-strip.svg",
+      "photo": "photos/01-metacognition-self-regulation/exit-strip.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "02-emotional-engagement",
+      "strand_title": "Strand 2 \u00b7 Emotional engagement",
+      "setup": "covered-object",
+      "title": "Covered object",
+      "context": "Front bench \u00b7 prep 2 min \u00b7 3 min in lesson",
+      "diagram": "diagrams/02-emotional-engagement/covered-object.svg",
+      "photo": "photos/02-emotional-engagement/covered-object.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "02-emotional-engagement",
+      "strand_title": "Strand 2 \u00b7 Emotional engagement",
+      "setup": "wrong-answer-wall",
+      "title": "Wrong answer wall",
+      "context": "One wall panel \u00b7 prep 5 min \u00b7 4 min weekly",
+      "diagram": "diagrams/02-emotional-engagement/wrong-answer-wall.svg",
+      "photo": "photos/02-emotional-engagement/wrong-answer-wall.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "02-emotional-engagement",
+      "strand_title": "Strand 2 \u00b7 Emotional engagement",
+      "setup": "threshold-question",
+      "title": "Threshold question",
+      "context": "Door \u00b7 prep 1 min \u00b7 3 min in lesson",
+      "diagram": "diagrams/02-emotional-engagement/threshold-question.svg",
+      "photo": "photos/02-emotional-engagement/threshold-question.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "02-emotional-engagement",
+      "strand_title": "Strand 2 \u00b7 Emotional engagement",
+      "setup": "pupil-owned-corner",
+      "title": "The Pupil Corner",
+      "context": "1 metre square \u00b7 prep 10 min \u00b7 weekly",
+      "diagram": "diagrams/02-emotional-engagement/pupil-owned-corner.svg",
+      "photo": "photos/02-emotional-engagement/pupil-owned-corner.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "02-emotional-engagement",
+      "strand_title": "Strand 2 \u00b7 Emotional engagement",
+      "setup": "countdown-reveal",
+      "title": "Countdown reveal",
+      "context": "Wall strip \u00b7 prep 15 min per unit \u00b7 2 min",
+      "diagram": "diagrams/02-emotional-engagement/countdown-reveal.svg",
+      "photo": "photos/02-emotional-engagement/countdown-reveal.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "03-retrieval-and-revision",
+      "strand_title": "Strand 3 \u00b7 Retrieval and revision",
+      "setup": "three-shelf-wall",
+      "title": "Three shelf knowledge wall",
+      "context": "One wall \u00b7 prep 20 min \u00b7 5 min starter",
+      "diagram": "diagrams/03-retrieval-and-revision/three-shelf-wall.svg",
+      "photo": "photos/03-retrieval-and-revision/three-shelf-wall.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "03-retrieval-and-revision",
+      "strand_title": "Strand 3 \u00b7 Retrieval and revision",
+      "setup": "blank-first-book-second",
+      "title": "Blank first, book second",
+      "context": "Books \u00b7 prep 0 \u00b7 5 min",
+      "diagram": "diagrams/03-retrieval-and-revision/blank-first-book-second.svg",
+      "photo": "photos/03-retrieval-and-revision/blank-first-book-second.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "03-retrieval-and-revision",
+      "strand_title": "Strand 3 \u00b7 Retrieval and revision",
+      "setup": "question-grid",
+      "title": "Question grid on the tabletop",
+      "context": "Desk \u00b7 prep 30 min per unit \u00b7 5 min",
+      "diagram": "diagrams/03-retrieval-and-revision/question-grid.svg",
+      "photo": "photos/03-retrieval-and-revision/question-grid.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "03-retrieval-and-revision",
+      "strand_title": "Strand 3 \u00b7 Retrieval and revision",
+      "setup": "forgetting-queue",
+      "title": "Forgetting queue",
+      "context": "Back wall or corridor \u00b7 prep 10 min \u00b7 3 min",
+      "diagram": "diagrams/03-retrieval-and-revision/forgetting-queue.svg",
+      "photo": "photos/03-retrieval-and-revision/forgetting-queue.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "03-retrieval-and-revision",
+      "strand_title": "Strand 3 \u00b7 Retrieval and revision",
+      "setup": "twenty-word-strip",
+      "title": "Twenty word summary strip",
+      "context": "Wall strip \u00b7 prep 10 min \u00b7 3 min",
+      "diagram": "diagrams/03-retrieval-and-revision/twenty-word-strip.svg",
+      "photo": "photos/03-retrieval-and-revision/twenty-word-strip.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "04-responsive-teaching",
+      "strand_title": "Strand 4 \u00b7 Responsive teaching",
+      "setup": "response-boards",
+      "title": "Whole class response boards",
+      "context": "Every desk \u00b7 prep 10 min \u00b7 8 seconds",
+      "diagram": "diagrams/04-responsive-teaching/response-boards.svg",
+      "photo": "photos/04-responsive-teaching/response-boards.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "04-responsive-teaching",
+      "strand_title": "Strand 4 \u00b7 Responsive teaching",
+      "setup": "hinge-point",
+      "title": "Hinge point",
+      "context": "Mid lesson \u00b7 prep 15 min per question \u00b7 2 min",
+      "diagram": "diagrams/04-responsive-teaching/hinge-point.svg",
+      "photo": "photos/04-responsive-teaching/hinge-point.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "04-responsive-teaching",
+      "strand_title": "Strand 4 \u00b7 Responsive teaching",
+      "setup": "weighted-name-draw",
+      "title": "Weighted name draw",
+      "context": "Jar on desk \u00b7 prep 10 min \u00b7 no extra time",
+      "diagram": "diagrams/04-responsive-teaching/weighted-name-draw.svg",
+      "photo": "photos/04-responsive-teaching/weighted-name-draw.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "04-responsive-teaching",
+      "strand_title": "Strand 4 \u00b7 Responsive teaching",
+      "setup": "traffic-light-margin",
+      "title": "Traffic light margin",
+      "context": "Pupil books \u00b7 prep 0 \u00b7 90 seconds",
+      "diagram": "diagrams/04-responsive-teaching/traffic-light-margin.svg",
+      "photo": "photos/04-responsive-teaching/traffic-light-margin.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "04-responsive-teaching",
+      "strand_title": "Strand 4 \u00b7 Responsive teaching",
+      "setup": "two-seat-surgery",
+      "title": "Two seat surgery",
+      "context": "Side table \u00b7 prep 0 \u00b7 4 min",
+      "diagram": "diagrams/04-responsive-teaching/two-seat-surgery.svg",
+      "photo": "photos/04-responsive-teaching/two-seat-surgery.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "05-oracy-and-word-wealth",
+      "strand_title": "Strand 5 \u00b7 Oracy and word wealth",
+      "setup": "sentence-stem-strip",
+      "title": "Sentence stem strip",
+      "context": "Wall pupils face \u00b7 prep 10 min \u00b7 no extra time",
+      "diagram": "diagrams/05-oracy-and-word-wealth/sentence-stem-strip.svg",
+      "photo": "photos/05-oracy-and-word-wealth/sentence-stem-strip.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "05-oracy-and-word-wealth",
+      "strand_title": "Strand 5 \u00b7 Oracy and word wealth",
+      "setup": "takeable-word-wall",
+      "title": "Word wall pupils take words off",
+      "context": "Board \u00b7 prep 20 min per unit \u00b7 1 min",
+      "diagram": "diagrams/05-oracy-and-word-wealth/takeable-word-wall.svg",
+      "photo": "photos/05-oracy-and-word-wealth/takeable-word-wall.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "05-oracy-and-word-wealth",
+      "strand_title": "Strand 5 \u00b7 Oracy and word wealth",
+      "setup": "talk-roles",
+      "title": "Talk roles on the table",
+      "context": "Table centre \u00b7 prep 15 min \u00b7 4 min",
+      "diagram": "diagrams/05-oracy-and-word-wealth/talk-roles.svg",
+      "photo": "photos/05-oracy-and-word-wealth/talk-roles.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "05-oracy-and-word-wealth",
+      "strand_title": "Strand 5 \u00b7 Oracy and word wealth",
+      "setup": "etymology-corner",
+      "title": "Etymology corner",
+      "context": "Small panel \u00b7 prep 5 min per fortnight \u00b7 2 min",
+      "diagram": "diagrams/05-oracy-and-word-wealth/etymology-corner.svg",
+      "photo": "photos/05-oracy-and-word-wealth/etymology-corner.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "05-oracy-and-word-wealth",
+      "strand_title": "Strand 5 \u00b7 Oracy and word wealth",
+      "setup": "sixty-second-talk",
+      "title": "Sixty second subject talk",
+      "context": "Marked floor spot \u00b7 prep 2 min \u00b7 2 min",
+      "diagram": "diagrams/05-oracy-and-word-wealth/sixty-second-talk.svg",
+      "photo": "photos/05-oracy-and-word-wealth/sixty-second-talk.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "06-collaborative-learning",
+      "strand_title": "Strand 6 \u00b7 Collaborative learning",
+      "setup": "one-pen-four-hands",
+      "title": "One pen, four hands",
+      "context": "Table of four \u00b7 prep 1 min \u00b7 10 min",
+      "diagram": "diagrams/06-collaborative-learning/one-pen-four-hands.svg",
+      "photo": "photos/06-collaborative-learning/one-pen-four-hands.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "06-collaborative-learning",
+      "strand_title": "Strand 6 \u00b7 Collaborative learning",
+      "setup": "numbered-heads",
+      "title": "Numbered heads",
+      "context": "Tables of four \u00b7 prep 5 min \u00b7 no extra time",
+      "diagram": "diagrams/06-collaborative-learning/numbered-heads.svg",
+      "photo": "photos/06-collaborative-learning/numbered-heads.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "06-collaborative-learning",
+      "strand_title": "Strand 6 \u00b7 Collaborative learning",
+      "setup": "jigsaw-stations",
+      "title": "Jigsaw stations",
+      "context": "Four stations \u00b7 prep 20 min \u00b7 20 min",
+      "diagram": "diagrams/06-collaborative-learning/jigsaw-stations.svg",
+      "photo": "photos/06-collaborative-learning/jigsaw-stations.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "06-collaborative-learning",
+      "strand_title": "Strand 6 \u00b7 Collaborative learning",
+      "setup": "silent-build",
+      "title": "Silent build",
+      "context": "Floor or joined tables \u00b7 prep 10 min \u00b7 8 min",
+      "diagram": "diagrams/06-collaborative-learning/silent-build.svg",
+      "photo": "photos/06-collaborative-learning/silent-build.jpg",
+      "photo_present": false
+    },
+    {
+      "strand": "06-collaborative-learning",
+      "strand_title": "Strand 6 \u00b7 Collaborative learning",
+      "setup": "critique-swap",
+      "title": "Two group critique swap",
+      "context": "Work at pupil height \u00b7 prep 0 \u00b7 8 min",
+      "diagram": "diagrams/06-collaborative-learning/critique-swap.svg",
+      "photo": "photos/06-collaborative-learning/critique-swap.jpg",
+      "photo_present": false
+    }
+  ]
+}

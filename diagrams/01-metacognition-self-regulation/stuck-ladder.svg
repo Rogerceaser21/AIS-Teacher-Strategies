@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Stuck ladder"><title>Stuck ladder</title><desc>Door frame · prep 5 min · runs itself</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Stuck ladder</text><text x="20" y="42" class="s" text-anchor="start">Door frame · prep 5 min · runs itself</text><g><rect x="30" y="90" width="12" height="54" rx="2" class="fillw"/><rect x="30" y="90" width="12" height="54" rx="2" class="stroke"/><path d="M42 90 A37.8 37.8 0 0 1 60.36 117.0" class="stroke dash"/><text x="36" y="156" class="lm" text-anchor="middle">door</text><rect x="70" y="78" width="150" height="20" rx="2" class="fillp"/><rect x="70" y="78" width="150" height="20" rx="2" class="stroke"/><text x="145.0" y="91.4" class="l" text-anchor="middle">1. reread the question</text><rect x="70" y="104" width="150" height="20" rx="2" class="fillp"/><rect x="70" y="104" width="150" height="20" rx="2" class="stroke"/><text x="145.0" y="117.4" class="l" text-anchor="middle">2. check the model</text><rect x="70" y="130" width="150" height="20" rx="2" class="filla"/><rect x="70" y="130" width="150" height="20" rx="2" class="acc"/><text x="145.0" y="143.4" class="la" text-anchor="middle">3. check my book</text><rect x="70" y="156" width="150" height="20" rx="2" class="fillp"/><rect x="70" y="156" width="150" height="20" rx="2" class="stroke"/><text x="145.0" y="169.4" class="l" text-anchor="middle">4. ask my partner</text><rect x="70" y="182" width="150" height="20" rx="2" class="fillp"/><rect x="70" y="182" width="150" height="20" rx="2" class="stroke"/><text x="145.0" y="195.4" class="l" text-anchor="middle">5. try one line</text><rect x="70" y="208" width="150" height="20" rx="2" class="fillp"/><rect x="70" y="208" width="150" height="20" rx="2" class="stroke"/><text x="145.0" y="221.4" class="l" text-anchor="middle">6. ask the teacher</text><circle cx="258" cy="130" r="8" class="stroke"/><line x1="268" y1="130" x2="295.4" y2="130.0" class="acc"/><path d="M300 130 L291.4 132.2 M300 130 L291.4 127.8" class="acc"/><text x="284.0" y="121.0" class="la halo" text-anchor="middle">rung 3</text><text x="300" y="152" class="lm" text-anchor="start">pupil names the rung</text><line x1="16" y1="248" x2="404" y2="248" class="stroke"/></g></svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Etymology corner"><title>Etymology corner</title><desc>Small panel · prep 5 min per fortnight · 2 min</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Etymology corner</text><text x="20" y="42" class="s" text-anchor="start">Small panel · prep 5 min per fortnight · 2 min</text><g><rect x="96" y="70" width="228" height="44" rx="4" class="filla"/><rect x="96" y="70" width="228" height="44" rx="4" class="acc"/><text x="210" y="97" class="la" text-anchor="middle">pre · fix · root · suffix</text><line x1="210" y1="118" x2="122.3" y2="148.5" class="acc dash"/><path d="M118 150 L125.4 145.1 M118 150 L126.9 149.2" class="acc"/><line x1="210" y1="118" x2="210.0" y2="145.4" class="acc dash"/><path d="M210 150 L207.8 141.4 M210 150 L212.2 141.4" class="acc"/><line x1="210" y1="118" x2="297.7" y2="148.5" class="acc dash"/><path d="M302 150 L293.1 149.2 M302 150 L294.6 145.1" class="acc"/><rect x="78" y="154" width="84" height="30" rx="2" class="fillp"/><rect x="78" y="154" width="84" height="30" rx="2" class="stroke"/><text x="120.0" y="172.4" class="l" text-anchor="middle">same root</text><rect x="170" y="154" width="84" height="30" rx="2" class="fillp"/><rect x="170" y="154" width="84" height="30" rx="2" class="stroke"/><text x="212.0" y="172.4" class="l" text-anchor="middle">same root</text><rect x="262" y="154" width="84" height="30" rx="2" class="filla"/><rect x="262" y="154" width="84" height="30" rx="2" class="acc"/><text x="304.0" y="172.4" class="la" text-anchor="middle">other subject</text><text x="210" y="208" class="lm" text-anchor="middle">pupils add relatives they find</text><text x="210" y="232" class="lm" text-anchor="middle">a mechanism for unfamiliar words, not a list to memorise</text></g></svg>

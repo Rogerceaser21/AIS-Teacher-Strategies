@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Two seat surgery"><title>Two seat surgery</title><desc>Side table · prep 0 · 4 min</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Two seat surgery</text><text x="20" y="42" class="s" text-anchor="start">Side table · prep 0 · 4 min</text><g><rect x="256" y="74" width="120" height="48" rx="4" class="filla"/><rect x="256" y="74" width="120" height="48" rx="4" class="acc"/><text x="316.0" y="101.5" class="l" text-anchor="middle">surgery</text><circle cx="276" cy="140" r="9" class="filla"/><circle cx="276" cy="140" r="9" class="acc"/><circle cx="306" cy="140" r="9" class="filla"/><circle cx="306" cy="140" r="9" class="acc"/><circle cx="350" cy="140" r="8" class="filla"/><circle cx="350" cy="140" r="8" class="acc"/><text x="350" y="143.2" class="la" text-anchor="middle">T</text><circle cx="398" cy="98" r="13" class="fillw"/><circle cx="398" cy="98" r="13" class="stroke"/><text x="398" y="101.4" class="la" text-anchor="middle">4m</text><rect x="28" y="78" width="74" height="36" rx="4" class="fillp"/><rect x="28" y="78" width="74" height="36" rx="4" class="stroke"/><rect x="116" y="78" width="74" height="36" rx="4" class="fillp"/><rect x="116" y="78" width="74" height="36" rx="4" class="stroke"/><rect x="28" y="132" width="74" height="36" rx="4" class="fillp"/><rect x="28" y="132" width="74" height="36" rx="4" class="stroke"/><rect x="116" y="132" width="74" height="36" rx="4" class="fillp"/><rect x="116" y="132" width="74" height="36" rx="4" class="stroke"/><rect x="28" y="186" width="74" height="36" rx="4" class="fillp"/><rect x="28" y="186" width="74" height="36" rx="4" class="stroke"/><rect x="116" y="186" width="74" height="36" rx="4" class="fillp"/><rect x="116" y="186" width="74" height="36" rx="4" class="stroke"/><text x="210" y="196" class="la" text-anchor="middle">named by the check</text><line x1="150" y1="188" x2="257.6" y2="157.3" class="acc dash"/><path d="M262 156 L254.3 160.5 M262 156 L253.1 156.3" class="acc"/><text x="210" y="244" class="lm" text-anchor="middle">rotate the seats visibly: normal, not remedial</text></g></svg>

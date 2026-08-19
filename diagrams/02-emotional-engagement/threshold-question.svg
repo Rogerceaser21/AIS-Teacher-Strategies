@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Threshold question"><title>Threshold question</title><desc>Door · prep 1 min · 3 min in lesson</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Threshold question</text><text x="20" y="42" class="s" text-anchor="start">Door · prep 1 min · 3 min in lesson</text><g><rect x="40" y="104" width="12" height="54" rx="2" class="fillw"/><rect x="40" y="104" width="12" height="54" rx="2" class="stroke"/><path d="M52 104 A37.8 37.8 0 0 1 70.36 131.0" class="stroke dash"/><text x="46" y="170" class="lm" text-anchor="middle">door</text><rect x="60" y="112" width="112" height="40" rx="2" class="filla"/><rect x="60" y="112" width="112" height="40" rx="2" class="acc"/><text x="116.0" y="135.4" class="la" text-anchor="middle">one question</text><text x="210" y="82" class="la" text-anchor="middle">crossing the threshold</text><line x1="178" y1="132" x2="213.4" y2="132.0" class="acc"/><path d="M218 132 L209.4 134.2 M218 132 L209.4 129.8" class="acc"/><circle cx="238" cy="118" r="8" class="stroke"/><circle cx="262" cy="132" r="8" class="stroke"/><circle cx="238" cy="146" r="8" class="stroke"/><circle cx="346" cy="132" r="8" class="filla"/><circle cx="346" cy="132" r="8" class="acc"/><text x="346" y="135.2" class="la" text-anchor="middle">T</text><line x1="282" y1="132" x2="325.4" y2="132.0" class="acc dash"/><path d="M330 132 L321.4 134.2 M330 132 L321.4 129.8" class="acc"/><text x="210" y="200" class="lm" text-anchor="middle">answered out loud or on a note, never assessed</text><text x="210" y="218" class="la" text-anchor="middle">3 pupils asked back by name once seated</text><line x1="16" y1="240" x2="404" y2="240" class="stroke"/></g></svg>

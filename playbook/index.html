@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIS Teacher Strategies · The Learning Environment Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f8f4ec; --paper-2:#f1ead9; --ink:#2e2438; --ink-soft:#5b4f6b;
+  --amber:#d98e2b; --amber-soft:#f3ddba; --plum:#6d4bb8; --plum-soft:#e6def5;
+  --line:#d9cfbd; --card:#fffdf8; --say:#3c2a4d;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Karla", "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;z-index:0;
+  background-image:radial-gradient(rgba(46,36,56,.05) 1px, transparent 1px);background-size:22px 22px}
+main,header.site{position:relative;z-index:1}
+
+/* ---------- sticky nav ---------- */
+header.site{position:sticky;top:0;z-index:50;background:rgba(248,244,236,.94);backdrop-filter:blur(6px);
+  border-bottom:2px solid var(--ink)}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 24px;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-weight:900;font-size:1.05rem;letter-spacing:.01em;white-space:nowrap}
+.brand .star{color:var(--amber)}
+nav.menu{display:flex;gap:4px;flex-wrap:wrap}
+nav.menu a{color:var(--ink-soft);text-decoration:none;font-weight:700;font-size:.82rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:6px 10px;border-radius:999px}
+nav.menu a:hover{background:var(--amber-soft);color:var(--ink)}
+.searchwrap{margin-left:auto;position:relative;flex:1 1 220px;max-width:340px;min-width:200px}
+#search{width:100%;padding:9px 36px 9px 14px;border:2px solid var(--ink);border-radius:999px;
+  background:var(--card);font:600 .9rem var(--sans);color:var(--ink)}
+#search::placeholder{color:#9a8fa9}
+#search:focus{outline:3px solid var(--amber-soft)}
+#clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;
+  font-size:1rem;cursor:pointer;color:var(--ink-soft);display:none;padding:4px}
+#hitcount{position:absolute;right:-2px;top:calc(100% + 4px);font-size:.72rem;font-weight:700;color:var(--plum);display:none;white-space:nowrap}
+
+/* ---------- hero ---------- */
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.hero{padding:64px 0 30px;border-bottom:2px solid var(--ink)}
+.kicker{font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(2.4rem,5.4vw,4.2rem);line-height:1.02;margin:10px 0 16px;max-width:900px}
+.stand{max-width:640px;color:var(--ink-soft);font-size:1.08rem}
+.stand strong{color:var(--ink)}
+
+/* router */
+.router{margin:38px 0 8px}
+.router h2{font-family:var(--serif);font-weight:800;font-size:1.35rem;margin-bottom:4px}
+.router p.sub{color:var(--ink-soft);margin-bottom:14px;font-size:.95rem}
+.router a.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:baseline;
+  padding:13px 14px;border-top:1.5px solid var(--line);text-decoration:none;color:inherit}
+.router a.row:last-of-type{border-bottom:1.5px solid var(--line)}
+.router a.row:hover{background:var(--card)}
+.router .cannot{font-size:1.02rem}
+.router .cannot b{font-family:var(--serif);font-weight:800}
+.router .dest{font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--plum);white-space:nowrap}
+
+/* ---------- sections ---------- */
+section.block{padding:50px 0 34px;border-bottom:2px solid var(--ink)}
+.block-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+.bignum{font-family:var(--serif);font-weight:900;font-size:clamp(2.6rem,6vw,4rem);color:var(--amber);line-height:1}
+h2.title{font-family:var(--serif);font-weight:900;font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.1}
+.usewhen{color:var(--ink-soft);max-width:760px;margin:8px 0 2px}
+.starthere{display:inline-block;margin:14px 0 6px;padding:9px 14px;background:var(--ink);color:var(--paper);
+  border-radius:8px;font-weight:700;font-size:.92rem}
+.starthere b{color:var(--amber)}
+
+/* setup cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;margin-top:22px}
+.card{background:var(--card);border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;
+  box-shadow:4px 4px 0 rgba(46,36,56,.14);display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:1.5px solid var(--ink);background:var(--paper-2)}
+.card .pad{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-family:var(--serif);font-weight:800;font-size:1.22rem;line-height:1.15}
+.meta{display:flex;gap:8px;flex-wrap:wrap}
+.meta span{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  background:var(--plum-soft);color:var(--say);padding:3px 9px;border-radius:999px}
+.card ol{padding-left:20px;display:flex;flex-direction:column;gap:4px;font-size:.95rem}
+.say{background:var(--say);color:#f6edff;border-radius:10px;padding:11px 14px;font-size:.95rem}
+.say b{color:var(--amber);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:3px}
+.why{font-size:.9rem;color:var(--ink-soft)}
+.why b{color:var(--ink)}
+
+/* strand footer */
+.strandfoot{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.foot-box{background:var(--paper-2);border:1.5px solid var(--line);border-radius:12px;padding:16px 18px}
+.foot-box h4{font-family:var(--serif);font-weight:800;font-size:1rem;margin-bottom:8px}
+.foot-box ol,.foot-box ul{padding-left:20px;font-size:.92rem;display:flex;flex-direction:column;gap:4px}
+.foot-box p{font-size:.92rem}
+details.book{margin-top:18px;border:1.5px solid var(--line);border-radius:12px;background:var(--card)}
+details.book summary{cursor:pointer;padding:13px 18px;font-weight:700;font-family:var(--serif);font-size:1rem}
+details.book .inner{padding:0 18px 16px}
+details.book ul{padding-left:20px;font-size:.92rem;display:flex;flex-direction:column;gap:6px}
+
+/* house rules */
+.rules{counter-reset:rule;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:20px}
+.rule{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:16px;position:relative}
+.rule::before{counter-increment:rule;content:counter(rule);position:absolute;top:-14px;left:14px;
+  background:var(--amber);color:var(--ink);font-family:var(--serif);font-weight:900;width:28px;height:28px;
+  border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--ink)}
+.rule b{display:block;font-family:var(--serif);font-size:1rem;margin-bottom:4px;padding-top:4px}
+.rule p{font-size:.88rem;color:var(--ink-soft)}
+
+/* technique library */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 6px}
+.chip{border:1.5px solid var(--ink);background:var(--card);border-radius:999px;padding:6px 14px;
+  font:700 .82rem var(--sans);cursor:pointer;color:var(--ink)}
+.chip.active{background:var(--ink);color:var(--paper)}
+.tgroup{margin-top:26px}
+.tgroup>h3{font-family:var(--serif);font-weight:900;font-size:1.5rem}
+.tgroup>.locs{font-size:.8rem;color:var(--ink-soft);margin:2px 0 10px}
+.tsub{margin:14px 0 4px;font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--plum)}
+ul.tech{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:8px 22px}
+ul.tech li{font-size:.93rem;padding:7px 10px;border-left:3px solid var(--amber);background:var(--card);border-radius:0 8px 8px 0}
+ul.tech li b{font-family:var(--serif)}
+ul.tech.case li{border-left-color:var(--plum)}
+
+/* worked example */
+.judge{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.judge div{border:1.5px solid var(--ink);border-radius:10px;padding:10px 16px;background:var(--card)}
+.judge .lvl{font-family:var(--serif);font-weight:900;font-size:1.5rem}
+.judge .lbl{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:18px}
+.rec{background:var(--card);border:1.5px solid var(--ink);border-radius:12px;padding:16px 18px}
+.rec .from{font-size:.82rem;color:var(--ink-soft);font-style:italic;margin-bottom:8px}
+.rec h4{font-family:var(--serif);font-weight:800;font-size:1.05rem;margin-bottom:6px}
+.rec p{font-size:.9rem;margin-bottom:6px}
+.notebox{margin-top:22px;background:var(--say);color:#f6edff;border-radius:12px;padding:18px 20px}
+.notebox h4{font-family:var(--serif);color:var(--amber);margin-bottom:8px}
+.notebox ol{padding-left:20px;display:flex;flex-direction:column;gap:5px;font-size:.95rem}
+
+/* footer */
+footer{padding:36px 0 60px;color:var(--ink-soft);font-size:.9rem;max-width:760px}
+footer b{color:var(--ink)}
+
+.hidden{display:none !important}
+.searchable.dim{display:none}
+mark{background:var(--amber-soft);color:inherit;padding:0 1px}
+
+@media (max-width:640px){
+  .nav-inner{gap:10px;padding:10px 16px}
+  .searchwrap{max-width:none}
+  .wrap{padding:0 16px}
+}
+@media print{
+  header.site,.chips,#hitcount{display:none !important}
+  body{background:#fff;font-size:11.5pt}
+  body::before{display:none}
+  section.block{page-break-before:always;border-bottom:0;padding:20px 0}
+  .hero{page-break-before:avoid;padding:10px 0}
+  .card{box-shadow:none;break-inside:avoid}
+  details.book{display:block}
+  details.book summary{list-style:none}
+  details.book .inner{display:block}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <div class="brand"><span class="star">✷</span> AIS · Teacher Strategies</div>
+    <nav class="menu">
+      <a href="#find">Find your strand</a>
+      <a href="#rules">House rules</a>
+      <a href="#s1">Strands</a>
+      <a href="#library">Technique library</a>
+      <a href="#example">Worked example</a>
+    </nav>
+    <div class="searchwrap">
+      <input id="search" type="search" placeholder="Search 30 setups + 150 techniques…" autocomplete="off">
+      <button id="clear" aria-label="Clear search">✕</button>
+      <div id="hitcount"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= HERO + ROUTER ================= -->
+<div class="hero" id="top">
+  <div class="kicker">The learning environment, put to work</div>
+  <h1>The Learning Environment Playbook</h1>
+  <p class="stand">Thirty AIS classroom setups and around one hundred and fifty named techniques for turning
+  the room itself into part of the lesson. <strong>Open one strand. Run one setup this week.</strong>
+  Every setup gives prep time, numbered steps and the exact sentence the teacher says out loud.</p>
+
+  <div class="router" id="find">
+    <h2>Find your strand</h2>
+    <p class="sub">Pick from what students are failing to DO, not from what you want on the wall.</p>
+    <a class="row" href="#s1"><span class="cannot">Students cannot <b>say how they did it, or start without you</b></span><span class="dest">Strand 1 · Metacognition ↓</span></a>
+    <a class="row" href="#s2"><span class="cannot">Students cannot <b>find a reason to care before you supply one</b></span><span class="dest">Strand 2 · Emotional engagement ↓</span></a>
+    <a class="row" href="#s3"><span class="cannot">Students cannot <b>recall last term's content</b></span><span class="dest">Strand 3 · Retrieval ↓</span></a>
+    <a class="row" href="#s4"><span class="cannot">Students cannot <b>show you what they know in time for you to act</b></span><span class="dest">Strand 4 · Responsive teaching ↓</span></a>
+    <a class="row" href="#s5"><span class="cannot">Students cannot <b>say the subject out loud in full sentences</b></span><span class="dest">Strand 5 · Oracy ↓</span></a>
+    <a class="row" href="#s6"><span class="cannot">Students cannot <b>work in a group without one student carrying it</b></span><span class="dest">Strand 6 · Collaborative ↓</span></a>
+  </div>
+</div>
+
+<!-- ================= HOUSE RULES ================= -->
+<section class="block" id="rules">
+  <div class="block-head"><h2 class="title">Five house rules</h2></div>
+  <div class="rules">
+    <div class="rule"><b>Students touch it or it comes down.</b><p>A surface nobody writes on, moves or points at is decoration. Decoration is fine. It does not count as environment work.</p></div>
+    <div class="rule"><b>Nothing laminated in its first fortnight.</b><p>If the build takes longer than the use, redesign it.</p></div>
+    <div class="rule"><b>Show thinking, not finished work.</b><p>Attempts, crossings out, disagreements. A wall of perfect work teaches students that only perfect work belongs.</p></div>
+    <div class="rule"><b>One strand per room per half term.</b><p>All six at once is a craft fair.</p></div>
+    <div class="rule"><b>Say the activating sentence out loud.</b><p>Every setup has one. Unspoken surfaces get ignored, which trains students to ignore the walls.</p></div>
+  </div>
+</section>
+
+<!-- ================= STRAND 1 ================= -->
+<section class="block strand" id="s1">
+  <div class="block-head"><div class="bignum">01</div><h2 class="title">Metacognition and self-regulated learning</h2></div>
+  <p class="usewhen"><b>Use this strand when:</b> students finish the task but cannot say how, ask "is this right?" every two minutes, stall the second you walk away, or hand in work they never reread.</p>
+  <div class="starthere"><b>Start here today:</b> tape six numbered card strips beside your door. That is the stuck ladder. Five minutes.</div>
+  <div class="cards">
+
+    <article class="card searchable" data-s="stuck ladder door metacognition independence stuck before asking adult rungs">
+      <img src="assets/01-metacognition-self-regulation/stuck-ladder.jpg" data-alt="../diagrams/01-metacognition-self-regulation/stuck-ladder.svg" alt="Stuck ladder schematic" loading="lazy">
+      <div class="pad">
+        <h3>Stuck ladder</h3>
+        <div class="meta"><span>Door frame</span><span>Prep 5 min once</span><span>Runs itself</span></div>
+        <ol><li>Cut six card strips, one colour, numbered 1 to 6.</li><li>Tape them vertically beside the door at seated eye height.</li><li>Write the moves before asking an adult: reread the question, check the model, check my book, ask my partner, try one line, ask the teacher.</li><li>First lesson, walk the class up the ladder out loud once.</li></ol>
+        <div class="say"><b>Say this</b>"Which rung are you on, and what did rung three tell you?"</div>
+        <p class="why"><b>Works because</b> most students jump straight to the adult. Nobody named the steps between.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="live model mistakes working wall modelling crossings out process">
+      <img src="assets/01-metacognition-self-regulation/live-model-mistakes.jpg" data-alt="../diagrams/01-metacognition-self-regulation/live-model-mistakes.svg" alt="Live model schematic" loading="lazy">
+      <div class="pad">
+        <h3>Live model, mistakes left in</h3>
+        <div class="meta"><span>Working wall</span><span>Prep 0</span><span>6 min in lesson</span></div>
+        <ol><li>Do the task in front of the class on the same paper and pen the students have.</li><li>Do not tidy it. Leave the crossings out.</li><li>Pin it on the working wall.</li><li>Annotate two spots only: "here I stopped and checked" and "here I changed my mind because".</li><li>Replace it every lesson or two.</li></ol>
+        <div class="say"><b>Say this</b>"Find where I changed my mind. Do the same on yours."</div>
+        <p class="why"><b>Works because</b> perfect models hide the process. This one shows it.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="plan boxes tabletop planning first move wipe clean sleeve">
+      <img src="assets/01-metacognition-self-regulation/plan-boxes.jpg" data-alt="../diagrams/01-metacognition-self-regulation/plan-boxes.svg" alt="Plan boxes schematic" loading="lazy">
+      <div class="pad">
+        <h3>Plan boxes on the tabletop</h3>
+        <div class="meta"><span>Desk</span><span>Prep 10 min once</span><span>90 seconds</span></div>
+        <ol><li>One A3 wipe-clean sleeve and one marker per pair.</li><li>Three boxes: what am I making, what makes it good, what is my first move.</li><li>Before any extended task, 90 seconds on the boxes, then pens down.</li><li>Students tick the first move when it is done.</li></ol>
+        <div class="say"><b>Say this</b>"Ninety seconds on your plan boxes, then pens down."</div>
+        <p class="why"><b>Works because</b> planning is the cheapest phase to improve and the first one skipped.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="two colour check second pen evaluate improve editing book scrutiny">
+      <img src="assets/01-metacognition-self-regulation/two-colour-check.jpg" data-alt="../diagrams/01-metacognition-self-regulation/two-colour-check.svg" alt="Two colour check schematic" loading="lazy">
+      <div class="pad">
+        <h3>Two colour check</h3>
+        <div class="meta"><span>Books</span><span>Prep 5 min once</span><span>Last 5 min</span></div>
+        <ol><li>Three subject-specific checks on a small card near the front. Change each half term.</li><li>Last five minutes, second-colour pen only.</li><li>Students reread and improve. Nothing new, only better.</li></ol>
+        <div class="say"><b>Say this</b>"Second colour out. Three checks. Nothing new, only better."</div>
+        <p class="why"><b>Works because</b> it splits producing from evaluating, and leaves visible evidence that evaluating happened.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="exit strip door pockets got it nearly lost me sticky note self assessment">
+      <img src="assets/01-metacognition-self-regulation/exit-strip.jpg" data-alt="../diagrams/01-metacognition-self-regulation/exit-strip.svg" alt="Exit strip schematic" loading="lazy">
+      <div class="pad">
+        <h3>Exit strip on the back of the door</h3>
+        <div class="meta"><span>Back of door</span><span>Prep 10 min once</span><span>60 seconds</span></div>
+        <ol><li>Fix three pockets inside the door: got it, nearly, lost me.</li><li>Students drop a named sticky note in on the way out.</li><li>You read them in 90 seconds after the lesson.</li><li>They set the first three minutes of the next lesson.</li></ol>
+        <div class="say"><b>Say this</b>"Name on it, honest pocket, then out."</div>
+        <p class="why"><b>Works because</b> self-assessment only matters when it changes what happens next.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="strandfoot">
+    <div class="foot-box searchable" data-s="walkthrough metacognition indicators observation">
+      <h4>Walkthrough: what to look for in 15 minutes</h4>
+      <ol><li>A student using a surface without being told to.</li><li>A model on display that shows process, not a finished exemplar.</li><li>The teacher asking "how did you decide", not only "what is the answer".</li><li>A stuck student who can still name their next move.</li></ol>
+    </div>
+    <div class="foot-box searchable" data-s="fails when metacognition wallpaper">
+      <h4>Fails when</h4>
+      <p>Nobody says the activating sentence, so the prompts become wallpaper. Fix: put the sentence in the lesson plan, not on the wall.</p>
+    </div>
+  </div>
+  <details class="book searchable" data-s="from the book metacognition scarf signal self-sufficiency reframing learning pit choice architecture driving partner">
+    <summary>From the book · Gadsby &amp; Evans on this strand (Introduction theme 1, Kindle loc. 286-360)</summary>
+    <div class="inner"><ul>
+      <li><b>The scarf signal.</b> One agreed visual cue per room that flips the class into a rehearsed independent-learning routine, no adult needed.</li>
+      <li><b>Environment as self-sufficiency aid.</b> Audit what students can reach and use without asking: support resources, success criteria, quality models on open access.</li>
+      <li><b>Reframing language, taught explicitly.</b> Stress reframed as opportunity out loud: "this may feel hard, that is the point".</li>
+      <li><b>Choice architecture.</b> Choice plus challenge builds resilience; start with fixed, limited choices, and frame mastery as personal best, never comparison.</li>
+      <li><b>Teacher as driving partner.</b> Not a facilitator making it easier: the partner steering structure and support while students drive.</li>
+    </ul></div>
+  </details>
+</section>
+
+<!-- ================= STRAND 2 ================= -->
+<section class="block strand" id="s2">
+  <div class="block-head"><div class="bignum">02</div><h2 class="title">Emotional engagement</h2></div>
+  <p class="usewhen"><b>Use this strand when:</b> the class is compliant but flat, starts are slow, students wait to be told what to find interesting, or you are the only energy in the room.</p>
+  <div class="starthere"><b>Start here today:</b> put one object connected to your unit on the front bench and cover it. Two minutes.</div>
+  <div class="cards">
+
+    <article class="card searchable" data-s="covered object curiosity cloth mystery reveal engagement hook">
+      <img src="assets/02-emotional-engagement/covered-object.jpg" data-alt="../diagrams/02-emotional-engagement/covered-object.svg" alt="Covered object schematic" loading="lazy">
+      <div class="pad">
+        <h3>Covered object</h3>
+        <div class="meta"><span>Front bench</span><span>Prep 2 min</span><span>3 min in lesson</span></div>
+        <ol><li>Cover an object linked to the unit with a cloth or box.</li><li>It sits there for a whole lesson before the one that needs it.</li><li>Students get one closed question each on the way in. Yes or no answers only.</li><li>Uncover it at the point the content needs it. Not before.</li></ol>
+        <div class="say"><b>Say this</b>"One question each, yes or no. It gets uncovered when we need it."</div>
+        <p class="why"><b>Works because</b> curiosity peaks in the gap between a little and enough. The cloth holds the gap open.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="wrong answer wall misconceptions sticky notes risk safe mistakes">
+      <img src="assets/02-emotional-engagement/wrong-answer-wall.jpg" data-alt="../diagrams/02-emotional-engagement/wrong-answer-wall.svg" alt="Wrong answer wall schematic" loading="lazy">
+      <div class="pad">
+        <h3>Wrong answer wall</h3>
+        <div class="meta"><span>One wall panel</span><span>Prep 5 min once</span><span>4 min weekly</span></div>
+        <ol><li>Claim one panel of wall. Sticky notes, one colour.</li><li>Students post plausible wrong answers and misconceptions for the current unit, unnamed.</li><li>Once a week the class picks the most convincing wrong answer.</li><li>Dismantle it together at the board.</li></ol>
+        <div class="say"><b>Say this</b>"Which of these would fool a sensible person, and why?"</div>
+        <p class="why"><b>Works because</b> it makes being wrong the material of the lesson instead of a personal risk.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="threshold question door entry corridor energy start">
+      <img src="assets/02-emotional-engagement/threshold-question.jpg" data-alt="../diagrams/02-emotional-engagement/threshold-question.svg" alt="Threshold question schematic" loading="lazy">
+      <div class="pad">
+        <h3>Threshold question</h3>
+        <div class="meta"><span>Door</span><span>Prep 1 min per lesson</span><span>3 min</span></div>
+        <ol><li>One A4 sleeve on the door, one marker.</li><li>Write one question. Change it every lesson. Never assess it.</li><li>Students answer out loud or on a note as they cross the threshold.</li><li>Once seated, ask three students by name for their answer.</li></ol>
+        <div class="say"><b>Say this</b>the question itself, asked back by name.</div>
+        <p class="why"><b>Works because</b> it converts corridor energy into lesson energy at the one moment every student passes the same point.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="the pupil corner curated space students own artefact clipping question weekly review">
+      <img src="assets/02-emotional-engagement/pupil-owned-corner.jpg" data-alt="../diagrams/02-emotional-engagement/pupil-owned-corner.svg" alt="The Pupil Corner schematic" loading="lazy">
+      <div class="pad">
+        <h3>The Pupil Corner</h3>
+        <div class="meta"><span>1 metre square</span><span>Prep 10 min once</span><span>2 min weekly</span></div>
+        <ol><li>Mark one area. A metre square is enough. It is the students' own curated space.</li><li>One artefact, clipping or question gets added each week, chosen by the students and built on current student need.</li><li>The teacher reviews the corner with the students at the start of the lesson.</li><li>Build the next five minutes of teaching on what it holds.</li></ol>
+        <div class="say"><b>Say this</b>"Two minutes at our corner. What did you add, and why now?"</div>
+        <p class="why"><b>Works because</b> interest sourced from peers lands harder than interest sourced from you.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="countdown reveal numbered cards story sequence unit narrative">
+      <img src="assets/02-emotional-engagement/countdown-reveal.jpg" data-alt="../diagrams/02-emotional-engagement/countdown-reveal.svg" alt="Countdown reveal schematic" loading="lazy">
+      <div class="pad">
+        <h3>Countdown reveal</h3>
+        <div class="meta"><span>Wall strip</span><span>Prep 15 min per unit</span><span>2 min</span></div>
+        <ol><li>Make one numbered card per lesson in the unit. Each hides a fact, figure or fragment.</li><li>Pin them in a row on a wall strip or the window.</li><li>Turn one card per lesson. The last card resolves the sequence.</li><li>Ask what the new card changes about last lesson's conclusion.</li></ol>
+        <div class="say"><b>Say this</b>"Card four. What does it change about what we thought on Tuesday?"</div>
+        <p class="why"><b>Works because</b> students track a story more readily than a scheme of work.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="strandfoot">
+    <div class="foot-box searchable" data-s="walkthrough emotional engagement indicators">
+      <h4>Walkthrough: what to look for in 15 minutes</h4>
+      <ol><li>Students talking about content inside the first two minutes.</li><li>At least one element students put there, not the teacher.</li><li>Errors and half-formed ideas visible and unpunished.</li><li>Interest that survives the teacher leaving the front.</li></ol>
+    </div>
+    <div class="foot-box searchable" data-s="fails when engagement novelty hook">
+      <h4>Fails when</h4>
+      <p>The hook goes nowhere. Novelty replaces content and it stops working. Every setup here must land on the lesson's actual knowledge inside five minutes.</p>
+    </div>
+  </div>
+  <details class="book searchable" data-s="from the book emotional engagement irresistible transformations sensory game structures relevance">
+    <summary>From the book · Gadsby &amp; Evans on this strand (Introduction theme 2, Kindle loc. 363-407)</summary>
+    <div class="inner"><ul>
+      <li><b>"Irresistible" learning.</b> An environment compelling enough that even reluctant students get hooked. Atmosphere is cultivated deliberately.</li>
+      <li><b>Room transformations.</b> Real examples: a classroom as Tutankhamun's tomb, a corridor as a First World War trench. The space itself can carry the hook.</li>
+      <li><b>Learning is sensory.</b> Unexpected elements create intrigue, but never novelty for its own sake: the hook must land on content fast.</li>
+      <li><b>Game structures.</b> Learning presented as levels, so students chase the next level with mastery as the incentive.</li>
+      <li><b>Relevance offset.</b> Disengagement is offset by showing real-life application of the skill being built.</li>
+    </ul></div>
+  </details>
+</section>
+
+<!-- ================= STRAND 3 ================= -->
+<section class="block strand" id="s3">
+  <div class="block-head"><div class="bignum">03</div><h2 class="title">Retrieval and revision</h2></div>
+  <p class="usewhen"><b>Use this strand when:</b> last term's content has evaporated, students recognise material but cannot produce it, or revision means rereading and highlighting.</p>
+  <div class="starthere"><b>Start here today:</b> run tomorrow's starter with books shut for three minutes. Zero prep.</div>
+  <div class="cards">
+
+    <article class="card searchable" data-s="three shelf knowledge wall spacing bands starter retrieval">
+      <img src="assets/03-retrieval-and-revision/three-shelf-wall.jpg" data-alt="../diagrams/03-retrieval-and-revision/three-shelf-wall.svg" alt="Three shelf knowledge wall schematic" loading="lazy">
+      <div class="pad">
+        <h3>Three shelf knowledge wall</h3>
+        <div class="meta"><span>One wall</span><span>Prep 20 min + 2 min weekly</span><span>5 min starter</span></div>
+        <ol><li>Divide one wall into three horizontal bands. Card strips, three colours.</li><li>Band 1 is this fortnight, band 2 is this term, band 3 is last year.</li><li>Every starter takes 1 question from band 1, 2 from band 2, 3 from band 3.</li><li>Items move down as they age. Nothing is ever removed.</li></ol>
+        <div class="say"><b>Say this</b>"Two from the bottom shelf first. Those are the ones you think you forgot."</div>
+        <p class="why"><b>Works because</b> spacing beats massing, and the wall stops the schedule quietly lapsing.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="blank first book second retrieval practice testing memory closed books">
+      <img src="assets/03-retrieval-and-revision/blank-first-book-second.jpg" data-alt="../diagrams/03-retrieval-and-revision/blank-first-book-second.svg" alt="Blank first book second schematic" loading="lazy">
+      <div class="pad">
+        <h3>Blank first, book second</h3>
+        <div class="meta"><span>Books</span><span>Prep 0</span><span>5 min</span></div>
+        <ol><li>Books shut, silent, three minutes on the retrieval questions.</li><li>Books open. Correct in a second colour, two minutes.</li><li>Read the corrections, not the scores. They are your diagnostic.</li></ol>
+        <div class="say"><b>Say this</b>"Shut, silent, three minutes. Then you get your book back."</div>
+        <p class="why"><b>Works because</b> the effort of pulling it out is what strengthens memory. Looking first feels productive and does almost nothing.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="question grid dice tabletop random coordinate pairs">
+      <img src="assets/03-retrieval-and-revision/question-grid.jpg" data-alt="../diagrams/03-retrieval-and-revision/question-grid.svg" alt="Question grid schematic" loading="lazy">
+      <div class="pad">
+        <h3>Question grid on the tabletop</h3>
+        <div class="meta"><span>Desk</span><span>Prep 30 min per unit</span><span>5 min</span></div>
+        <ol><li>Build a 6 by 6 grid of questions for the unit. One per table, in a wipe-clean sleeve.</li><li>Two dice per table. Students roll for a coordinate.</li><li>They answer out loud in pairs. Partner checks against a small answer card.</li><li>Four rolls each, then stop.</li></ol>
+        <div class="say"><b>Say this</b>"Four rolls each, out loud, partner checks."</div>
+        <p class="why"><b>Works because</b> random selection stops students rehearsing only what they already know.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="forgetting queue pegs fluffed questions gaps visible progress">
+      <img src="assets/03-retrieval-and-revision/forgetting-queue.jpg" data-alt="../diagrams/03-retrieval-and-revision/forgetting-queue.svg" alt="Forgetting queue schematic" loading="lazy">
+      <div class="pad">
+        <h3>Forgetting queue</h3>
+        <div class="meta"><span>Back wall or corridor</span><span>Prep 10 min once</span><span>3 min</span></div>
+        <ol><li>Put a line of pegs or clips on the back wall or in the corridor.</li><li>Any question the class collectively fluffed goes up with the date.</li><li>Pegged questions reappear in starters until the class answers them cleanly twice.</li><li>Retired questions move to a visible "beaten" pile.</li></ol>
+        <div class="say"><b>Say this</b>"Two off the queue. Beat them and they come down."</div>
+        <p class="why"><b>Works because</b> the class's own gaps set the schedule, and the shrinking queue is the visible progress that keeps them buying in.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="twenty word summary strip constraint selection revision spine">
+      <img src="assets/03-retrieval-and-revision/twenty-word-strip.jpg" data-alt="../diagrams/03-retrieval-and-revision/twenty-word-strip.svg" alt="Twenty word summary strip schematic" loading="lazy">
+      <div class="pad">
+        <h3>Twenty word summary strip</h3>
+        <div class="meta"><span>Wall strip</span><span>Prep 10 min once</span><span>3 min</span></div>
+        <ol><li>Pre-cut paper strips with twenty boxes printed on each.</li><li>Last three minutes, one student (rotating) writes the lesson in exactly twenty words.</li><li>Pin it in sequence. The strip becomes the unit's revision spine.</li><li>Each writer reads the previous three entries first.</li></ol>
+        <div class="say"><b>Say this</b>"Exactly twenty. Read the last three before you write yours."</div>
+        <p class="why"><b>Works because</b> the constraint forces selection instead of copying the board.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="strandfoot">
+    <div class="foot-box searchable" data-s="walkthrough retrieval indicators">
+      <h4>Walkthrough: what to look for in 15 minutes</h4>
+      <ol><li>Retrieval from memory before any resource opens.</li><li>Questions reaching back past the current unit.</li><li>Students correcting their own attempts, not receiving a score.</li><li>Something on display tracking what the class has not yet mastered.</li></ol>
+    </div>
+    <div class="foot-box searchable" data-s="fails when retrieval assessment theatre">
+      <h4>Fails when</h4>
+      <p>Nothing changes as a result of the answers. That is assessment theatre. Every setup here has to feed either the next starter or the next explanation.</p>
+    </div>
+  </div>
+  <details class="book searchable" data-s="from the book retrieval bjork desirable difficulties spacing interleaving performance learning prove it plates">
+    <summary>From the book · Gadsby &amp; Evans on this strand (Introduction theme 3, Kindle loc. 407-437)</summary>
+    <div class="inner"><ul>
+      <li><b>Performance is not learning.</b> What students can do at the end of today's lesson is a poor predictor of what sticks. Design for long-term learning.</li>
+      <li><b>Desirable difficulties, run through the room.</b> Spacing, letting material fade before returning, generating answers from partial cues, frequent low-stakes testing, varying conditions, interleaving topics.</li>
+      <li><b>The wall as a revision record.</b> Displays that hold past learning for frequent, active revisiting. Their paired paper plates read "What have you learned?" and "Prove it!".</li>
+      <li><b>One energy.</b> Retrieval and revision replace passive rereading with active revision built into the room, all term, not just before exams.</li>
+    </ul></div>
+  </details>
+</section>
+
+<!-- ================= STRAND 4 ================= -->
+<section class="block strand" id="s4">
+  <div class="block-head"><div class="bignum">04</div><h2 class="title">Responsive teaching</h2></div>
+  <p class="usewhen"><b>Use this strand when:</b> you discover the gap while marking at home, the same three students answer everything, or support for vulnerable students is planned in advance and never adjusted.</p>
+  <div class="starthere"><b>Start here today:</b> put a wipe-clean board and pen on every desk, where students can reach them without asking. Ten minutes.</div>
+  <div class="cards">
+
+    <article class="card searchable" data-s="whole class response boards mini whiteboards check for understanding cfu read the room">
+      <img src="assets/04-responsive-teaching/response-boards.jpg" data-alt="../diagrams/04-responsive-teaching/response-boards.svg" alt="Response boards schematic" loading="lazy">
+      <div class="pad">
+        <h3>Whole class response boards</h3>
+        <div class="meta"><span>Every desk</span><span>Prep 10 min once</span><span>8 seconds per check</span></div>
+        <ol><li>One A4 wipe-clean board and pen per student, stored within reach.</li><li>End every explanation with boards up.</li><li>Scan, say what you saw, then either move on or reteach on the spot.</li><li>Collect nothing.</li></ol>
+        <div class="say"><b>Say this</b>"Boards up on three. I am reading the room, not marking you."</div>
+        <p class="why"><b>Works because</b> it turns a sample of two students into a full class read in about eight seconds. That is the only way to make a real in-lesson decision.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="hinge point question multiple choice misconception mid lesson fork cfu">
+      <img src="assets/04-responsive-teaching/hinge-point.jpg" data-alt="../diagrams/04-responsive-teaching/hinge-point.svg" alt="Hinge point schematic" loading="lazy">
+      <div class="pad">
+        <h3>Hinge point</h3>
+        <div class="meta"><span>Mid lesson</span><span>Prep 15 min, reusable</span><span>2 min</span></div>
+        <ol><li>Write one multiple-choice question for the lesson's midpoint.</li><li>Make each wrong option reveal a specific misconception.</li><li>Whole class answers at once, lettered cards or fingers.</li><li>Have two next moves ready: one for a strong response, one for a weak one.</li></ol>
+        <div class="say"><b>Say this</b>"Show me. No looking sideways."</div>
+        <p class="why"><b>Works because</b> it tells you which misconception you are dealing with, not just how many students are wrong.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="weighted name draw lolly sticks cold call no opt out eal quiet vulnerable">
+      <img src="assets/04-responsive-teaching/weighted-name-draw.jpg" data-alt="../diagrams/04-responsive-teaching/weighted-name-draw.svg" alt="Weighted name draw schematic" loading="lazy">
+      <div class="pad">
+        <h3>Weighted name draw</h3>
+        <div class="meta"><span>Jar on desk</span><span>Prep 10 min once</span><span>No extra time</span></div>
+        <ol><li>Lolly sticks with names in a visible jar.</li><li>Add duplicates for students you need to hear from more often: quiet, new to English, on your vulnerable list.</li><li>Thinking time first, then draw.</li><li>Return the stick, so nobody is safe after their turn.</li></ol>
+        <div class="say"><b>Say this</b>"Sticks are in. Thinking time first, then I draw."</div>
+        <p class="why"><b>Works because</b> hands up systematically over-samples the confident. Weighting the jar is targeted support that costs no planning time.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="traffic light margin located difficulty confidence exact line self rating">
+      <img src="assets/04-responsive-teaching/traffic-light-margin.jpg" data-alt="../diagrams/04-responsive-teaching/traffic-light-margin.svg" alt="Traffic light margin schematic" loading="lazy">
+      <div class="pad">
+        <h3>Traffic light margin</h3>
+        <div class="meta"><span>Student books</span><span>Prep 0</span><span>90 seconds</span></div>
+        <ol><li>Students mark the margin beside the exact line where they lost confidence.</li><li>Not a rating of the whole task. One located point.</li><li>You circulate reading margins only. A full class takes about 90 seconds.</li></ol>
+        <div class="say"><b>Say this</b>"Mark the line where it went wrong, not the whole page."</div>
+        <p class="why"><b>Works because</b> whole-task self-rating is noise. A located difficulty is actionable.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="two seat surgery reteach immediate specific small group side table">
+      <img src="assets/04-responsive-teaching/two-seat-surgery.jpg" data-alt="../diagrams/04-responsive-teaching/two-seat-surgery.svg" alt="Two seat surgery schematic" loading="lazy">
+      <div class="pad">
+        <h3>Two seat surgery</h3>
+        <div class="meta"><span>Side table</span><span>Prep 0</span><span>4 min</span></div>
+        <ol><li>Put two chairs beside your desk or a side table.</li><li>The boards check or margin scan names two students.</li><li>They bring their book for a four-minute reteach while the class works.</li><li>Rotate the seats visibly so it reads as normal, not remedial.</li></ol>
+        <div class="say"><b>Say this</b>"Surgery seats: two names, four minutes, bring your book."</div>
+        <p class="why"><b>Works because</b> immediate and specific beats an intervention next week, and it stops the gap compounding.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="strandfoot">
+    <div class="foot-box searchable" data-s="walkthrough responsive teaching indicators decision">
+      <h4>Walkthrough: what to look for in 15 minutes</h4>
+      <ol><li>A whole-class check in the first ten minutes, followed by a visible teacher decision.</li><li>Questioning distributed beyond volunteers.</li><li>One student getting support that was decided in this lesson.</li><li>The teacher changing plan out loud: "we are going back to X because".</li></ol>
+    </div>
+    <div class="foot-box searchable" data-s="fails when responsive check next five minutes">
+      <h4>Fails when</h4>
+      <p>Boards go up, the teacher says "well done" and moves to the next slide regardless. If the check cannot change the next five minutes, do not run it.</p>
+    </div>
+  </div>
+  <details class="book searchable" data-s="from the book responsive afl wiliam leahy seek less respond more helpful huddle go and stand participation">
+    <summary>From the book · Gadsby &amp; Evans on this strand (Introduction theme 4, Kindle loc. 440-476)</summary>
+    <div class="inner"><ul>
+      <li><b>The scale of the prize.</b> Formative assessment woven into minute-to-minute teaching produces some of the largest known gains: roughly half a grade per student per subject.</li>
+      <li><b>Seek less, respond more.</b> Where assessment for learning fails: heavy collecting, starved responding. Every check exists to change the next five minutes.</li>
+      <li><b>The room must flex.</b> Can you regroup students quickly and work with a small group without derailing the class?</li>
+      <li><b>A named help zone.</b> Base yourself in a fixed spot students come to: their Helpful Huddle and Secret Challenge, plus Go and Stand.</li>
+      <li><b>Participation is obligatory.</b> Inclusive, high in cognitive demand, and impossible to opt out of.</li>
+    </ul></div>
+  </details>
+</section>
+
+<!-- ================= STRAND 5 ================= -->
+<section class="block strand" id="s5">
+  <div class="block-head"><div class="bignum">05</div><h2 class="title">Oracy and word wealth</h2></div>
+  <p class="usewhen"><b>Use this strand when:</b> answers are one word long, students know the technical vocabulary but never say it, EAL students are silent, or written work is far stronger than anything you hear.</p>
+  <div class="starthere"><b>Start here today:</b> print six sentence stems and tape them along the wall students face, at seated eye height. Ten minutes.</div>
+  <div class="cards">
+
+    <article class="card searchable" data-s="sentence stem strip talk moves frames oracy answers">
+      <img src="assets/05-oracy-and-word-wealth/sentence-stem-strip.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/sentence-stem-strip.svg" alt="Sentence stem strip schematic" loading="lazy">
+      <div class="pad">
+        <h3>Sentence stem strip</h3>
+        <div class="meta"><span>Wall students face</span><span>Prep 10 min once</span><span>No extra time</span></div>
+        <ol><li>Choose six to eight stems that are your subject's talk moves: "the evidence for that is", "I would challenge that because", "building on what Layla said".</li><li>Print them large. Tape along the wall students face, at seated eye height.</li><li>Answers must start with a stem.</li><li>Students may point at the one they are about to use.</li></ol>
+        <div class="say"><b>Say this</b>"Start with a stem. Point to it if you need a second."</div>
+        <p class="why"><b>Works because</b> students who sound inarticulate usually have the idea and not the frame.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="takeable word wall vocabulary cards velcro use traffic data">
+      <img src="assets/05-oracy-and-word-wealth/takeable-word-wall.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/takeable-word-wall.svg" alt="Takeable word wall schematic" loading="lazy">
+      <div class="pad">
+        <h3>Word wall students take words off</h3>
+        <div class="meta"><span>Board</span><span>Prep 20 min per unit</span><span>1 min</span></div>
+        <ol><li>Put each unit's words on removable cards. Velcro dots or pegs. Not printed lists.</li><li>Students take the card they need to their desk.</li><li>The word must appear in their work before the card goes back.</li><li>Cards nobody takes tell you which words are dead. Replace them.</li></ol>
+        <div class="say"><b>Say this</b>"Take two words to your table. Both have to appear in your paragraph."</div>
+        <p class="why"><b>Works because</b> vocabulary is learned through use, not exposure. The traffic is also your data on which words students avoid.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="talk roles builder challenger summariser evidence keeper airtime discussion accountability">
+      <img src="assets/05-oracy-and-word-wealth/talk-roles.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/talk-roles.svg" alt="Talk roles schematic" loading="lazy">
+      <div class="pad">
+        <h3>Talk roles on the table</h3>
+        <div class="meta"><span>Table centre</span><span>Prep 15 min once</span><span>4 min</span></div>
+        <ol><li>Make four role cards per table: builder, challenger, summariser, evidence keeper.</li><li>Rotate roles every discussion.</li><li>The summariser reports back in one sentence and names who contributed what.</li><li>Take three summarisers, not one.</li></ol>
+        <div class="say"><b>Say this</b>"Roles up. Summarisers, I will take three of you in four minutes."</div>
+        <p class="why"><b>Works because</b> unstructured discussion rewards the confident. Roles distribute airtime by design.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="etymology corner root prefix suffix morphology eal readers word families">
+      <img src="assets/05-oracy-and-word-wealth/etymology-corner.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/etymology-corner.svg" alt="Etymology corner schematic" loading="lazy">
+      <div class="pad">
+        <h3>Etymology corner</h3>
+        <div class="meta"><span>Small panel</span><span>Prep 5 min per fortnight</span><span>2 min</span></div>
+        <ol><li>One word per fortnight on a small panel, broken into root, prefix, suffix.</li><li>Add three relatives that share the root, at least one from another subject.</li><li>Students add relatives they find.</li></ol>
+        <div class="say"><b>Say this</b>"What else in the room shares that root?"</div>
+        <p class="why"><b>Works because</b> morphology gives students a mechanism for unfamiliar words instead of a list to memorise. Biggest gain for EAL students and weaker readers.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="sixty second subject talk sustained speaking floor spot word wall listening">
+      <img src="assets/05-oracy-and-word-wealth/sixty-second-talk.jpg" data-alt="../diagrams/05-oracy-and-word-wealth/sixty-second-talk.svg" alt="Sixty second subject talk schematic" loading="lazy">
+      <div class="pad">
+        <h3>Sixty second subject talk</h3>
+        <div class="meta"><span>Marked floor spot</span><span>Prep 2 min</span><span>2 min</span></div>
+        <ol><li>Mark a spot on the floor facing the class. Tape is enough.</li><li>One student per lesson stands there and talks for 60 seconds on a prompt from the unit.</li><li>Minimum two words from the word wall.</li><li>The class listens for those words and signals when they hear them.</li></ol>
+        <div class="say"><b>Say this</b>"Sixty seconds, two words minimum. Everyone else is listening for them."</div>
+        <p class="why"><b>Works because</b> sustained speaking is a separate skill from answering questions, and most students never practise it.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="strandfoot">
+    <div class="foot-box searchable" data-s="walkthrough oracy indicators vocabulary talk">
+      <h4>Walkthrough: what to look for in 15 minutes</h4>
+      <ol><li>Full sentence answers containing subject vocabulary.</li><li>Students using or physically taking words from a display.</li><li>Structured talk with more than three students contributing.</li><li>One student speaking longer than fifteen seconds uninterrupted.</li></ol>
+    </div>
+    <div class="foot-box searchable" data-s="fails when oracy vocabulary displayed never spoken">
+      <h4>Fails when</h4>
+      <p>The vocabulary is displayed beautifully and never spoken. No traffic inside a fortnight means fewer words and a reason to use them.</p>
+    </div>
+  </div>
+  <details class="book searchable" data-s="from the book oracy word gap dialogic talk word circles connection boys vocabulary">
+    <summary>From the book · Gadsby &amp; Evans on this strand (Introduction theme 5, Kindle loc. 480-537)</summary>
+    <div class="inner"><ul>
+      <li><b>Why the stakes are high.</b> The word-gap research: early vocabulary correlates with later reading, employment and wellbeing outcomes.</li>
+      <li><b>The word-rich classroom.</b> Explicit vocabulary teaching well beyond glossaries: active engagement, spaced returns, varied conditions of use.</li>
+      <li><b>Word circles display.</b> Ambitious words as big coloured discs, with students sticking synonym notes and used-it-in-a-sentence notes onto each.</li>
+      <li><b>Dialogic talk.</b> Talk where both teacher and students make substantial contributions and thinking visibly moves forward.</li>
+      <li><b>Boys especially.</b> Boys need the vocabulary for emotional expression too: oracy work is pastoral work.</li>
+    </ul></div>
+  </details>
+</section>
+
+<!-- ================= STRAND 6 ================= -->
+<section class="block strand" id="s6">
+  <div class="block-head"><div class="bignum">06</div><h2 class="title">Collaborative learning</h2></div>
+  <p class="usewhen"><b>Use this strand when:</b> group work produces one poster and three spectators, the same students always scribe, or collaboration is really just seating.</p>
+  <div class="starthere"><b>Start here today:</b> take three pens off every group of four and leave one. One minute.</div>
+  <div class="cards">
+
+    <article class="card searchable" data-s="one pen four hands shared sheet colours contribution free riding">
+      <img src="assets/06-collaborative-learning/one-pen-four-hands.jpg" data-alt="../diagrams/06-collaborative-learning/one-pen-four-hands.svg" alt="One pen four hands schematic" loading="lazy">
+      <div class="pad">
+        <h3>One pen, four hands</h3>
+        <div class="meta"><span>Table of four</span><span>Prep 1 min</span><span>10 min</span></div>
+        <ol><li>One shared A3 sheet and one pen per group of four.</li><li>The pen passes after every sentence. Physically.</li><li>At the end, each student signs their sentences in their own colour.</li><li>You read the colours, not the content, to see contribution.</li></ol>
+        <div class="say"><b>Say this</b>"Pen passes every sentence. I will be reading the colours."</div>
+        <p class="why"><b>Works because</b> free riding becomes visible without you policing it, and the group has to agree before anything gets written.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="numbered heads accountability report group random number">
+      <img src="assets/06-collaborative-learning/numbered-heads.jpg" data-alt="../diagrams/06-collaborative-learning/numbered-heads.svg" alt="Numbered heads schematic" loading="lazy">
+      <div class="pad">
+        <h3>Numbered heads</h3>
+        <div class="meta"><span>Tables of four</span><span>Prep 5 min once</span><span>No extra time</span></div>
+        <ol><li>Number cards 1 to 4 on each table.</li><li>Set the task. Tell them one number will report for the whole group.</li><li>Draw the number at the end.</li><li>Bringing everyone up to speed is the actual work.</li></ol>
+        <div class="say"><b>Say this</b>"Any number can be called. Make sure your threes can explain it."</div>
+        <p class="why"><b>Works because</b> shared accountability plus individual answerability is what makes cooperative learning beat ordinary group work.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="jigsaw stations experts regroup interdependence sources">
+      <img src="assets/06-collaborative-learning/jigsaw-stations.jpg" data-alt="../diagrams/06-collaborative-learning/jigsaw-stations.svg" alt="Jigsaw stations schematic" loading="lazy">
+      <div class="pad">
+        <h3>Jigsaw stations</h3>
+        <div class="meta"><span>Four stations</span><span>Prep 20 min per topic</span><span>20 min</span></div>
+        <ol><li>Put one short source at each of four stations.</li><li>Round one: students become the expert on their station.</li><li>Round two: regroup so each new group holds one expert per station.</li><li>Design the task so it cannot be finished without all four pieces.</li></ol>
+        <div class="say"><b>Say this</b>"You are the only person at this table who saw source three."</div>
+        <p class="why"><b>Works because</b> interdependence is built into the task instead of requested.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="silent build cards sorting no talking processing eal">
+      <img src="assets/06-collaborative-learning/silent-build.jpg" data-alt="../diagrams/06-collaborative-learning/silent-build.svg" alt="Silent build schematic" loading="lazy">
+      <div class="pad">
+        <h3>Silent build</h3>
+        <div class="meta"><span>Floor or joined tables</span><span>Prep 10 min per card set</span><span>8 min</span></div>
+        <ol><li>Give each group cards, a sorting mat or physical pieces.</li><li>First four minutes are silent. Move, place, reorder, gesture. No talking.</li><li>Talk opens after, starting from a shared arrangement.</li></ol>
+        <div class="say"><b>Say this</b>"Four minutes silent. Move things, do not talk."</div>
+        <p class="why"><b>Works because</b> silence removes the fastest talker's dominance and buys processing time for students who need it, including EAL students.</p>
+      </div>
+    </article>
+
+    <article class="card searchable" data-s="two group critique swap sticky notes strength question feedback act">
+      <img src="assets/06-collaborative-learning/critique-swap.jpg" data-alt="../diagrams/06-collaborative-learning/critique-swap.svg" alt="Two group critique swap schematic" loading="lazy">
+      <div class="pad">
+        <h3>Two group critique swap</h3>
+        <div class="meta"><span>Work at student height</span><span>Prep 0</span><span>8 min</span></div>
+        <ol><li>Display work at student height. Two groups swap.</li><li>Each group leaves exactly two sticky notes: one specific strength, one specific question.</li><li>Use the sentence stems from strand 5.</li><li>Original groups get five minutes to act on the notes before the work counts as finished.</li></ol>
+        <div class="say"><b>Say this</b>"Two notes. Specific, or it does not count."</div>
+        <p class="why"><b>Works because</b> critique is where collaborative work actually improves. Two notes keeps it honest and fast.</p>
+      </div>
+    </article>
+  </div>
+
+  <div class="strandfoot">
+    <div class="foot-box searchable" data-s="walkthrough collaborative indicators group">
+      <h4>Walkthrough: what to look for in 15 minutes</h4>
+      <ol><li>Every student in a group producing something identifiable as theirs.</li><li>A task one student could not complete alone in the same time.</li><li>Students talking to each other about content, not to the teacher.</li><li>Groups acting on feedback before calling the work done.</li></ol>
+    </div>
+    <div class="foot-box searchable" data-s="fails when collaboration structural reason">
+      <h4>Fails when</h4>
+      <p>There is no structural reason to collaborate. If a confident student could do the whole thing alone in the same time, split the information or drop the grouping.</p>
+    </div>
+  </div>
+  <details class="book searchable" data-s="from the book collaborative in groups not as groups eef climate of allies accountability interdependence">
+    <summary>From the book · Gadsby &amp; Evans on this strand (Introduction theme 6, Kindle loc. 537-561)</summary>
+    <div class="inner"><ul>
+      <li><b>In groups is not as groups.</b> Most classrooms seat students in groups without designing work that requires a group.</li>
+      <li><b>The evidence bar.</b> Collaborative approaches are consistently positive, and the gains concentrate where tasks are structured for talk and interaction.</li>
+      <li><b>Past the superficial.</b> Students learn to treat each other as learning resources: what is learned socially becomes internalised for independent use.</li>
+      <li><b>Climate of allies.</b> Students challenge and extend each other's thinking without feeling exposed. Built deliberately.</li>
+      <li><b>The design pair.</b> Every collaborative structure needs individual accountability and positive interdependence.</li>
+    </ul></div>
+  </details>
+</section>
+
+<!-- ================= TECHNIQUE LIBRARY ================= -->
+<section class="block" id="library">
+  <div class="block-head"><h2 class="title">The technique library</h2></div>
+  <p class="usewhen">Around one hundred and fifty named techniques from <i>Dynamically Different Classrooms</i>, retold in our own words with chapter locations so you can find the originals. The six strands above are AIS practice; everything below is Gadsby and Evans' own catalogue.</p>
+  <div class="chips">
+    <button class="chip active" data-ch="all">All chapters</button>
+    <button class="chip" data-ch="c1">1 · Beyond displays</button>
+    <button class="chip" data-ch="c2">2 · Nothing wasted</button>
+    <button class="chip" data-ch="c3">3 · Floors</button>
+    <button class="chip" data-ch="c4">4 · Zoning</button>
+    <button class="chip" data-ch="c5">Conclusion · Legacy</button>
+  </div>
+
+  <!-- Chapter 1 -->
+  <div class="tgroup" data-ch="c1">
+    <h3>Chapter 1 · Beyond displays: from static to dynamic</h3>
+    <div class="locs">Kindle loc. 560-1213 · walls stop being decoration and become a place students think</div>
+    <div class="tsub">Re-energising displays you already have</div>
+    <ul class="tech">
+      <li class="searchable" data-s="reframing success criteria questions initial letters recall"><b>Reframing.</b> Rewrite success criteria as questions beside the work, then strip prompts back to initial letters, then to nothing.</li>
+      <li class="searchable" data-s="pick a prompt thought speech bubbles speculative"><b>Pick a Prompt.</b> Thought and speech bubbles with speculative openers, positioned for students to complete.</li>
+      <li class="searchable" data-s="label the learning annotate symbols red herrings"><b>Label the Learning.</b> Students annotate displays with symbols they must be able to talk about: red herrings, challenges, linked ideas.</li>
+      <li class="searchable" data-s="tag it sticky notes routine comment"><b>Tag It.</b> Sticky notes and a pen attached to the board until posting a comment becomes routine.</li>
+      <li class="searchable" data-s="revisit resurrect revive exemplar interrogate old work"><b>Revisit, Resurrect and Revive.</b> Interrogate old exemplar work with the students who made it, and expect additions.</li>
+      <li class="searchable" data-s="extending the thinking colour coded challenge questions answers posted"><b>Extending the Thinking.</b> Challenge-coded questions beside key learning; students must post their answers, so engagement is provable.</li>
+    </ul>
+    <div class="tsub">Beyond the word wall</div>
+    <ul class="tech">
+      <li class="searchable" data-s="in or out words removed added spot the change vocabulary"><b>In or Out.</b> Words quietly appear or vanish from the display and students spot the change.</li>
+      <li class="searchable" data-s="split them up terms definitions re-pair"><b>Split Them Up.</b> Terms separated from definitions for students to re-pair.</li>
+      <li class="searchable" data-s="prioritise three words matter most justify"><b>Prioritise.</b> Which three displayed words matter most to this topic, argued out loud first.</li>
+      <li class="searchable" data-s="taboo describe term without listed words postcards"><b>Taboo.</b> Describe the key term without using its four or five associated words. Making the cards is the harder thinking.</li>
+      <li class="searchable" data-s="top trumps vocabulary score criteria deck"><b>Top Trumps.</b> Score vocabulary against criteria, then argue the scores. Students build the deck.</li>
+      <li class="searchable" data-s="jeopardy keyword write the question"><b>Jeopardy.</b> Each pair gets a keyword and writes the question it answers.</li>
+      <li class="searchable" data-s="define and defend definitions critiqued agreed"><b>Define and Defend.</b> Definitions critiqued and argued to an agreed final version for the display.</li>
+      <li class="searchable" data-s="odd one out keyword does not belong"><b>Odd One Out.</b> Which displayed keyword does not belong, and why. No single right answer.</li>
+      <li class="searchable" data-s="connect four or more unlabelled vocabulary patterns torches ceiling"><b>Connect Four or More.</b> A giant unlabelled vocabulary display; students find the patterns and categories themselves.</li>
+    </ul>
+    <div class="tsub">Using disruption</div>
+    <ul class="tech">
+      <li class="searchable" data-s="cover up sticky notes hidden reproduce"><b>Cover Up.</b> Sticky notes over words or images; pairs reproduce what is hidden.</li>
+      <li class="searchable" data-s="mix up planted removed red herring hunt"><b>Mix Up.</b> Something is removed from, or planted in, a display. Students hunt the change.</li>
+      <li class="searchable" data-s="blanket coverage sheet overnight recreate teams envoys"><b>Blanket Coverage.</b> A sheet over a whole area overnight; teams compete to recreate what was underneath.</li>
+    </ul>
+    <div class="tsub">Building new displays</div>
+    <ul class="tech">
+      <li class="searchable" data-s="draw them in enormous image no caption speculate"><b>Draw Them In.</b> One enormous intriguing image, no caption, left for speculation before you teach into it.</li>
+      <li class="searchable" data-s="powerful projection ceiling lying floor questions"><b>Powerful Projection.</b> Project onto the ceiling with students lying on the floor holding key questions in mind.</li>
+      <li class="searchable" data-s="mouth of truth box statements prove true evidence revision"><b>The Mouth of Truth.</b> Students pull statements from a decorated box and must prove whether each is true.</li>
+      <li class="searchable" data-s="gift bags mystery challenges low wall independent"><b>Gift Bags.</b> Bright bags in dead low-wall space, labelled as mystery challenges to dip into.</li>
+    </ul>
+    <div class="tsub">Evolving, learner-generated displays</div>
+    <ul class="tech">
+      <li class="searchable" data-s="cabinet of curiosities artefacts treasures legacy"><b>Cabinet of Curiosities.</b> A cabinet of artefacts and intriguing images, made stronger by students' own treasures.</li>
+      <li class="searchable" data-s="kwlp grids know want learned prove it"><b>KWLP grids.</b> Know / want to know / learned, plus P: prove it, in a format the student chooses.</li>
+      <li class="searchable" data-s="prod and prickle provocative incorrect statement correct evidence"><b>Prod and Prickle.</b> Deliberately provocative displays: an incorrect statement students must correct with evidence.</li>
+      <li class="searchable" data-s="park it board flag ideas contentious"><b>Park It Board.</b> A named place to park any idea that needs flagging or more explanation.</li>
+      <li class="searchable" data-s="teacher no-go domain student boards wombolls challenges"><b>Teacher No-Go Domain.</b> Boards the teacher does not touch: students set challenges and interpret the learning in their own words.</li>
+      <li class="searchable" data-s="marketplace trios temporary display sell critique"><b>Marketplace.</b> Trios build a fast display on one aspect of a unit and sell their wares to the circulating other half.</li>
+      <li class="searchable" data-s="another brick in the wall blank wall build lessons concept mapping"><b>Another Brick in the Wall.</b> A blank wall built brick by brick with key learning over a series of lessons.</li>
+      <li class="searchable" data-s="the bottom line backing paper low eyeline younger drafting"><b>The Bottom Line.</b> The bottom half of a wall as an invitational drafting surface at younger children's eyeline.</li>
+      <li class="searchable" data-s="analogy alley analogies hard concepts explain"><b>Analogy Alley.</b> Students build analogies for hard concepts, then keep returning to explain them.</li>
+    </ul>
+    <div class="tsub">Gamification</div>
+    <ul class="tech">
+      <li class="searchable" data-s="board games repurposed giant wall dice snakes ladders"><b>Board Games Repurposed.</b> A giant familiar board on the wall, played standing, with backward moves sneaking in extra practice.</li>
+      <li class="searchable" data-s="roll the dice learning grids six by six coordinate"><b>Roll the Dice / Learning Grids.</b> A six by six grid of prompts; pairs roll to pick their cell, colour-coded by difficulty.</li>
+    </ul>
+    <div class="tsub">Students as learning resources for one another</div>
+    <ul class="tech">
+      <li class="searchable" data-s="calendar challenge advent windows daily ask me"><b>Calendar Challenge.</b> An advent-style calendar of challenges, one window a day, opener's name left as an "ask me about it" prompt.</li>
+      <li class="searchable" data-s="whispering wall recordable speech bubbles tips"><b>Whispering Wall.</b> Recordable speech bubbles for leaving and listening to tips and critique.</li>
+      <li class="searchable" data-s="really useful stuff board outside classroom corridor passers-by"><b>Really Useful Stuff Board.</b> Students display a unit's essentials outside the room for other classes, who can add their own.</li>
+      <li class="searchable" data-s="critique circuit progress parade swan feedback strengths weaknesses next steps magpies"><b>Critique Circuit / Progress Parade.</b> Students tour current work giving SWAN feedback: strengths, weaknesses, next steps.</li>
+    </ul>
+    <div class="tsub">Developing independence</div>
+    <ul class="tech">
+      <li class="searchable" data-s="get set go no introduction instructions concealed envelopes treasure hunt"><b>Get Set, Go.</b> No explanatory introduction: instructions and roles live in an agreed place or are hidden as a treasure hunt.</li>
+      <li class="searchable" data-s="moving on record significant point motivating mistake eureka stumbling block"><b>Moving On.</b> Students record one significant point in their learning and how they moved past it, in a medium they choose.</li>
+      <li class="searchable" data-s="learning journeys unit map avatar next step labels"><b>Learning Journeys.</b> The unit as a large journey map; students place their avatar and decide their next step.</li>
+      <li class="searchable" data-s="remember when deja vu photo gallery frames annotated retention"><b>Remember When / Déjà Vu.</b> Photos of students mid-learning, annotated soon after and again much later to test retention.</li>
+    </ul>
+    <div class="tsub">Aspiration and iteration</div>
+    <ul class="tech">
+      <li class="searchable" data-s="famous failures dyson jordan failure statistics"><b>Famous Failures.</b> Real repeated-failure stories with the numbers separated for students to match, then students post their own failure statistics.</li>
+      <li class="searchable" data-s="process or product drafts annotations austin's butterfly"><b>Process or Product?</b> Work in process beside end products, with large student annotations on how they moved between drafts.</li>
+      <li class="searchable" data-s="wagoll wasoll waboll comparison judge improve"><b>WAGOLL versus WASOLL.</b> What a good one looks like beside what a substandard one looks like, then students design their own for others to judge.</li>
+      <li class="searchable" data-s="on this day whole school same task progression years"><b>On This Day.</b> Every student in the school does the same task on the same day, displayed so progression across years is visible.</li>
+      <li class="searchable" data-s="rolling forward year end paper roll reworked best work"><b>Rolling Forward.</b> Significant work passed to the next teacher on a paper roll, reworked and extended through the year.</li>
+    </ul>
+    <div class="tsub">Front-loading</div>
+    <ul class="tech">
+      <li class="searchable" data-s="big question end of unit start preprocess"><b>Big Question.</b> The end-of-unit question brought forward to the start for students to preprocess.</li>
+      <li class="searchable" data-s="big picture unit plan visible annotated suggestions"><b>Big Picture.</b> The whole unit plan shared at the outset, kept visible, adjusted with the students.</li>
+    </ul>
+    <div class="tsub">Case studies</div>
+    <ul class="tech case">
+      <li class="searchable" data-s="working window place value glass window pens"><b>Working window.</b> A double-sided place value chart on the glass, new questions every few days; engagement evidenced by finger marks.</li>
+      <li class="searchable" data-s="terminology team challenge kirk balk finance envelopes race"><b>Terminology team challenge.</b> Question and answer strips in mystery envelopes, two teams racing to pair them, then annotating with linking arrows.</li>
+      <li class="searchable" data-s="connections challenge year 3 adjective adverb categories neon stars"><b>Connections challenge.</b> A card sort where trios generated their own category headings, then extended a larger display.</li>
+      <li class="searchable" data-s="elf on the shelf darton disruption overnight self-selected"><b>The elf on the shelf.</b> Fifteen minutes of low-prep overnight disruption across several displays; students self-selected challenges on entry.</li>
+      <li class="searchable" data-s="beat my best dearne portable boards practice exam scores formative targets"><b>Beat My Best board.</b> Students tracked their own practice-exam scores and pulled formative targets out of summative data. The only competition was with themselves.</li>
+      <li class="searchable" data-s="learning leaping walls hoyland rivers thought shower qr codes"><b>Learning leaping off the walls.</b> A rivers display holding a prior-knowledge thought shower, refined over time, plus QR codes to student-made videos.</li>
+      <li class="searchable" data-s="mark the mistakes mfl waboll deliberate errors highlight"><b>Mark the mistakes.</b> A languages WABOLL with twelve deliberate errors; pairs agreed, highlighted and annotated them into a WAGOLL.</li>
+    </ul>
+  </div>
+
+  <!-- Chapter 2 -->
+  <div class="tgroup" data-ch="c2">
+    <h3>Chapter 2 · Nothing wasted: storing learning to revive later</h3>
+    <div class="locs">Kindle loc. 1221-1569 · nothing students produce gets binbagged; store it visibly, haul it back weeks later</div>
+    <div class="tsub">Prominent storage vessels</div>
+    <ul class="tech">
+      <li class="searchable" data-s="hidden in plain sight containers jars do not touch yet"><b>Hidden in Plain Sight.</b> Evidence of prior learning in obvious containers, visible but not touchable yet.</li>
+      <li class="searchable" data-s="crowdsourcing snowballs anonymous ideas scrunched jar reopen"><b>Crowdsourced snowballs.</b> Anonymous key ideas scrunched into snowballs, verified together, best sealed in the snowball jar.</li>
+      <li class="searchable" data-s="secret scrolls library corner ordering connections"><b>Secret Scrolls.</b> Scroll-stored learning heaped like an ancient library; ordering and connecting them becomes the activity.</li>
+      <li class="searchable" data-s="rolling up rolling out big paper rolls cupboard excellence unroll"><b>Rolling Up and Rolling Out.</b> The class's best work stored ceremonially on big rolls, unrolled periodically with recall first.</li>
+      <li class="searchable" data-s="stepping back in time mystery folders envelopes question mark"><b>Stepping Back in Time.</b> Floor challenges stored in mystery envelopes; prior learning is coming back, students just never know when.</li>
+      <li class="searchable" data-s="hibernation ceremony taking display down recap first"><b>Hibernation.</b> Taking a display down becomes a ceremony: what is secure, what could you teach, what needs recapping first.</li>
+    </ul>
+    <div class="tsub">The ceiling as cloud storage</div>
+    <ul class="tech">
+      <li class="searchable" data-s="space rocket cardboard tube launch countdown re-entry"><b>Space Rocket.</b> A tube of learning evidence hoisted to the ceiling at consolidation, brought down later with a countdown.</li>
+      <li class="searchable" data-s="paper chains strips key points colour coded sentences teams"><b>Paper Chains.</b> Key points linked into hanging chains, colour-coded meaningfully, later dismantled and rebuilt into new forms.</li>
+      <li class="searchable" data-s="lucky dip umbrella suspended prompts confetti"><b>Lucky Dip.</b> An open umbrella suspended by its handle storing secure learning; dip in later, or reopen it so the contents scatter.</li>
+      <li class="searchable" data-s="balloon burst net balloons messages challenges release"><b>Balloon Burst.</b> A net of balloons overhead with messages inside, released at a strategic moment.</li>
+      <li class="searchable" data-s="helium hideaway balloons heights deflate descend"><b>Helium Hideaway.</b> Keywords inside helium balloons at varied heights; they slowly descend back into the room over days.</li>
+      <li class="searchable" data-s="brag tags wristbands target prove it celebratory"><b>Brag Tags.</b> Wristbands carrying a personal target, worn until the student proves it is met, then displayed as evidence.</li>
+      <li class="searchable" data-s="linking brag tags bonanza chains prove understanding"><b>Linking the Brag Tags / Bonanza.</b> Tags linked into growing chains; you cannot add one unless you can prove you still understand it.</li>
+      <li class="searchable" data-s="treasure hunt card prompts fishing line route rules"><b>Treasure Hunt.</b> Large hanging prompts navigated by connecting one to the next, with new route rules each time.</li>
+      <li class="searchable" data-s="significant symbols gas go and stand whole class read"><b>Significant Symbols / GAS.</b> Hung symbols for key ideas; students answer by physically standing under their choice.</li>
+      <li class="searchable" data-s="umbrella questioning spokes questions answers clipped"><b>Umbrella Questioning.</b> Questions on the spokes of a hanging umbrella, answers clipped to the handle's crook.</li>
+      <li class="searchable" data-s="overarching umbrellas exam components confidence reteaching groups"><b>Overarching Umbrellas.</b> One umbrella per exam component; students stand under their weakest, giving you self-selected reteaching groups.</li>
+      <li class="searchable" data-s="ceiling circuits stations rotating time limit"><b>Ceiling Circuits.</b> The umbrellas turned into a circuit-training course, groups rotating on a signal.</li>
+      <li class="searchable" data-s="memory mobiles washing lines cryptic clues"><b>Memory Mobiles.</b> Mobiles and washing lines with key points written as cryptic coded clues.</li>
+      <li class="searchable" data-s="tasty tacos paper plate shell questions chilli challenge"><b>Tasty Tacos.</b> A folded paper plate stuffed with questions, clues and riddles, some coded extra spicy for self-selected difficulty.</li>
+      <li class="searchable" data-s="take down the tacos work through present critique"><b>Take Down the Tacos.</b> Groups work through a taco's contents and present answers back to the creators for critique.</li>
+      <li class="searchable" data-s="message to myself letter future self postbox mocks transition"><b>Message to Myself.</b> A letter to their future self, opened at a chosen moment; a postbox collects extra memos.</li>
+      <li class="searchable" data-s="bunting triangles three key points tessellate relink memory"><b>Bunting.</b> Triangular cards with key points along each edge, tessellated by circulating students, cut down later to relink from memory.</li>
+    </ul>
+    <div class="tsub">Case studies</div>
+    <ul class="tech case">
+      <li class="searchable" data-s="clearly challenging mfl washing line transparent envelopes glimpse"><b>Clearly challenging.</b> Transparent envelopes of extension challenges on a washing line, visibility controlled as tantaliser or invitation.</li>
+      <li class="searchable" data-s="maximising mock exam feedback dearne year 11 taco symbol crown waffle"><b>Maximising mock exam feedback.</b> Year 11s distilled all exam feedback onto one sheet, sealed it in a taco labelled with a symbol for their most important message.</li>
+      <li class="searchable" data-s="tessellating triangles hoyland year 3 rivers mini plenary"><b>Tessellating triangles.</b> Bunting used mid-sequence as a mini-plenary that told the teacher whether prior learning was still live.</li>
+      <li class="searchable" data-s="remember then reassemble kirk balk paper chains match questions answers"><b>Remember then reassemble.</b> Colour-coded question and answer chains sent up in random order, later dismantled and matched.</li>
+      <li class="searchable" data-s="grabbing hold knowledge darton rousseau nurture balloons ask first"><b>Grabbing hold of the knowledge.</b> An immersive Rousseau lesson with a nurture group, planned by asking the students first what would overload them.</li>
+      <li class="searchable" data-s="under my umbrella hoyland weather symbols sun cloud raindrop"><b>Under my umbrella.</b> Weather symbols sorting contributions: sun for known, cloud for anticipated, raindrop for a question.</li>
+      <li class="searchable" data-s="gas design technology tools circuit symbols stand under"><b>GAS in design and technology.</b> Cardboard tool cut-outs hung around the room; students stood under the right one in answer to questions.</li>
+    </ul>
+  </div>
+
+  <!-- Chapter 3 -->
+  <div class="tgroup" data-ch="c3">
+    <h3>Chapter 3 · Floors: not just for standing or sitting on</h3>
+    <div class="locs">Kindle loc. 1582-1942 · the biggest unused surface; movement as memory marker and live diagnostic</div>
+    <div class="tsub">Entrances and exits</div>
+    <ul class="tech">
+      <li class="searchable" data-s="crossing the threshold taped stimulus doorway settling pre-assessment rag"><b>Crossing the Threshold.</b> A large stimulus taped just inside the doorway, with a varied instruction, replacing settling activities entirely.</li>
+      <li class="searchable" data-s="step back in time threshold retrieval prior learning confidence"><b>Step Back in Time.</b> The threshold slot used for retrieval, with confidence flagged: "I remember", "I think", "I'm not completely sure, but".</li>
+      <li class="searchable" data-s="threshold tombola raffle tickets groupings envelopes just a minute"><b>Threshold Tombola.</b> A tombola at the door: tickets set groupings and zones, or mystery envelopes get sprung at random moments.</li>
+    </ul>
+    <div class="tsub">Powerful perimeters</div>
+    <ul class="tech">
+      <li class="searchable" data-s="memory march chant perimeter tempo playful"><b>Memory March.</b> Students move around the room's edge chanting the topic's most significant message, tempo and direction kept changing.</li>
+      <li class="searchable" data-s="sweeping glance brisk lap walls memory challenge countdown"><b>Sweeping Glance.</b> A brisk lap of the perimeter surveying the walls, then a memory challenge on what they just saw.</li>
+      <li class="searchable" data-s="stop and take stock physically stop hard reteaching list ninety seconds"><b>Stop and Take Stock.</b> The lap with one rule added: stop at anything hard to understand. Where people stop is your reteaching list.</li>
+      <li class="searchable" data-s="thinking circuits trail objects questions connections odd one out red herrings"><b>Thinking Circuits.</b> A trail of related objects and questions around the edge; students walk it working out the connections.</li>
+      <li class="searchable" data-s="gas go and stand corners commit justify grouping misconception map"><b>GAS (Go And Stand).</b> Choices in the corners; students stand by their answer, trained to walk past anything easy, and justify the position.</li>
+    </ul>
+    <div class="tsub">Moving in the middle</div>
+    <ul class="tech">
+      <li class="searchable" data-s="stepping stones sheets floor gather test peer teach"><b>Stepping Stones.</b> Large sheets of questions and tasks laid across the floor; being unsure means you stay until a peer teaches you off it.</li>
+      <li class="searchable" data-s="stumbling blocks cardboard boxes difficulties roll discuss"><b>Stumbling Blocks.</b> Big boxes carry the class's main difficulties on their faces, rolled like dice and talked over.</li>
+      <li class="searchable" data-s="360 degree flip drill one fact actions fade support"><b>360 Degree Flip.</b> One key fact locked in by a movement drill repeated with steadily less support until it runs from memory.</li>
+      <li class="searchable" data-s="learning arena cleared space gladiatorial questions risk"><b>Learning Arena.</b> A cleared space framed as gladiatorial: step in and take questions from the spectators, in groups to lower the stakes.</li>
+      <li class="searchable" data-s="scaling up giant inductive grid blockbusters hexagons floor"><b>Scaling Up.</b> The hardest content made physically large on the floor: a Giant Inductive Grid to walk and talk, or a Giant Blockbusters Grid to compete across.</li>
+      <li class="searchable" data-s="on a roll wallpaper representations rehearse each other first"><b>On a Roll.</b> A long paper roll covered with the current learning; use each other before your book, and what gets looked up is your reteach list.</li>
+      <li class="searchable" data-s="story sheets fabric setting marker pens tension disaster"><b>Story Sheets.</b> A fabric sheet on the floor where students build a setting, stretched by introducing tensions to react to.</li>
+      <li class="searchable" data-s="big circle little circles arena oversized hula hoops talking chips"><b>Big Circle, Little Circles.</b> The class in one large circle physically moving oversized learning, then hula-hoop groups doing differentiated versions with talking chips.</li>
+      <li class="searchable" data-s="tap the talent trade ideas set time interpersonal"><b>Tap the Talent.</b> Students must trade ideas with as many people as possible inside a set time.</li>
+      <li class="searchable" data-s="guided tours pairs eyes closed describe image draw"><b>Guided Tours.</b> Only A can see the image; A guides B, eyes closed, around the room describing it, then B draws what was described.</li>
+      <li class="searchable" data-s="fully immersed project floor image work together"><b>Fully Immersed.</b> Lights dimmed, an image projected onto the floor for students to work on together.</li>
+      <li class="searchable" data-s="inner circle zone elastic loop earn way in whispered clues"><b>Inner Circle Zone.</b> Six students inside an elastic loop; the rest earn their way in by contributing, with whispered clues encouraged.</li>
+    </ul>
+    <div class="tsub">Case studies</div>
+    <ul class="tech case">
+      <li class="searchable" data-s="high frequency words st lukes reception thresholds free flow"><b>Going over high-frequency words.</b> One keyword taped at each of three door thresholds, read aloud every crossing, many times a day.</li>
+      <li class="searchable" data-s="threshold objectives st lukes year 4 missing keyword memory"><b>Threshold objectives.</b> The lesson objective on the doorway floor with one keyword missing: read it, write it from memory, predict the word.</li>
+      <li class="searchable" data-s="tiger feet infant stepping stones picture book sequence red herring"><b>Tiger feet.</b> Story-moment pictures as stepping stones for early readers sequencing a familiar book, with a planted red herring.</li>
+      <li class="searchable" data-s="on a roll with learning dearne year 9 geography whiteboards floor"><b>On a roll with learning.</b> Year 9 geographers around a paper roll, testing ideas on mini-whiteboards first; they owned the resource afterwards.</li>
+      <li class="searchable" data-s="speech marks st josephs year 1 big circle 66 99 wagoll gas"><b>Lifting speech marks off the page.</b> Oversized jumbled direct speech physically assembled in the arena, then hoop groups, then a GAS plenary.</li>
+    </ul>
+  </div>
+
+  <!-- Chapter 4 -->
+  <div class="tgroup" data-ch="c4">
+    <h3>Chapter 4 · Zoning: one classroom, endless possibilities</h3>
+    <div class="locs">Kindle loc. 1953-2476 · discrete areas so students differentiate themselves and you see where you are needed</div>
+    <div class="tsub">Zone types they suggest</div>
+    <ul class="tech">
+      <li class="searchable" data-s="zone menu research recording problem solving curiosity prove it making impossible quiet reading corner"><b>The zone menu.</b> Research, recording, problem-solving, curiosity, Prove It, making, impossible, quiet and reading corners: a menu, not a prescription.</li>
+    </ul>
+    <div class="tsub">Unexpected zones</div>
+    <ul class="tech">
+      <li class="searchable" data-s="locked up learning cage warnings off limits withholding"><b>Locked Up Learning.</b> A cage of topic artefacts declared off-limits; the whole value is in the withholding.</li>
+      <li class="searchable" data-s="mystery materials covered table sheet predict slowly quickly ready steady look kims game"><b>Mystery Materials.</b> A covered centre table leads the lesson. Reveal it Slowly or Quickly, or play Ready Steady Look and recall what was glimpsed.</li>
+      <li class="searchable" data-s="follow your symbol stickers entry zones no instructions"><b>Follow Your Symbol.</b> Unexplained stickers on entry route students to matching zones later, with the group working out the task.</li>
+      <li class="searchable" data-s="under wraps coloured blankets tables stealth rotate"><b>Under Wraps.</b> Different coloured sheets over each table's activity, worked on stealthily so the mystery holds for the next group.</li>
+      <li class="searchable" data-s="make it your own theme racing circuit mountain climb zones"><b>Make It Your Own.</b> One theme (a racing circuit, a mountain climb) with the zones designed as its component parts.</li>
+      <li class="searchable" data-s="follow your quest whole school treasure hunt personalised gaming"><b>Follow Your Quest.</b> A whole-school treasure hunt of personalised, escalating challenges hidden around the building.</li>
+    </ul>
+    <div class="tsub">Language zones</div>
+    <ul class="tech">
+      <li class="searchable" data-s="talk tally focus words names dates proved vocabulary circulation"><b>Talk Tally.</b> Focus words as a tally chart; a student adds their name once they have proved correct use.</li>
+      <li class="searchable" data-s="claim the connective cards colour coded purpose pile game"><b>Claim the Connective.</b> Connectives on colour-coded cards, claimed on successful use, collected competitively.</li>
+    </ul>
+    <div class="tsub">Choice and challenge zones</div>
+    <ul class="tech">
+      <li class="searchable" data-s="self selection tasks opt in no wrong selection"><b>Self-Selection.</b> Different tasks set out to opt into, with one rule up front: there is no wrong selection.</li>
+      <li class="searchable" data-s="tantalising trays extension concealed mystery curiosity"><b>Tantalising Trays.</b> Extension tasks concealed in trays under the focal table; the pull is curiosity, not compliance.</li>
+      <li class="searchable" data-s="question conundrums research discussion brainstorm zones big question wait time"><b>Question Conundrums.</b> Zones that prepare a big answer: research, discussion, brainstorming; prove you chose the right one.</li>
+      <li class="searchable" data-s="wandering and wondering silent prompts sticky notes meditative"><b>Wandering and Wondering.</b> Prompts visited in silence, personal responses left on sticky notes; the silence is the ingredient.</li>
+      <li class="searchable" data-s="ever more challenging solo taxonomy zones physical journey"><b>Ever More Challenging.</b> Zones built on the SOLO taxonomy stages so progression through difficulty is a physical journey.</li>
+      <li class="searchable" data-s="pose the impossible unsolvable problem tinker weeks clues"><b>Pose the Impossible.</b> An unsolvable conundrum on permanent open invitation, with clues dropped in at strategic moments.</li>
+      <li class="searchable" data-s="centre stage teacher desk middle students take over questions"><b>Centre Stage.</b> The teacher's desk moved to the centre and handed to rotating student pairs who pose the questions.</li>
+    </ul>
+    <div class="tsub">Responsive zones</div>
+    <ul class="tech">
+      <li class="searchable" data-s="suspended success criteria ceiling stand by target groupings assessment"><b>Suspended Success Criteria.</b> Differentiated criteria hung up; students stand by the one they need next, naming their own target.</li>
+      <li class="searchable" data-s="magpie models wagolls borrow key words phrases terms"><b>Magpie Models.</b> A zone of WAGOLLs students may enter to borrow words, phrases and ideas, on set terms.</li>
+      <li class="searchable" data-s="check mate peer assess routine criteria proud differently learned"><b>Check Mate.</b> Partners peer-assess against routine criteria, always ending on: proud of, do differently, main thing learned.</li>
+      <li class="searchable" data-s="coaching conference themed zones conference huddle bench layouts"><b>Coaching Conference.</b> Themed zones for working in different modes: conference table, team huddle, coaching bench.</li>
+      <li class="searchable" data-s="rooted teacher plant yourself zone students come to you"><b>Rooted Teacher.</b> Plant yourself in one named zone like a tree and have students come to you.</li>
+      <li class="searchable" data-s="helpful huddle small group space carpet reserved table"><b>Helpful Huddle.</b> A readily available space for pulling a small group out to work with during the lesson.</li>
+      <li class="searchable" data-s="magpie me teacher same task larger watch memorise transfer"><b>Magpie Me.</b> You do the same task as the students but larger; they watch and memorise rather than copy, then transfer.</li>
+      <li class="searchable" data-s="secret challenge envelopes probing questions zone"><b>Secret Challenge.</b> A prominent zone of intriguing sealed challenges: the probing questions you would otherwise ask aloud.</li>
+      <li class="searchable" data-s="inward outward classroom chairs facing out conference horseshoe"><b>The Inward/Outward Classroom.</b> Edge tables facing outwards for independent work, an inward conference area for guided reteaching.</li>
+      <li class="searchable" data-s="permeable classroom several classrooms department regroup friday"><b>The Permeable Classroom.</b> Zoning across a whole department: teach Monday to Thursday, regroup students across classes for targeted Friday provision.</li>
+      <li class="searchable" data-s="colour coded feedback dot book coloured table improvement"><b>Colour-Coded Feedback.</b> Feedback as a coloured dot; call the colour and the improvement grouping is already differentiated.</li>
+    </ul>
+    <div class="tsub">Progress zones</div>
+    <ul class="tech">
+      <li class="searchable" data-s="prove it place mastery masterpieces refined tweet elevator pitch"><b>Prove It Place.</b> A zone for mastery masterpieces refined over time; students choose how to consolidate and present.</li>
+      <li class="searchable" data-s="pupil portfolios zone corridor collating celebration"><b>Pupil Portfolios.</b> A zone of portfolios students update themselves, combining metacognition with celebration.</li>
+      <li class="searchable" data-s="progress portrait gallery proudest piece annotated weeding feeding"><b>Progress Portrait.</b> One frame per student holding their current proudest piece, annotated and constantly replaced.</li>
+      <li class="searchable" data-s="progress pull out concertina wallets drafts iterations"><b>Progress Pull Out.</b> Concertina wallets extending to show every draft, so progress reads as connected iterations.</li>
+      <li class="searchable" data-s="personal power profiles expert outside school consultants mini teachers"><b>Personal Power Profiles.</b> Profiles of each student's genuine expertise; those students become named consultants for anyone who needs it.</li>
+    </ul>
+    <div class="tsub">Independence zones</div>
+    <ul class="tech">
+      <li class="searchable" data-s="enable table resources before asking organisers tablet recording missed learning"><b>Enable Table.</b> Resources used before asking the teacher, including a tablet recording of your key teaching episodes to replay.</li>
+      <li class="searchable" data-s="earn it learn it tokens economy free peer help expensive teacher"><b>Earn It and Learn It.</b> Peer help and the enable table are free; the teacher costs tokens. "Are you sure you want to spend a token on this?"</li>
+      <li class="searchable" data-s="clue corner 4b strategy boards books brain buddy teacher colour coded clues"><b>Clue Corner + the 4B Strategy.</b> Colour-coded clue cards reached only after boards, books, brain and buddy; the teacher is the final B.</li>
+      <li class="searchable" data-s="give one take one clue card leave one behind restocks"><b>Give One, Take One.</b> Take a clue card, leave one behind on something you are confident about. The corner restocks itself.</li>
+      <li class="searchable" data-s="expertise area ambassadors mini teachers badges vip"><b>Expertise Area.</b> Students as declared experts with badges inviting questions, plus a nominated VIP who visits to hear how the learning developed.</li>
+      <li class="searchable" data-s="teaching takeover students deliver plenary interactive"><b>Teaching Takeover.</b> Students routinely deliver part of the lesson, with questions and challenges going both ways.</li>
+      <li class="searchable" data-s="teach the teddies mini classroom mimic consolidate filming"><b>Teach the Teddies.</b> A designated mini classroom where students mimic teaching to consolidate, filmed and fed back on.</li>
+      <li class="searchable" data-s="teach it with tech whiteboard video animation podcasts"><b>Teach It with Tech.</b> Students research and present with the whiteboard, video, animation or podcasts, shareable beyond the class.</li>
+      <li class="searchable" data-s="review and redesign small groups redesign lesson taught improve"><b>Review and Redesign.</b> Small groups redesign a lesson you have already taught them, for a future class.</li>
+      <li class="searchable" data-s="pick a card challenge bank difficulty bronze silver gold reflective log"><b>Pick a Card.</b> A bank of difficulty-coded challenge cards, with a reflective log recording how each one felt to tackle.</li>
+      <li class="searchable" data-s="creation station build challenge question game other classes"><b>Creation Station.</b> Students collaboratively build a challenging task, or a game that teaches their new learning to another class.</li>
+    </ul>
+    <div class="tsub">Collaborative zones</div>
+    <ul class="tech">
+      <li class="searchable" data-s="across the barricades chairs split halves trade information"><b>Across the Barricades.</b> A chair barricade splits the room; each team holds different information, so trading is the only route through.</li>
+      <li class="searchable" data-s="research carousel stations media rotate every member confident"><b>Research Carousel.</b> Media stations rotated on a timer; a team leaves only when every member is confident they have what they need.</li>
+      <li class="searchable" data-s="circuit training stations activities rotate whistle stepping stones transitions"><b>Circuit Training.</b> Tables as varied-mode stations rotated against the clock, with stepping-stone challenges in the transitions.</li>
+    </ul>
+    <div class="tsub">Case studies</div>
+    <ul class="tech case">
+      <li class="searchable" data-s="get on board codsall talk tally maths vocabulary unit"><b>Get on board.</b> A maths Talk Tally kept up for the whole unit, with a daily focus on words not yet explored.</li>
+      <li class="searchable" data-s="maths keeps you on your toes dearne zones roll stretch impossible corner hazard tape"><b>Maths that keeps you on your toes.</b> A zoned Year 10 maths room: Roll and Stretch dice, a Stretch Wall on cupboard doors, an Impossible Corner in hazard tape.</li>
+      <li class="searchable" data-s="intriguing in-class interventions codsall secret challenge envelopes shapes not colours"><b>Intriguing in-class interventions.</b> A rooted teacher calling pairs to a Secret Challenge zone; envelopes marked with shapes, not colours, so no student could read the tiering.</li>
+      <li class="searchable" data-s="moving thinking circuits codsall pe stepping stones transitions"><b>Moving and thinking circuits.</b> PE circuit training with differentiated stepping stones turning the transitions into thinking time.</li>
+    </ul>
+  </div>
+
+  <!-- Conclusion -->
+  <div class="tgroup" data-ch="c5">
+    <h3>Conclusion · The legacy of the learning</h3>
+    <div class="locs">Kindle loc. 2489-2592 · the argument moves out of the single classroom and into the wider school</div>
+    <div class="tsub">Wider spaces and wider collaboration</div>
+    <ul class="tech">
+      <li class="searchable" data-s="query it qr it codes windows foyer parents"><b>Query It, QR It.</b> QR codes in visible places linking parents and visitors to what is currently being learned.</li>
+      <li class="searchable" data-s="corridor content traffic priority interactive pareto"><b>Corridor Content.</b> Corridors carry the heaviest traffic, so fill them with interactive content aligned to whole-school priorities, not showcase work.</li>
+      <li class="searchable" data-s="chalk it up board gate foyer big question community"><b>Chalk It Up.</b> A big board at the gate or foyer carrying a live question, open for students, parents and visitors to add their thinking.</li>
+      <li class="searchable" data-s="guru gallery power profiles whole school staff expertise consultants alumni"><b>Guru Gallery.</b> Personal Power Profiles scaled to the whole school, crucially including staff expertise, with leavers kept in the gallery.</li>
+      <li class="searchable" data-s="real legacy projects year long community issue inherit"><b>Real Legacy Projects.</b> Year-long collaborative projects on genuinely real issues, future-proofed so the next cohort inherits them.</li>
+    </ul>
+    <div class="tsub">Staff development (leader-facing)</div>
+    <ul class="tech">
+      <li class="searchable" data-s="powerful partners pair colleague shared focus log compare"><b>Powerful Partners.</b> Two teachers, one shared focus, same technique, short logs, then each talks to the other's students about the impact.</li>
+      <li class="searchable" data-s="networking cross school teachmeets sharing"><b>Networking.</b> Real or virtual cross-school networks for sharing what you have been trying.</li>
+      <li class="searchable" data-s="staff learning wall staffroom photos techniques jigsaw prize"><b>Staff Learning Wall.</b> Staff progress made visible: photos of techniques in action, annotated, in a staffroom space.</li>
+      <li class="searchable" data-s="assembly ensemble students present impact catalyst staff"><b>Assembly Ensemble.</b> Students build and give the presentation on what changed in their classroom. Students advocating beats a teacher advocating.</li>
+      <li class="searchable" data-s="frequented foyers video entrance parents visitors"><b>Frequented Foyers.</b> The same student-made content as video in the school entrance, advocating to parents and visitors.</li>
+      <li class="searchable" data-s="room request timetabling allocation shared rooms environment"><b>Room Request.</b> If the room is a live resource, that has implications for room allocation, agreed at team level.</li>
+      <li class="searchable" data-s="subject specifics hardest concepts department environment techniques"><b>Subject Specifics.</b> Subject meetings identify the specialism's hardest concepts, then decide how the environment addresses them.</li>
+      <li class="searchable" data-s="lifelong learning staff inset photos annotated visible"><b>Lifelong Learning.</b> Photos of staff on courses, annotated with what they will do differently, where students can see them.</li>
+      <li class="searchable" data-s="performance poem teachers stems filmed compare students"><b>Performance Poem.</b> Teachers complete stems, combine them into one piece and perform it on film; then students do their version.</li>
+      <li class="searchable" data-s="shared solutions whole school issue corridor sticky notes crowdsource"><b>Shared Solutions.</b> A whole-school priority on a shared space with a pad of notes attached, so staff, students and visitors all contribute.</li>
+    </ul>
+    <div class="tsub">Their closing mantra</div>
+    <ul class="tech">
+      <li class="searchable" data-s="what we want for our pupils we also want for our teachers mantra culture"><b>The line to open the first staff session with:</b> "what we want for our pupils, we also want for our teachers."</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= WORKED EXAMPLE ================= -->
+<section class="block" id="example">
+  <div class="block-head"><h2 class="title">Worked example: from observation to next step</h2></div>
+  <p class="usewhen">A real AIS lesson observation (a Primary Digital Technologies lesson, mixed ability), anonymised. The Teacher Coach's notes went in; four Teacher Strategy recommendations came out. This is the transaction this playbook exists for.</p>
+
+  <div class="judge">
+    <div><div class="lvl">1</div><div class="lbl">Learning skills · Outstanding</div></div>
+    <div><div class="lvl">3</div><div class="lbl">Teaching · Good</div></div>
+    <div><div class="lvl">4</div><div class="lbl">Progress · Acceptable</div></div>
+  </div>
+  <p style="max-width:760px">The shape of the observation: routines, behaviour and relationships at the top of the scale, but a closed follow-along task capped how far students could travel. The Teacher Coach left four actionable notes, and every one of them maps onto a strand above.</p>
+
+  <div class="recs">
+    <div class="rec searchable" data-s="example turn and talk accountability talk roles oracy">
+      <div class="from">Coach's note: "attach a condition or outcome to turn and talk, to boost accountability in student dialogue."</div>
+      <h4>→ Talk roles <span style="color:var(--plum)">(Strand 5)</span></h4>
+      <p>Role cards per table; the summariser reports back in one sentence and names who contributed what. The report IS the condition and outcome.</p>
+      <p class="why"><b>Say this:</b> "Roles up. Summarisers, I will take three of you in four minutes."</p>
+    </div>
+    <div class="rec searchable" data-s="example cfu success criteria highly able stretch hinge point secret challenge">
+      <div class="from">Coach's note: "check for understanding against the success criteria before the first activity; and how will the students who are already able make progress today?"</div>
+      <h4>→ Hinge point + Secret Challenge <span style="color:var(--plum)">(Strand 4 + ch. 4)</span></h4>
+      <p>One misconception-revealing question before the task starts, with two pre-planned next moves. A challenge envelope zone gives the able students self-serve stretch: capped bottom, open top.</p>
+      <p class="why"><b>Say this:</b> "Show me. No looking sideways."</p>
+    </div>
+    <div class="rec searchable" data-s="example reading aloud engagement cold call weighted name draw">
+      <div class="from">Coach's note: "how do we ensure ALL students are engaged while one student is reading? For example, cold calling the next sentence."</div>
+      <h4>→ Weighted name draw <span style="color:var(--plum)">(Strand 4)</span></h4>
+      <p>The stick jar decides who reads the next sentence, weighted toward students you need to hear more. Cold calling becomes infrastructure instead of a thing you remember to do.</p>
+      <p class="why"><b>Say this:</b> "Sticks are in. Anyone can be next sentence."</p>
+    </div>
+    <div class="rec searchable" data-s="example jigsaw collaborative stations bots sharing">
+      <div class="from">Coach's note: "could this have run jigsaw-style, with students visiting different stations and then sharing their experiences? More collaborative."</div>
+      <h4>→ Jigsaw stations <span style="color:var(--plum)">(Strand 6)</span></h4>
+      <p>Round one: each pair becomes the expert on a different station. Round two: regroup so every table holds one expert per station, and the task cannot be finished without all four pieces.</p>
+      <p class="why"><b>Say this:</b> "You are the only person at this table who saw station three."</p>
+    </div>
+  </div>
+
+  <div class="notebox searchable" data-s="coaching note format three lines strand setup sentence">
+    <h4>The coaching note that goes to the teacher (three lines, always)</h4>
+    <ol>
+      <li>Strand name.</li>
+      <li>One setup from that strand.</li>
+      <li>The sentence the teacher will say to activate it.</li>
+    </ol>
+    <p style="margin-top:10px;font-size:.9rem">Example: <i>Responsive teaching · Hinge point before task entry · "Show me. No looking sideways."</i></p>
+  </div>
+</section>
+
+<footer>
+  <p><b>Attribution.</b> This playbook is AIS practice, inspired by the approach in <i>Dynamically Different
+  Classrooms</i> by Claire Gadsby and Jan Evans (Independent Thinking Press). The six strands and their thirty
+  setups are AIS versions for our rooms, subjects and kit; the technique library retells Gadsby and Evans'
+  own named techniques in our own words, with chapter locations so you can find the originals. Staff wanting
+  the original techniques, case studies and photographs should read the book.</p>
+</footer>
+
+</main>
+
+<script>
+/* image fallback chain: banana image -> AIS schematic svg */
+document.querySelectorAll("img[data-alt]").forEach(img => {
+  img.addEventListener("error", function h(){
+    const alts = (img.dataset.alt || "").split("|").filter(Boolean);
+    if (alts.length){ img.dataset.alt = alts.slice(1).join("|"); img.src = alts[0]; }
+    else img.removeEventListener("error", h);
+  });
+});
+
+/* global search */
+const q = document.getElementById("search");
+const clearBtn = document.getElementById("clear");
+const hitEl = document.getElementById("hitcount");
+const items = Array.from(document.querySelectorAll(".searchable"));
+const sections = Array.from(document.querySelectorAll("section.block, .tgroup"));
+function norm(s){ return (s||"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,""); }
+items.forEach(el => el.dataset.idx = norm((el.dataset.s||"") + " " + el.textContent));
+function runSearch(){
+  const term = norm(q.value.trim());
+  clearBtn.style.display = term ? "block" : "none";
+  hitEl.style.display = term ? "block" : "none";
+  if (!term){
+    items.forEach(el => el.classList.remove("dim"));
+    sections.forEach(s => s.classList.remove("hidden"));
+    document.querySelectorAll("details.book").forEach(d => d.open = false);
+    return;
+  }
+  let hits = 0;
+  items.forEach(el => {
+    const hit = el.dataset.idx.includes(term);
+    el.classList.toggle("dim", !hit);
+    if (hit) hits++;
+  });
+  sections.forEach(s => {
+    const any = s.querySelector(".searchable:not(.dim)");
+    s.classList.toggle("hidden", !any);
+  });
+  document.querySelectorAll("details.book:not(.dim)").forEach(d => d.open = true);
+  hitEl.textContent = hits + (hits === 1 ? " match" : " matches");
+}
+q.addEventListener("input", runSearch);
+clearBtn.addEventListener("click", () => { q.value=""; runSearch(); q.focus(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && document.activeElement === q){ q.value=""; runSearch(); }
+  if (e.key === "/" && document.activeElement !== q){ e.preventDefault(); q.focus(); }
+});
+
+/* chapter filter chips */
+document.querySelectorAll(".chip").forEach(chip => {
+  chip.addEventListener("click", () => {
+    document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+    chip.classList.add("active");
+    const ch = chip.dataset.ch;
+    document.querySelectorAll(".tgroup").forEach(g => {
+      g.classList.toggle("hidden", ch !== "all" && g.dataset.ch !== ch);
+    });
+  });
+});
+</script>
+
+</body>
+</html>

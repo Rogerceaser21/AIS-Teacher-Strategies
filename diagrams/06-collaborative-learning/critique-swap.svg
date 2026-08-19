@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Two group critique swap"><title>Two group critique swap</title><desc>Work at pupil height · prep 0 · 8 min</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Two group critique swap</text><text x="20" y="42" class="s" text-anchor="start">Work at pupil height · prep 0 · 8 min</text><g><rect x="32" y="84" width="150" height="92" rx="4" class="fillw"/><rect x="32" y="84" width="150" height="92" rx="4" class="stroke"/><text x="107.0" y="188" class="lm" text-anchor="middle">group A work</text><rect x="238" y="84" width="150" height="92" rx="4" class="fillw"/><rect x="238" y="84" width="150" height="92" rx="4" class="stroke"/><text x="313.0" y="188" class="lm" text-anchor="middle">group B work</text><rect x="60" y="100" width="20" height="20" rx="2" class="filla"/><rect x="60" y="100" width="20" height="20" rx="2" class="acc"/><text x="70.0" y="113.5" class="la" text-anchor="middle">+</text><rect x="120" y="100" width="20" height="20" rx="2" class="filla"/><rect x="120" y="100" width="20" height="20" rx="2" class="acc"/><text x="130.0" y="113.5" class="la" text-anchor="middle">?</text><rect x="266" y="100" width="20" height="20" rx="2" class="filla"/><rect x="266" y="100" width="20" height="20" rx="2" class="acc"/><text x="276.0" y="113.5" class="la" text-anchor="middle">+</text><rect x="326" y="100" width="20" height="20" rx="2" class="filla"/><rect x="326" y="100" width="20" height="20" rx="2" class="acc"/><text x="336.0" y="113.5" class="la" text-anchor="middle">?</text><line x1="186" y1="112" x2="229.4" y2="112.0" class="acc"/><path d="M234 112 L225.4 114.2 M234 112 L225.4 109.8" class="acc"/><line x1="234" y1="148" x2="190.6" y2="148.0" class="acc dash"/><path d="M186 148 L194.6 145.8 M186 148 L194.6 150.2" class="acc"/><text x="210" y="200" class="lm" text-anchor="middle">exactly two notes: one specific strength, one specific question</text><text x="210" y="224" class="la" text-anchor="middle">five minutes to act on them before the work counts as finished</text></g></svg>

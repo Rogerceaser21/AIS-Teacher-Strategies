@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Covered object"><title>Covered object</title><desc>Front bench · prep 2 min · 3 min in lesson</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Covered object</text><text x="20" y="42" class="s" text-anchor="start">Front bench · prep 2 min · 3 min in lesson</text><g><rect x="200" y="152" width="140" height="46" rx="4" class="fillp"/><rect x="200" y="152" width="140" height="46" rx="4" class="stroke"/><path d="M218 152 q52 -50 104 0 z" class="filla"/><path d="M218 152 q52 -50 104 0" class="acc"/><text x="270" y="96" class="la" text-anchor="middle">covered all lesson</text><line x1="270" y1="106" x2="270.0" y2="117.4" class="acc"/><path d="M270 122 L267.8 113.4 M270 122 L272.2 113.4" class="acc"/><circle cx="58" cy="148" r="8" class="stroke"/><circle cx="58" cy="176" r="8" class="stroke"/><circle cx="88" cy="162" r="8" class="stroke"/><line x1="104" y1="162" x2="185.4" y2="162.0" class="acc dash"/><path d="M190 162 L181.4 164.2 M190 162 L181.4 159.8" class="acc"/><text x="147" y="148" class="lm halo" text-anchor="middle">1 closed question each</text><text x="210" y="232" class="lm" text-anchor="middle">uncovered only when the content needs it</text></g></svg>

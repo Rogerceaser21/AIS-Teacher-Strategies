@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280" role="img" aria-label="Traffic light margin"><title>Traffic light margin</title><desc>Pupil books · prep 0 · 90 seconds</desc><style>
+  :root{--ink:#1f2430;--muted:#8b93a3;--line:#c9cedb;--wash:#f2f3f8;--paper:#fff;--accent:#6d4df6;--accent-wash:#ece7ff}
+  @media (prefers-color-scheme: dark){
+    :root{--ink:#e8eaf2;--muted:#8d95a8;--line:#3a4157;--wash:#1b2030;--paper:#111521;--accent:#9b86ff;--accent-wash:#241f3d}
+  }
+  .t{font:600 13px/1.2 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;fill:var(--ink)}
+  .s{font:500 10px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted);letter-spacing:.02em}
+  .l{font:500 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--ink)}
+  .lm{font:500 9px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--muted)}
+  .la{font:600 9.5px/1.2 ui-sans-serif,system-ui,sans-serif;fill:var(--accent)}
+  .halo{paint-order:stroke;stroke:var(--paper);stroke-width:3.5px;stroke-linejoin:round}
+  .stroke{fill:none;stroke:var(--line);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .acc{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .fillw{fill:var(--wash)}
+  .filla{fill:var(--accent-wash)}
+  .fillp{fill:var(--paper)}
+  .dash{stroke-dasharray:4 3}
+</style><rect x="0" y="0" width="420" height="280" fill="none"/><text x="20" y="26" class="t" text-anchor="start">Traffic light margin</text><text x="20" y="42" class="s" text-anchor="start">Pupil books · prep 0 · 90 seconds</text><g><rect x="80" y="78" width="260" height="138" rx="4" class="fillp"/><rect x="80" y="78" width="260" height="138" rx="4" class="stroke"/><line x1="112" y1="78" x2="112" y2="216" class="stroke"/><line x1="126" y1="100" x2="322" y2="100" class="stroke"/><line x1="126" y1="122" x2="322" y2="122" class="stroke"/><line x1="126" y1="144" x2="322" y2="144" class="stroke"/><line x1="126" y1="166" x2="322" y2="166" class="stroke"/><line x1="126" y1="188" x2="322" y2="188" class="stroke"/><line x1="126" y1="210" x2="322" y2="210" class="stroke"/><rect x="92" y="158" width="14" height="14" rx="2" class="filla"/><rect x="92" y="158" width="14" height="14" rx="2" class="acc"/><line x1="60" y1="165" x2="77.4" y2="165.0" class="acc"/><path d="M82 165 L73.4 167.2 M82 165 L73.4 162.8" class="acc"/><text x="56" y="152" class="la" text-anchor="end">the line</text><text x="56" y="166" class="la" text-anchor="end">it went wrong</text><text x="56" y="180" class="lm" text-anchor="end">not the page</text><text x="210" y="246" class="lm" text-anchor="middle">circulate reading margins only: a class takes about 90 seconds</text></g></svg>
