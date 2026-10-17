@@ -1252,6 +1252,16 @@ function runSearch(){
   hitEl.textContent = hits + (hits === 1 ? " match" : " matches");
 }
 q.addEventListener("input", runSearch);
+/* ?find=<strategy name> (links from the Recommendations page): fill the search box and scroll to the first match */
+(function(){
+  const f = new URLSearchParams(location.search).get("find");
+  if (!f) return;
+  q.value = f; runSearch();
+  const go = () => { const h = document.querySelector(".searchable:not(.dim)"); if (h) h.scrollIntoView({block: "center"}); };
+  go();
+  if (document.readyState === "complete") setTimeout(go, 300);
+  else addEventListener("load", () => { go(); setTimeout(go, 300); });
+})();
 clearBtn.addEventListener("click", () => { q.value=""; runSearch(); q.focus(); });
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && document.activeElement === q){ q.value=""; runSearch(); }
